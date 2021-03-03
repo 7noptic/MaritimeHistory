@@ -1,0 +1,26 @@
+.faq{
+    &-block{
+        padding: 60px 0;
+        &__title{
+            padding-bottom: 35px;
+        }
+    }
+    &-item{
+        margin-bottom: 20px;
+        &__quest{
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 400;
+            font-family: Yeseva One;
+            padding-bottom: 20px;
+        }
+        &__answer{
+            padding-left: 15px;
+            font-size: 14px;
+            line-height: 18px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(122,95,70,0.5);
+        }
+
+    }
+}

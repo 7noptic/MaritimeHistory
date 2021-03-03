@@ -1,0 +1,12 @@
+.reviews-block{
+    padding: 60px 0;
+    &__btn{
+        padding: 8px 31px;
+    }
+}
+.js-reviews-block-tab{
+    display: none;
+    &.active{
+        display: block;
+    }
+}

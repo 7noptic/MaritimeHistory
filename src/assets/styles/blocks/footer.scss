@@ -1,0 +1,62 @@
+.footer{
+    padding-top: 160px;
+    &__title{
+        font-family: Yeseva One;
+font-weight: normal;
+font-size: 20px;
+line-height: 30px;
+margin-bottom: 55px;
+    }
+    &__menu{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 120px;
+        &> a{
+            font-size: 14px;
+line-height: 18px;
+margin-bottom: 30px;
+
+        }
+    }
+            &__text{
+                font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 10px;
+        &-b{
+            font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 35px;
+        display: block;
+        }
+        &-s{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px; 
+            margin-bottom: 10px;
+        }
+    }
+    &-social{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 220px;
+        &__item{
+
+        }
+    }
+    &__tel{
+        font-family: Yeseva One;
+font-style: normal;
+font-weight: normal;
+font-size: 32px;
+line-height: 37px;
+margin-bottom: 10px;
+display: block;
+    }
+    &__btn{
+padding: 17px 71px;
+margin-bottom: 55px;
+    }
+}

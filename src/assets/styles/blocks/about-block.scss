@@ -1,0 +1,22 @@
+.about-block{
+    padding: 60px 0;
+    &__title{
+        padding-bottom: 65px;
+    }
+    &__logo{
+        margin-bottom: 60px;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        padding-bottom: 100px;
+        flex-direction: column;
+    }
+    &__adv{
+        padding-top: 30px;
+        font-family: Yeseva One;
+        font-size: 22px;
+        line-height: 25px;
+        text-align: center;
+    }
+}

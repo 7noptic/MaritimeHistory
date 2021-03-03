@@ -1,0 +1,58 @@
+.header{
+    padding: 30px;
+    &__menu{
+        &> a{
+            color: $brown;
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 50px;
+            &:hover{
+                color: $gold;
+            }
+        }
+    }
+    &__info{
+        color: $brown;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    &__tel{
+font-size: 22px;
+font-family: Yeseva One;
+margin-right: 15px;
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+    &__search{
+        width: 100%;
+        max-width: 580px;
+        &-img{
+            display: none;
+        }
+    }
+    &__btn{
+        padding: 14px 20px;
+        font-size: 12px;
+        font-weight: 800;
+    }
+    &__heart{
+        &:hover{
+            &  path{
+                fill:linear-gradient(180deg, #FFE249 -2.35%, #B36C19 114.54%);
+            }
+        }
+    }
+    &__basket{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    &__row{
+        margin-bottom: 30px;
+    }
+}

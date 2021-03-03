@@ -1,0 +1,28 @@
+.tags{
+    padding: 30px 0;
+    position: relative;
+    &-slide{
+       // text-align: center;
+        width: auto !important; 
+        cursor: pointer;
+      //  padding: 9px 13px;
+      //  border-radius: 100px;
+      //  border: 1px solid $brown;
+    }
+    &__btn{
+        padding: 9px 13px;
+    }
+    &__next,&__prev{
+        cursor: pointer;
+        position: absolute;
+        top: calc(50% - 8px);
+        
+    }
+    &__prev{
+        left: 0;
+    }
+    &__next{
+        right: 0;
+        transform: rotate(180deg);
+    }
+}

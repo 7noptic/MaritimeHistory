@@ -1,0 +1,84 @@
+.card{
+    padding: 10px 0;
+    margin-bottom: 40px; 
+    &:hover{
+        color: $brown;
+        
+    }
+    &__img{
+        display: block;
+        max-height: 350px;
+        position: relative;
+        margin-bottom: 15px;
+        & > img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-height: 350px;
+        }
+    }
+    &__heart{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        transition: $transition2;
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+    &__name{
+        display: block;
+        margin-bottom: 20px;
+        font-size: 20px;
+        line-height: 30px;
+        font-family: Yeseva One;
+        overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    box-orient: vertical;
+    height: 60px;
+    &:hover{
+        color: $gold;
+    }
+    }
+    &__text{
+        font-size: 14px;
+        line-height: 18px;
+        padding-bottom: 10px;   
+        &-b{
+            padding-bottom: 15px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    &__price{
+        display: inline-block;
+        padding-bottom: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        opacity: .6;
+        &-b{
+            padding-bottom: 15px;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 30px;
+            display: inline-block;  
+        }
+    }
+    &__btn{
+        width: 48%;
+        padding: 9px;
+    }
+    &__btns{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+}

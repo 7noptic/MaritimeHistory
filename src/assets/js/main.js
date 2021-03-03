@@ -1,12 +1,13 @@
 'use script';
-import Swiper, {Navigation, Pagination,} from 'swiper';
+import Swiper, {Navigation, Pagination, Autoplay} from 'swiper';
 import Readmore from "readmore-js";
 import GLightbox from 'glightbox';
 
-Swiper.use([Navigation, Pagination]);
+Swiper.use([Navigation, Pagination, Autoplay]);
 
 
 window.addEventListener('DOMContentLoaded', () =>{
+    const glightbox = new GLightbox({});
     /* HAMBURGER MENU IN HEADER*/
     let header = document.querySelector('.header'),
         hamburgerBtn = header.querySelector('.js-burger'),
@@ -31,11 +32,26 @@ window.addEventListener('DOMContentLoaded', () =>{
 
    /* MODAL */
    let modalBlock = document.querySelector('.js-sidebars'),
-   allModal = document.querySelectorAll('.js-sidebars > section');
+       allModal = document.querySelectorAll('.js-sidebars > section'),
+       modalCall = document.querySelector('.modal-call'),
+       modalOneClick = document.querySelector('.modal-one-click'),
+       modalSubscribe = document.querySelector('.modal-subscribe');
+
+
 
 
    document.addEventListener('click', e =>{
     let target = e.target;
+
+    if(target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))){
+        toggleModal(e, modalCall)
+    }
+    if(target && (target.classList.contains('js-one-click') || target.classList.contains('modal-one-click__exit'))){
+        toggleModal(e, modalOneClick)
+    }
+    if(target && (target.classList.contains('js-subscribe') || target.classList.contains('modal-subscribe__exit'))){
+        toggleModal(e, modalSubscribe)
+    }
     /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
         if (target && target.classList.contains('sidebar-bg')) {
             e.preventDefault();
@@ -57,18 +73,56 @@ window.addEventListener('DOMContentLoaded', () =>{
 
 
     /* TABS */
+    let reviewsBlockParent = document.querySelector('.reviews-block'),
+        reviewsBlockTabs = reviewsBlockParent.querySelectorAll('.js-reviews-block-tab'),
+        reviewsBlockLink = reviewsBlockParent.querySelectorAll('.reviews-block__link'),
+        newsBlockParent = document.querySelector('.news-block'),
+        newsBlockTabs = newsBlockParent.querySelectorAll('.js-news-block-tab'),
+        newsBlockLink = newsBlockParent.querySelectorAll('.news-block__link'),
+        regionParent = document.querySelector('.region'),
+        regionTabs = regionParent.querySelectorAll('.js-region-tabs'),
+        regionLink = regionParent.querySelectorAll('.region__link');
+
+
+    if(reviewsBlockParent){
+        toggleTabs(0, reviewsBlockLink, reviewsBlockTabs, reviewsBlockParent, 'reviews-block__link');
+    }
+    if(newsBlockParent){
+        toggleTabs(0, newsBlockLink, newsBlockTabs, newsBlockParent, 'news-block__link');
+    }
+    if(regionParent){
+        toggleTabs(0, regionLink, regionTabs, regionParent, 'region__link');
+    }
+    
+
     function toggleTabs(i = 0, link, tabs, parent, classContains) {
         hideTabs(link, tabs);
         showTabs(0, link, tabs);
+        let indexPrevTabs = 0,
+            TabsPrevHeight = tabs[indexPrevTabs].clientHeight;
+        console.log(tabs[0].clientHeight);
         parent.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains(classContains)) {
                 e.preventDefault();
-                link.forEach((item, i) => {
+              /*  link.forEach((item, i) => {
                     if (item == e.target) {
+                       
+                        
+                    }
+                });*/
+                
+                for(let i = 0; i < link.length; i++){
+                    if(link[i] === e.target){
                         hideTabs(link, tabs);
                         showTabs(i, link, tabs);
+                        
+                        
+                        if(tabs[i].clientHeight > TabsPrevHeight){
+                            console.log(tabs[i].clientHeight);
+                            console.log(TabsPrevHeight);
+                        }
                     }
-                });
+                }
             }
         });
     }
@@ -103,9 +157,101 @@ window.addEventListener('DOMContentLoaded', () =>{
         });
     }
 
+    
 
 
+/* SWIPER */
 
+let sliderBanner = new Swiper('.swiper-container-banner', {
+    slidesPerView: 1,
+    observeParents: true,
+    observer: true,
+    
+    navigation:{
+        nextEl: '.banner__next',
+        prevEl: '.banner__prev'
+    },
+    autoplay: {
+        delay: 4000,
+      },
+
+});
+
+let sliderNewsBlock1 = new Swiper('.swiper-container-news-block-1', {
+    slidesPerView: 1,
+    spaceBetween: 50,
+    observeParents: true,
+    observer: true,
+    autoHeight: true,
+    navigation:{
+        nextEl: '.news-block__next-1',
+        prevEl: '.news-block__prev-1'
+    },
+});
+let sliderNewsBlock2 = new Swiper('.swiper-container-news-block-2', {
+    slidesPerView: 1,
+    spaceBetween: 50,
+    observeParents: true,
+    observer: true,
+    autoHeight: true,
+    navigation:{
+        nextEl: '.news-block__next-2',
+        prevEl: '.news-block__prev-2'
+    },
+});
+let sliderNewsBlock3 = new Swiper('.swiper-container-news-block-3', {
+    slidesPerView: 1,
+    spaceBetween: 50,
+    observeParents: true,
+    observer: true,
+    autoHeight: true,
+    navigation:{
+        nextEl: '.news-block__next-3',
+        prevEl: '.news-block__prev-3'
+    },
+});
+let sliderNewsBlock4 = new Swiper('.swiper-container-news-block-4', {
+    slidesPerView: 1,
+    spaceBetween: 50,
+    observeParents: true,
+    observer: true,
+    autoHeight: true,
+    navigation:{
+        nextEl: '.news-block__next-4',
+        prevEl: '.news-block__prev-4'
+    },
+});
+
+let sliderTags = new Swiper('.swiper-container-tags', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    observeParents: true,
+    observer: true,
+    allowSlidePrev: true,
+        allowSlideNext: true,
+        
+    navigation:{
+        nextEl: '.tags__next',
+        prevEl: '.tags__prev'
+    },
+    
+
+});
+let sliderCert = new Swiper('.swiper-container-sertificate', {
+    slidesPerView: 4,
+    spaceBetween: 50,
+    observeParents: true,
+    observer: true,
+    allowSlidePrev: true,
+        allowSlideNext: true,
+        
+    navigation:{
+        nextEl: '.cert__next',
+        prevEl: '.cert__prev'
+    },
+    
+
+});
 
  /* RATING */
  let ratingParent = document.querySelector('.js-rating'),
@@ -133,7 +279,17 @@ if (ratingParent) {
 
  });
 }
+/* CARD HEART */
+let card = document.querySelectorAll('.card');
+if(card){
+    document.addEventListener('click', (e) => {
 
+        if(e.target && e.target.classList.contains('card__heart-img')){
+            e.preventDefault();
+            console.log('asdfasdf');
+        }
+    });
+}
 
 
 
@@ -341,5 +497,5 @@ DynamicAdapt.prototype.arraySort = function (arr) {
     }
 };
 
-const da = new DynamicAdapt("min");
+const da = new DynamicAdapt("max");
 da.init();

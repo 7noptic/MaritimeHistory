@@ -1,0 +1,48 @@
+.board{
+    padding: 60px 0;
+    &__item{
+        display: block;
+        padding: 35px 40px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 600px;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        transition: $transition4;
+        &-s{
+            padding: 20px 30px;
+            height: 280px;
+        }
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+    &__info{
+        color: #fff;
+    }
+    &__name{
+        font-family: Yeseva One;
+        font-size: 30px;
+        line-height: 35px;
+        &-b{
+            font-size: 40px;
+            line-height: 46px;
+            padding-bottom: 15px;
+        }
+        
+    }
+    &__price{
+        font-family: Circe;
+        font-size: 40px;
+        line-height: 59px;
+        & > span{
+            font-family: Geometria;
+            font-size: 60px;
+            line-height: 75px;
+            font-weight: 600;
+
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.news-block{
+    padding: 60px 0;
+    &__nav{
+        &-slider{
+            display: flex;
+            margin-top: 30px;
+        }
+    }
+    &__prev{
+        cursor: pointer;
+    }
+    &__next{
+        margin-left: 20px;
+        transform: rotate(180deg);
+        cursor: pointer;
+    }
+}
+.js-news-block-tab{
+    display: none;
+    
+    &.active{
+        display: block;
+
+    }
+}

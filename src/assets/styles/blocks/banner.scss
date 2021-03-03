@@ -1,0 +1,52 @@
+.banner{
+    padding: 0 0 40px 0;
+    &-slide{
+        height: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        align-items: flex-end;
+        &.swiper-slide-active{
+            & > .banner__text{
+                animation: bot-to-top 1s;
+            }
+            
+        }
+    }
+    &__text{
+       padding: 70px;
+       font-size: 150px;
+        line-height: 130px;
+        font-family: Yeseva One;
+        padding: 70px;
+        color: #fff;
+    }
+    &__aside{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 25px 30px;
+    }
+    &__nav{
+        display: flex;
+        
+    }
+    &__prev{
+        cursor: pointer;
+    }
+    &__next{
+        margin-left: 20px;
+        transform: rotate(180deg);
+        cursor: pointer;
+    }
+    &__adv{
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-family: Yeseva One;
+        & > img, & > svg{
+            margin-right: 20px;
+        }
+    }
+}

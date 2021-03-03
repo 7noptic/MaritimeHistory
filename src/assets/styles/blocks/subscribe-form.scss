@@ -1,0 +1,43 @@
+.subscribe-form{
+    max-width: 650px;
+    padding: 50px 90px;
+    background-image: url('../img/subscribebg-l.svg'), url('../img/subscribebg-r.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left, right;
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        & > h2{
+            font-weight: 400;
+            margin: 0 auto;
+            font-family: Yeseva One;
+            font-size: 20px;
+            line-height: 30px;
+            text-align: center;
+            max-width: 250px;
+            width: 100%;
+            padding-bottom: 25px;
+        }
+        & > span{
+            padding: 0 20px;
+            width: 50%;
+            margin-bottom: 25px;
+        }
+        & > p{
+            text-align: center;
+            font-size: 10px;
+line-height: 13px;
+margin-bottom: 15px;
+max-width: 320px;
+        }
+        
+    }
+    &__btn{
+        padding: 13px 40px;
+    }
+    &__input{
+        text-align: center;
+    }
+}
