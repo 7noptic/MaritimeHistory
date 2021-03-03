@@ -46,3 +46,100 @@
         }
     }
 }
+@media screen and (max-width: 1919px){
+    .board{
+        &__item{
+            padding: 30px;
+            &-s{
+                padding: 15px 20px;
+            }
+        }
+        &__name{
+            font-size: 26px;
+            line-height: 30px;
+            &-b{
+                font-size: 34px;
+                line-height: 40px;
+            }
+
+        }
+        &__price{
+            font-size: 34px;
+            line-height: 59px;
+            & > span{
+                font-size: 34px;
+                line-height: 59px;
+                font-weight: 600;
+
+            }
+        }
+    }
+}
+@media screen and (max-width: 1599px){
+    .board{
+        padding: 50px 0;
+        &__item{
+            padding: 20px;
+            &-s{
+                padding: 15px 20px;
+            }
+        }
+        &__name{
+            font-size: 16px;
+            line-height: 26px;
+            &-b{
+                font-size: 20px;
+                line-height: 30px;
+            }
+
+        }
+        &__price{
+            font-size: 28px;
+            line-height: 32px;
+            & > span{
+                font-size: 26px;
+                line-height: 30px;
+                font-weight: 600;
+
+            }
+        }
+    }
+}
+@media screen and (max-width: 991px){
+    .board{
+        padding: 40px 0;
+        &__item{
+            height: 450px;
+            padding: 15px 20px;
+            margin-bottom: 35px;
+            &-s{
+                padding: 15px 20px;
+                height: 320px;
+            }
+        }
+        &__name{
+            font-size: 26px;
+            line-height: 30px;
+            &-b{
+                font-size: 26px;
+                line-height: 30px;
+            }
+
+        }
+        &__price{
+            font-size: 30px;
+            line-height: 32px;
+            & > span{
+                font-size: 40px;
+                line-height: 50px;
+                font-weight: 700;
+
+            }
+        }
+    }
+}
+@media screen and (max-width: 767px){
+    .board{
+        padding: 35px 0;
+    }
+}

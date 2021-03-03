@@ -24,3 +24,28 @@
 
     }
 }
+@media screen and (max-width: 991px){
+    .faq{
+        &-block{
+            padding: 40px 0;
+            &__title{
+                padding-bottom: 30px;
+            }
+        }
+        &-item{
+            margin-bottom: 15px;
+            &__quest{
+                font-size: 16px;
+                line-height: 18px;
+                padding-bottom: 15px;
+            }
+            &__answer{
+                padding-left: 0px;
+                font-size: 14px;
+                line-height: 18px;
+                padding-bottom: 20px;
+            }
+
+        }
+    }
+}

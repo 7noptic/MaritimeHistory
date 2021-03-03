@@ -1,28 +1,73 @@
-.tags{
-    padding: 30px 0;
-    position: relative;
-    &-slide{
-       // text-align: center;
-        width: auto !important; 
-        cursor: pointer;
-      //  padding: 9px 13px;
-      //  border-radius: 100px;
-      //  border: 1px solid $brown;
+.tags {
+  padding: 30px 0;
+  position: relative;
+
+  &-slide {
+    // text-align: center;
+    width: auto !important;
+    cursor: pointer;
+    //  padding: 9px 13px;
+    //  border-radius: 100px;
+    //  border: 1px solid $brown;
+  }
+
+  &__btn {
+    padding: 9px 13px;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: none;
+
+    &::first-letter, &:first-letter {
+      text-transform: uppercase !important;
     }
-    &__btn{
-        padding: 9px 13px;
+  }
+
+  &__next, &__prev {
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 8px);
+
+  }
+
+  &__prev {
+    left: 0;
+  }
+
+  &__next {
+    right: 0;
+    transform: rotate(180deg);
+  }
+}
+
+@media screen and (max-width: 1919px) {
+  .tags {
+    &__btn {
+      padding: 8px 12px;
+      font-size: 13px;
+      line-height: 17px;
+
     }
-    &__next,&__prev{
-        cursor: pointer;
-        position: absolute;
-        top: calc(50% - 8px);
-        
+  }
+}
+@media screen and (max-width: 991px) {
+  .tags {
+    padding: 25px 0;
+    &__btn {
+      padding: 6px 10px;
+      font-size: 12px;
+      line-height: 15px;
+
     }
-    &__prev{
-        left: 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  .tags {
+    padding: 20px 0;
+    &__btn {
+      padding: 5px 8px;
+      font-size: 12px;
+      line-height: 15px;
+
     }
-    &__next{
-        right: 0;
-        transform: rotate(180deg);
-    }
+  }
 }

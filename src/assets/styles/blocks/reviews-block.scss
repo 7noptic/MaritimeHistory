@@ -3,10 +3,27 @@
     &__btn{
         padding: 8px 31px;
     }
+    &__rating{
+        margin-bottom: 20px!important;
+    }
 }
 .js-reviews-block-tab{
     display: none;
     &.active{
         display: block;
+    }
+}
+@media screen and (max-width: 1599px){
+    .reviews-block{
+        padding: 50px 0;
+        &__rating{
+            margin-bottom: 15px!important;
+        }
+    }
+}
+
+@media screen and (max-width: 991px){
+    .reviews-block{
+        padding: 40px 0;
     }
 }

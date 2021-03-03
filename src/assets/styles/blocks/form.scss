@@ -57,3 +57,34 @@
         }
   }
 }
+@media screen and (max-width: 991px){
+  .form-wrapper-header {
+    padding: 10px 30px;
+    background-color: $gold;
+    & > span {
+      width: 100%;
+      position: relative;
+      height: 40px;
+      & > button{
+        padding: 0;
+      }
+      & > input {
+        width: 100%;
+        border-radius: 4px;
+        height: 40px;
+        background: #F7F7F7;
+        padding: 12px 14px;
+        &::placeholder{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .form{
+
+    &__input{
+      height: 50px;
+      padding: 15px;
+    }
+  }
+}

@@ -1,3 +1,23 @@
 .product-block{
     padding: 60px 0;
 }
+@media screen and (max-width: 1199px){
+    .product-block{
+        padding: 50px 0;
+    }
+}
+@media screen and (max-width: 991px){
+    .product-block{
+        padding: 50px 0;
+    }
+}
+@media screen and (max-width: 767px){
+    .product-block{
+        padding: 40px 0;
+    }
+}
+@media screen and (max-width: 575px){
+    .product-block{
+        padding: 35px 0;
+    }
+}

@@ -20,3 +20,30 @@
         text-align: center;
     }
 }
+
+@media screen and (max-width: 991px){
+    .about-block{
+        padding: 40px 0;
+        &__logo{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        &__title{
+            padding-bottom: 40px;
+        }
+        &__logo{
+            margin-bottom: 50px;
+        }
+        &__item{
+            padding-bottom: 60px;
+        }
+        &__adv{
+            padding-top: 20px;
+            font-size: 16px;
+            line-height: 18px;
+        }
+    }
+}

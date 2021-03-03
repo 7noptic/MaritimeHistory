@@ -1,25 +1,72 @@
-.region{
+.region {
     padding: 60px 0;
 }
-.subregion{
-    &__name{
+
+.subregion {
+    &__name {
         font-size: 16px;
-line-height: 20px;
-font-weight: 700;
-margin-bottom: 25px;
+        line-height: 20px;
+        font-weight: 700;
+        margin-bottom: 25px;
     }
-    &__link{
+
+    &__link {
         display: block;
         margin-bottom: 25px;
         font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-opacity: .5;
+        font-size: 16px;
+        line-height: 20px;
+        opacity: .5;
     }
 }
 .js-region-tabs,.js-subregion{
     display: none;
     &.active{
         display: block;
+    }
+}
+@media screen and (max-width: 1599px){
+    .region {
+        padding: 50px 0;
+    }
+
+    .subregion {
+        &__name {
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        &__link {
+            display: block;
+            margin-bottom: 15px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            opacity: .5;
+        }
+    }
+}
+@media screen and (max-width: 991px){
+    .region {
+        padding: 40px 0;
+    }
+
+    .subregion {
+        &__name {
+            font-size: 13px;
+            line-height: 17px;
+            margin-bottom: 15px;
+        }
+
+        &__link {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 17px;
+            opacity: .5;
+        }
     }
 }

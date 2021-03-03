@@ -1,59 +1,147 @@
-.modal-one-click{
-    padding: 25px;
-    &__wrapper{
-        padding: 0;
+.modal-one-click {
+  padding: 25px;
+
+  &__wrapper {
+    padding: 0;
+  }
+
+  &__img {
+    object-fit: cover;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    display: block;
+    padding-bottom: 6px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 5px;
+
+    &-b {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 23px;
+      margin-bottom: 5px;
     }
-    &__img{
-        object-fit: cover;
+  }
+
+  &__next, &__prev {
+    margin-bottom: 5px;
+    background-color: transparent;
+
+  }
+
+  &__next {
+    transform: rotate(180deg);
+  }
+
+  &__item {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba($color: #7A5F46, $alpha: .5);
+
+    &s {
+      max-height: 360px;
+      margin-bottom: 40px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      scrollbar-color: $gold rgba($color: #7A5F46, $alpha: .5); /* «цвет ползунка» «цвет полосы скроллбара» */
+      scrollbar-width: 3px;
+
+      &::-webkit-scrollbar {
+        width: 1px; /* ширина для вертикального скролла */
+        height: 1px; /* высота для горизонтального скролла */
+        background-color: rgba($color: #7A5F46, $alpha: .5);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        width: 12px;
+        height: 12px;
+        background-color: $gold;
+        border-radius: 50%;
+      }
     }
-    &__name{
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .modal-one-click {
+
+    &__wrapper {
+      padding: 50px 30px;
+    }
+
+    &__img {
+      object-fit: cover;
+    }
+
+    &__name {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      display: block;
+      padding-bottom: 6px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 5px;
+
+      &-b {
         font-weight: 500;
-        font-size: 12px;
-        line-height: 15px;
-        display: block;
-        padding-bottom: 6px;
-    }
-    &__text{
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 18px;
+        line-height: 23px;
         margin-bottom: 5px;
-        &-b{
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 23px;
-            margin-bottom: 5px;
-        }   
+        text-align: center;
+      }
     }
-    &__next, &__prev{
-        margin-bottom: 5px;
-        background-color: transparent;
+
+    &__next, &__prev {
+      margin-bottom: 5px;
+      background-color: transparent;
 
     }
-    &__next{
-        transform: rotate(180deg);
+
+    &__next {
+      transform: rotate(180deg);
     }
-    &__item{
-        padding-bottom: 20px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid rgba($color: #7A5F46, $alpha: .5);
-        &s{
-            max-height: 360px;
-            margin-bottom: 40px;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            scrollbar-color: $gold rgba($color: #7A5F46, $alpha: .5);     /* «цвет ползунка» «цвет полосы скроллбара» */
-            scrollbar-width: 3px;
-            &::-webkit-scrollbar {
-                width: 1px; /* ширина для вертикального скролла */
-                height: 1px; /* высота для горизонтального скролла */
-                background-color: rgba($color: #7A5F46, $alpha: .5);
-            }
-            &::-webkit-scrollbar-thumb {
-                width: 12px;
-                height: 12px;
-                background-color: $gold;
-                border-radius: 50%;
-            }
+
+    &__item {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba($color: #7A5F46, $alpha: .5);
+      &:last-child,&:last-of-type{
+        margin-bottom: 0;
+      }
+
+      &s {
+        min-height: 200px;
+        max-height: 360px;
+        margin-bottom: 40px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scrollbar-color: $gold rgba($color: #7A5F46, $alpha: .5); /* «цвет ползунка» «цвет полосы скроллбара» */
+        scrollbar-width: 3px;
+
+        &::-webkit-scrollbar {
+          width: 1px; /* ширина для вертикального скролла */
+          height: 1px; /* высота для горизонтального скролла */
+          background-color: rgba($color: #7A5F46, $alpha: .5);
         }
+
+        &::-webkit-scrollbar-thumb {
+          width: 12px;
+          height: 12px;
+          background-color: $gold;
+          border-radius: 50%;
+        }
+      }
     }
+  }
 }

@@ -8,18 +8,26 @@ Swiper.use([Navigation, Pagination, Autoplay]);
 
 window.addEventListener('DOMContentLoaded', () =>{
     const glightbox = new GLightbox({});
-    /* HAMBURGER MENU IN HEADER*/
+    /* HAMBURGER + FORM SEARCH OPEN HEADER */
     let header = document.querySelector('.header'),
+        searchForm = header.querySelector('.header__search > form'),
         hamburgerBtn = header.querySelector('.js-burger'),
         hamburgerMenu = header.querySelector('.hamburger-menu');
 
 
 
     header.addEventListener('click', (e) => {
-    if (e.target && e.target.classList.contains('js-burger')) {
-        hamburgerMenu.classList.toggle('active');
-        hamburgerBtn.classList.toggle('active');
-    }
+        let target = e.target;
+        if (target && target.classList.contains('js-search')) {
+            searchForm.classList.toggle('active');
+        }
+        if (target && target.classList.contains('js-burger')) {
+            hamburgerMenu.classList.toggle('active');
+            hamburgerBtn.classList.toggle('active');
+            html.classList.toggle('lock');
+            body.classList.toggle('lock');
+
+        }
     });
     /* ЗАГРУЗКА ДАННЫХ ИЗ LocalStorage */
     /* пример
@@ -249,6 +257,20 @@ let sliderCert = new Swiper('.swiper-container-sertificate', {
         nextEl: '.cert__next',
         prevEl: '.cert__prev'
     },
+    breakpoints:{
+        0:{
+            slidesPerView: 1,
+        },
+        575:{
+            slidesPerView: 2,
+        },
+        991:{
+            slidesPerView: 3,
+        },
+        1600:{
+            slidesPerView: 4,
+        }
+    }
     
 
 });
