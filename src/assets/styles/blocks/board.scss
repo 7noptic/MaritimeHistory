@@ -2,7 +2,7 @@
     padding: 60px 0;
     &__item{
         display: block;
-        padding: 35px 40px;
+        padding: 35px 20px;
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -12,7 +12,7 @@
         align-items: flex-end;
         transition: $transition4;
         &-s{
-            padding: 20px 30px;
+            padding: 20px;
             height: 280px;
         }
         &:hover{
@@ -24,7 +24,7 @@
     }
     &__name{
         font-family: Yeseva One;
-        font-size: 30px;
+        font-size: 26px;
         line-height: 35px;
         &-b{
             font-size: 40px;
@@ -39,8 +39,8 @@
         line-height: 59px;
         & > span{
             font-family: Geometria;
-            font-size: 60px;
-            line-height: 75px;
+            font-size: 50px;
+            line-height: 65px;
             font-weight: 600;
 
         }
@@ -143,3 +143,11 @@
         padding: 35px 0;
     }
 }
+@media screen and (max-width: 575px) {
+   
+    .board{
+      width: calc(100% + 30px);
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+  }
