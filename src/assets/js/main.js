@@ -72,6 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
         allModal = document.querySelectorAll('.js-sidebars > section'),
         modalCall = document.querySelector('.modal-call'),
         modalOneClick = document.querySelector('.modal-one-click'),
+        modalJob = document.querySelector('.modal-job'),
         modalSubscribe = document.querySelector('.modal-subscribe');
 
 
@@ -86,6 +87,9 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         if (target && (target.classList.contains('js-subscribe') || target.classList.contains('modal-subscribe__exit'))) {
             toggleModal(e, modalSubscribe)
+        }
+        if (target && (target.classList.contains('js-job') || target.classList.contains('modal-job__exit'))) {
+            toggleModal(e, modalJob)
         }
         /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
         if (target && target.classList.contains('sidebar-bg')) {
@@ -220,22 +224,25 @@ window.addEventListener('DOMContentLoaded', () => {
     let cards = document.querySelectorAll('.card'),
         oldPrice = document.querySelectorAll('.card__price'),
         newPrice = document.querySelectorAll('.card__price-b'),
-        economy = document.querySelectorAll('.card__economy'),
-        countKG = document.querySelectorAll('.js-count-kg');
-
+        economy = document.querySelectorAll('.card__economy');
     for(let i = 0; i < cards.length;i++){
         let oldP = +oldPrice[i].innerHTML.replace(/\D+/g, ''),
             newP = +newPrice[i].innerHTML.replace(/\D+/g, ''),
             resultNum = oldP - newP,
             resultDec =   (oldP - newP) / (oldP / 100);
         if(resultNum > 0){
-            economy[i].innerHTML = `${resultNum} ₽, ${resultDec.toFixed(1)} %`;
+            economy[i].innerHTML = `${resultNum} ₽ ${resultDec.toFixed(1)} %`;
         }
         else{
             economy[i].innerHTML = '-';
         }
 
     }
+    let countKg = document.querySelectorAll('.js-modal-count-kg'),
+        countPrev = document.querySelectorAll('.modal-one-click__prev'),
+        countNext = document.querySelectorAll('.modal-one-click__prev');
+
+
     /* SWIPER */
 
     let sliderBanner = new Swiper('.swiper-container-banner', {

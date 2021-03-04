@@ -1,14 +1,18 @@
 .form-wrapper-header {
-    display: flex;
-    & > span {
-      width: 100%;
-      position: relative;
-      &:first-child{
-        width: calc(100% - 40px);
-      }
-      &:nth-child(2){
-        width: 40px;
-      }
+  display: flex;
+
+  & > span {
+    width: 100%;
+    position: relative;
+
+    &:first-child {
+      width: calc(100% - 40px);
+    }
+
+    &:nth-child(2) {
+      width: 40px;
+    }
+
     /*  &::before{
         content: url("../img/search.svg");
         display: block;
@@ -16,73 +20,103 @@
         top: 0px;
         right: 8px;
       }*/
-      & > input {
-        width: 100%;
-        background: transparent;
-        padding: 9px 9px 9px 0;
-        border-bottom: 1px solid rgba(122,95,70,0.5);
-        &::placeholder{
-          font-size: 14px;
-          mix-blend-mode: normal;
-          opacity: 0.5;
-        }
-        &:hover{
-            cursor: text;
-        }
+    & > input {
+      width: 100%;
+      background: transparent;
+      padding: 9px 9px 9px 0;
+      border-bottom: 1px solid rgba(122, 95, 70, 0.5);
+
+      &::placeholder {
+        font-size: 14px;
+        mix-blend-mode: normal;
+        opacity: 0.5;
       }
-       & > button{
-        width: 100%;
-        background: transparent;
-        padding: 9px 9px 0 0;
-        height: 100%;
-       }
+
+      &:hover {
+        cursor: text;
+      }
+    }
+
+    & > button {
+      width: 100%;
+      background: transparent;
+      padding: 9px 9px 0 0;
+      height: 100%;
+    }
+  }
+}
+
+
+.form {
+  &__input {
+    width: 100%;
+    background: transparent;
+    padding: 9px 9px 9px 0;
+    border-bottom: 1px solid rgba(122, 95, 70, 0.5);
+    text-align: center;
+
+    &::placeholder {
+      font-size: 14px;
+      mix-blend-mode: normal;
+      opacity: 0.5;
+    }
+
+    &:hover, &:active, &:focus {
+      border-bottom: 1px solid rgba(122, 95, 70, 0.5);
     }
   }
 
+  &__textarea {
+    width: 100%;
+    background: transparent;
+    padding: 9px 9px 9px 0;
+    border-top: 1px solid rgba(122, 95, 70, 0.5);
+    text-align: left;
+    height: 150px;
 
-.form{
-  &__input{
-        width: 100%;
-        background: transparent;
-        padding: 9px 9px 9px 0;
-        border-bottom: 1px solid rgba(122,95,70,0.5);
-        text-align: center;
-        &::placeholder{
-          font-size: 14px;
-          mix-blend-mode: normal;
-          opacity: 0.5;
-        }
-        &:hover,&:active,&:focus{
-          border-bottom: 1px solid rgba(122,95,70,0.5);
-        }
+    &::placeholder {
+      font-size: 14px;
+      mix-blend-mode: normal;
+      opacity: 0.5;
+      text-align: center;
+    }
+
+    &:hover, &:active, &:focus {
+      border-top: 1px solid rgba(122, 95, 70, 0.5);
+    }
   }
 }
-@media screen and (max-width: 991px){
+
+@media screen and (max-width: 991px) {
   .form-wrapper-header {
     padding: 10px 30px;
     background-color: $gold;
+
     & > span {
       width: 100%;
       position: relative;
       height: 40px;
-      & > button{
+
+      & > button {
         padding: 0;
       }
+
       & > input {
         width: 100%;
         border-radius: 4px;
         height: 40px;
         background: #F7F7F7;
         padding: 12px 14px;
-        &::placeholder{
+
+        &::placeholder {
           font-size: 13px;
         }
       }
     }
   }
-  .form{
+  .form {
 
-    &__input{
+    &__input {
       height: 50px;
       padding: 15px;
     }

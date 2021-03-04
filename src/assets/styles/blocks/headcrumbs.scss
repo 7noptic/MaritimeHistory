@@ -1,0 +1,34 @@
+.headcrumbs {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+
+  &__link {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 1;
+    transition: $transition4;
+    padding-right: 30px;
+    position: relative;
+
+    &::after {
+      content: url('../img/hc.svg');
+      display: inline-block;
+      position: absolute;
+      top: -1px;
+
+      right: 12px;
+    }
+
+    &:last-of-type, &:last-child {
+      opacity: .5;
+
+      &::after {
+        content: none;
+
+      }
+    }
+  }
+}

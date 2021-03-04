@@ -4,20 +4,14 @@
   &__basket {
     position: fixed;
     top: calc(50% - 140px);
-
     right: -33px;
-    //transform: rotate(-90deg);
-    font-family: Geometria;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
-    color: #fff;
+    opacity: 0;
     padding: 9px 32px;
-
-
-
     text-align: center;
-
+    animation: r-to-l;
+    animation-duration: .7s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
   }
 
   &__slogan {
