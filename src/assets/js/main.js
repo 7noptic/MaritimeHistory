@@ -6,14 +6,32 @@ import GLightbox from 'glightbox';
 Swiper.use([Navigation, Pagination, Autoplay]);
 
 
-window.addEventListener('DOMContentLoaded', () =>{
+window.addEventListener('DOMContentLoaded', () => {
     const glightbox = new GLightbox({});
     /* HAMBURGER + FORM SEARCH OPEN HEADER */
     let header = document.querySelector('.header'),
         searchForm = header.querySelector('.header__search > form'),
         hamburgerBtn = header.querySelector('.js-burger'),
-        hamburgerMenu = header.querySelector('.hamburger-menu');
+        hamburgerMenu = header.querySelector('.hamburger-menu'),
+        hamburgerAside = document.querySelector('.aside__menu'),
+        hamburgerAsideLinks = document.querySelectorAll('.aside__menu > li > a'),
+        subMenu = document.querySelectorAll('.aside__menu-lvl2'),
+        footer = document.querySelector('.footer'),
+        footerLink = footer.querySelectorAll('.js-footer'),
+        footerContent = footer.querySelectorAll('.footer__menu');
 
+    footer.addEventListener('click', (e) => {
+        let target = e.target;
+        if (target && target.classList.contains('js-footer')) {
+
+            for (let i = 0; i < footerContent.length; i++) {
+                if (target == footerLink[i]) {
+                    console.log(footerContent[i]);
+                    footerContent[i].classList.toggle('active');
+                }
+            }
+        }
+    });
 
 
     header.addEventListener('click', (e) => {
@@ -24,11 +42,22 @@ window.addEventListener('DOMContentLoaded', () =>{
         if (target && target.classList.contains('js-burger')) {
             hamburgerMenu.classList.toggle('active');
             hamburgerBtn.classList.toggle('active');
-            html.classList.toggle('lock');
-            body.classList.toggle('lock');
-
         }
+
+
     });
+        hamburgerAside.addEventListener('click', e => {
+            let target = e.target;
+            if (target && target.tagName == 'A') {
+                for (let i = 0; i < hamburgerAsideLinks.length; i++) {
+                    if (target === hamburgerAsideLinks[i]) {
+
+                        subMenu[i].classList.toggle('active');
+                    }
+                }
+            }
+        })
+
     /* ЗАГРУЗКА ДАННЫХ ИЗ LocalStorage */
     /* пример
     if(localStorage.getItem('city') != null){
@@ -38,29 +67,27 @@ window.addEventListener('DOMContentLoaded', () =>{
     }
     */
 
-   /* MODAL */
-   let modalBlock = document.querySelector('.js-sidebars'),
-       allModal = document.querySelectorAll('.js-sidebars > section'),
-       modalCall = document.querySelector('.modal-call'),
-       modalOneClick = document.querySelector('.modal-one-click'),
-       modalSubscribe = document.querySelector('.modal-subscribe');
+    /* MODAL */
+    let modalBlock = document.querySelector('.js-sidebars'),
+        allModal = document.querySelectorAll('.js-sidebars > section'),
+        modalCall = document.querySelector('.modal-call'),
+        modalOneClick = document.querySelector('.modal-one-click'),
+        modalSubscribe = document.querySelector('.modal-subscribe');
 
 
+    document.addEventListener('click', e => {
+        let target = e.target;
 
-
-   document.addEventListener('click', e =>{
-    let target = e.target;
-
-    if(target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))){
-        toggleModal(e, modalCall)
-    }
-    if(target && (target.classList.contains('js-one-click') || target.classList.contains('modal-one-click__exit'))){
-        toggleModal(e, modalOneClick)
-    }
-    if(target && (target.classList.contains('js-subscribe') || target.classList.contains('modal-subscribe__exit'))){
-        toggleModal(e, modalSubscribe)
-    }
-    /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
+        if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))) {
+            toggleModal(e, modalCall)
+        }
+        if (target && (target.classList.contains('js-one-click') || target.classList.contains('modal-one-click__exit'))) {
+            toggleModal(e, modalOneClick)
+        }
+        if (target && (target.classList.contains('js-subscribe') || target.classList.contains('modal-subscribe__exit'))) {
+            toggleModal(e, modalSubscribe)
+        }
+        /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
         if (target && target.classList.contains('sidebar-bg')) {
             e.preventDefault();
             modalBlock.classList.toggle('sidebar-bg');
@@ -70,14 +97,13 @@ window.addEventListener('DOMContentLoaded', () =>{
                 }
             });
         }
-   });
-   
-   function toggleModal(e, modal) {
-    e.preventDefault();
-    modalBlock.classList.toggle('sidebar-bg');
-    modal.classList.toggle('active');
-    }
+    });
 
+    function toggleModal(e, modal) {
+        e.preventDefault();
+        modalBlock.classList.toggle('sidebar-bg');
+        modal.classList.toggle('active');
+    }
 
 
     /* TABS */
@@ -92,43 +118,68 @@ window.addEventListener('DOMContentLoaded', () =>{
         regionLink = regionParent.querySelectorAll('.region__link');
 
 
-    if(reviewsBlockParent){
+    if (reviewsBlockParent) {
         toggleTabs(0, reviewsBlockLink, reviewsBlockTabs, reviewsBlockParent, 'reviews-block__link');
     }
-    if(newsBlockParent){
+    if (newsBlockParent) {
         toggleTabs(0, newsBlockLink, newsBlockTabs, newsBlockParent, 'news-block__link');
     }
-    if(regionParent){
-        toggleTabs(0, regionLink, regionTabs, regionParent, 'region__link');
+    if (regionParent) {
+        toggleTabs(0, regionLink, regionTabs, regionParent, 'region__link', true);
     }
-    
 
-    function toggleTabs(i = 0, link, tabs, parent, classContains) {
+
+    function toggleTabs(i = 0, link, tabs, parent, classContains, subRegion, subLink, subContent) {
         hideTabs(link, tabs);
         showTabs(0, link, tabs);
+        /*
         let indexPrevTabs = 0,
             TabsPrevHeight = tabs[indexPrevTabs].clientHeight;
         console.log(tabs[0].clientHeight);
+        */
+        let subIndex = 0;
+
+        if (subRegion) {
+            let subLinks = tabs[0].querySelectorAll('.subregion__link'),
+                subTabs = tabs[0].querySelectorAll('.subregion__content');
+
+            hideTabs(subLinks, subTabs);
+            showTabs(0, subLinks, subTabs);
+
+        }
         parent.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains(classContains)) {
                 e.preventDefault();
-              /*  link.forEach((item, i) => {
-                    if (item == e.target) {
-                       
-                        
-                    }
-                });*/
-                
-                for(let i = 0; i < link.length; i++){
-                    if(link[i] === e.target){
+
+                for (let i = 0; i < link.length; i++) {
+                    if (link[i] === e.target) {
                         hideTabs(link, tabs);
                         showTabs(i, link, tabs);
-                        
-                        
+                        if (subRegion) {
+                            let subLinks = tabs[i].querySelectorAll('.subregion__link'),
+                                subTabs = tabs[i].querySelectorAll('.subregion__content');
+                            hideTabs(subLinks, subTabs);
+                            showTabs(0, subLinks, subTabs);
+                            subIndex = i;
+                        }
+                        /*
                         if(tabs[i].clientHeight > TabsPrevHeight){
                             console.log(tabs[i].clientHeight);
                             console.log(TabsPrevHeight);
                         }
+                        */
+                    }
+                }
+            }
+            let subLinks = tabs[subIndex].querySelectorAll('.subregion__link'),
+                subTabs = tabs[subIndex].querySelectorAll('.subregion__content');
+            if (e.target && e.target.classList.contains('subregion__link')) {
+                e.preventDefault();
+                for (let i = 0; i < subLinks.length; i++) {
+                    if (subLinks[i] === e.target) {
+                        console.log(subLinks[i]);
+                        hideTabs(subLinks, subTabs);
+                        showTabs(i, subLinks, subTabs);
                     }
                 }
             }
@@ -150,13 +201,13 @@ window.addEventListener('DOMContentLoaded', () =>{
     }
 
     /* SHOW HIDE CONTENT */
-    
-    function toggleContent(link, content, linkClass){
+
+    function toggleContent(link, content, linkClass) {
         document.addEventListener('click', (e) => {
-            if(e.target && e.target.classList.contains(linkClass)){
+            if (e.target && e.target.classList.contains(linkClass)) {
                 e.preventDefault();
-                link.forEach((item, i) =>{
-                    if(e.target == item){
+                link.forEach((item, i) => {
+                    if (e.target == item) {
                         item.classList.toggle('active');
                         content[i].classList.toggle('active');
                     }
@@ -165,155 +216,171 @@ window.addEventListener('DOMContentLoaded', () =>{
         });
     }
 
-    
+    /* card */
+    let cards = document.querySelectorAll('.card'),
+        oldPrice = document.querySelectorAll('.card__price'),
+        newPrice = document.querySelectorAll('.card__price-b'),
+        economy = document.querySelectorAll('.card__economy'),
+        countKG = document.querySelectorAll('.js-count-kg');
 
-
-/* SWIPER */
-
-let sliderBanner = new Swiper('.swiper-container-banner', {
-    slidesPerView: 1,
-    observeParents: true,
-    observer: true,
-    
-    navigation:{
-        nextEl: '.banner__next',
-        prevEl: '.banner__prev'
-    },
-    autoplay: {
-        delay: 4000,
-      },
-
-});
-
-let sliderNewsBlock1 = new Swiper('.swiper-container-news-block-1', {
-    slidesPerView: 1,
-    spaceBetween: 50,
-    observeParents: true,
-    observer: true,
-    autoHeight: true,
-    navigation:{
-        nextEl: '.news-block__next-1',
-        prevEl: '.news-block__prev-1'
-    },
-});
-let sliderNewsBlock2 = new Swiper('.swiper-container-news-block-2', {
-    slidesPerView: 1,
-    spaceBetween: 50,
-    observeParents: true,
-    observer: true,
-    autoHeight: true,
-    navigation:{
-        nextEl: '.news-block__next-2',
-        prevEl: '.news-block__prev-2'
-    },
-});
-let sliderNewsBlock3 = new Swiper('.swiper-container-news-block-3', {
-    slidesPerView: 1,
-    spaceBetween: 50,
-    observeParents: true,
-    observer: true,
-    autoHeight: true,
-    navigation:{
-        nextEl: '.news-block__next-3',
-        prevEl: '.news-block__prev-3'
-    },
-});
-let sliderNewsBlock4 = new Swiper('.swiper-container-news-block-4', {
-    slidesPerView: 1,
-    spaceBetween: 50,
-    observeParents: true,
-    observer: true,
-    autoHeight: true,
-    navigation:{
-        nextEl: '.news-block__next-4',
-        prevEl: '.news-block__prev-4'
-    },
-});
-
-let sliderTags = new Swiper('.swiper-container-tags', {
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    observeParents: true,
-    observer: true,
-    allowSlidePrev: true,
-        allowSlideNext: true,
-        
-    navigation:{
-        nextEl: '.tags__next',
-        prevEl: '.tags__prev'
-    },
-    
-
-});
-let sliderCert = new Swiper('.swiper-container-sertificate', {
-    slidesPerView: 4,
-    spaceBetween: 50,
-    observeParents: true,
-    observer: true,
-    allowSlidePrev: true,
-        allowSlideNext: true,
-        
-    navigation:{
-        nextEl: '.cert__next',
-        prevEl: '.cert__prev'
-    },
-    breakpoints:{
-        0:{
-            slidesPerView: 1,
-        },
-        575:{
-            slidesPerView: 2,
-        },
-        991:{
-            slidesPerView: 3,
-        },
-        1600:{
-            slidesPerView: 4,
+    for(let i = 0; i < cards.length;i++){
+        let oldP = +oldPrice[i].innerHTML.replace(/\D+/g, ''),
+            newP = +newPrice[i].innerHTML.replace(/\D+/g, ''),
+            resultNum = oldP - newP,
+            resultDec =   (oldP - newP) / (oldP / 100);
+        if(resultNum > 0){
+            economy[i].innerHTML = `${resultNum} ₽, ${resultDec.toFixed(1)} %`;
         }
+        else{
+            economy[i].innerHTML = '-';
+        }
+
     }
-    
+    /* SWIPER */
 
-});
+    let sliderBanner = new Swiper('.swiper-container-banner', {
+        slidesPerView: 1,
+        observeParents: true,
+        observer: true,
 
- /* RATING */
- let ratingParent = document.querySelector('.js-rating'),
- ratingInput = document.querySelector('#js-rating'),
- ratingStar = document.querySelectorAll('.js-rating > li');
+        navigation: {
+            nextEl: '.banner__next',
+            prevEl: '.banner__prev'
+        },
+        autoplay: {
+            delay: 4000,
+        },
 
-if (ratingParent) {
- ratingParent.addEventListener('click', (event) => {
-     event.preventDefault();
-     const target = event.target;
-     if (target && target.tagName == 'LI') {
-         ratingStar.forEach((item, i) => {
-             item.classList.remove('active');
-         });
-         for (let i = 0; i => ratingStar.length; i++) {
-             if (ratingStar[i] == target) {
-                 ratingStar[i].classList.add('active');
-                 ratingInput.value = ++i;
-                 return
-             } else {
-                 ratingStar[i].classList.add('active');
-             }
-         }
-     }
-
- });
-}
-/* CARD HEART */
-let card = document.querySelectorAll('.card');
-if(card){
-    document.addEventListener('click', (e) => {
-
-        if(e.target && e.target.classList.contains('card__heart-img')){
-            e.preventDefault();
-            console.log('asdfasdf');
-        }
     });
-}
+
+    let sliderNewsBlock1 = new Swiper('.swiper-container-news-block-1', {
+        slidesPerView: 1,
+        spaceBetween: 50,
+        observeParents: true,
+        observer: true,
+        autoHeight: true,
+        navigation: {
+            nextEl: '.news-block__next-1',
+            prevEl: '.news-block__prev-1'
+        },
+    });
+    let sliderNewsBlock2 = new Swiper('.swiper-container-news-block-2', {
+        slidesPerView: 1,
+        spaceBetween: 50,
+        observeParents: true,
+        observer: true,
+        autoHeight: true,
+        navigation: {
+            nextEl: '.news-block__next-2',
+            prevEl: '.news-block__prev-2'
+        },
+    });
+    let sliderNewsBlock3 = new Swiper('.swiper-container-news-block-3', {
+        slidesPerView: 1,
+        spaceBetween: 50,
+        observeParents: true,
+        observer: true,
+        autoHeight: true,
+        navigation: {
+            nextEl: '.news-block__next-3',
+            prevEl: '.news-block__prev-3'
+        },
+    });
+    let sliderNewsBlock4 = new Swiper('.swiper-container-news-block-4', {
+        slidesPerView: 1,
+        spaceBetween: 50,
+        observeParents: true,
+        observer: true,
+        autoHeight: true,
+        navigation: {
+            nextEl: '.news-block__next-4',
+            prevEl: '.news-block__prev-4'
+        },
+    });
+
+    let sliderTags = new Swiper('.swiper-container-tags', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+
+        navigation: {
+            nextEl: '.tags__next',
+            prevEl: '.tags__prev'
+        },
 
 
+    });
+    let sliderCert = new Swiper('.swiper-container-sertificate', {
+        slidesPerView: 4,
+        spaceBetween: 50,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+
+        navigation: {
+            nextEl: '.cert__next',
+            prevEl: '.cert__prev'
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            575: {
+                slidesPerView: 2,
+            },
+            991: {
+                slidesPerView: 3,
+            },
+            1600: {
+                slidesPerView: 4,
+            }
+        }
+
+
+    });
+
+
+    /* RATING */
+    let ratingParent = document.querySelector('.js-rating'),
+        ratingInput = document.querySelector('#js-rating'),
+        ratingStar = document.querySelectorAll('.js-rating > li');
+
+    if (ratingParent) {
+        ratingParent.addEventListener('click', (event) => {
+            event.preventDefault();
+            const target = event.target;
+            if (target && target.tagName == 'LI') {
+                ratingStar.forEach((item, i) => {
+                    item.classList.remove('active');
+                });
+                for (let i = 0; i => ratingStar.length; i++) {
+                    if (ratingStar[i] == target) {
+                        ratingStar[i].classList.add('active');
+                        ratingInput.value = ++i;
+                        return
+                    } else {
+                        ratingStar[i].classList.add('active');
+                    }
+                }
+            }
+
+        });
+    }
+    /* CARD HEART */
+    let card = document.querySelectorAll('.card');
+    if (card) {
+        document.addEventListener('click', (e) => {
+
+            if (e.target && e.target.classList.contains('card__heart-img')) {
+                e.preventDefault();
+                console.log('asdfasdf');
+            }
+        });
+    }
 
 
     /* VIDEO */
@@ -370,14 +437,6 @@ if(card){
 
     findVideos();
 });
-
-
-
-
-
-
-
-
 
 
 /* АДАПТИВНОЕ ПЕРЕМЕЩЕНИЕ БЛОКОВ */

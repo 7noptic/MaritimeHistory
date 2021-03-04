@@ -1,10 +1,11 @@
 .aside {
-  margin-left: 60px;
+  margin-left: 20px;
 
   &__basket {
     position: fixed;
-    top: center;
-    right: 0;
+    top: calc(50% - 140px);
+
+    right: -33px;
     //transform: rotate(-90deg);
     font-family: Geometria;
     font-weight: 500;
@@ -13,19 +14,7 @@
     color: #fff;
     padding: 9px 32px;
 
-    &::before {
-      content: '';
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: center;
-      right: 0;
-      background-image: url('../img/aside-bskt-bg.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: 0 0;
-      transform: rotate(-90deg);
-    }
+
 
     text-align: center;
 
@@ -203,5 +192,94 @@
 
       }
     }
+  }
+}
+@media screen and (max-width: 1199px){
+  .aside {
+    margin-left: 0px;
+
+    &__menu {
+
+      & > li {
+        position: relative;
+        display: block;
+
+        & > a {
+          text-align: center;
+          display: block;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+          padding: 10px;
+          opacity: 0.5;
+          color: $brown;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .aside__menu-lvl2 {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+
+    z-index: 5;
+    width: auto;
+    left: auto;
+    top: auto;
+    background: transparent;
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: rotateX(-90deg);
+    transition: .3s linear;
+    columns: 150px 3;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 0px !important;
+    &.active{
+      display: block;
+      transform: rotateX(0deg);
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &::before {
+      content: none;
+      display: none;
+    }
+
+    & > li {
+      display: block;
+      text-align: center;
+      position: relative;
+
+      a {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 30px;
+        margin-bottom: 10px;
+text-align: center;
+        &:hover {
+          color: $gold;
+        }
+      }
+    }
+  }
+
+  .aside__menu-lvl2 .aside__menu-lvl2 {
+    position: relative;
+    left: auto;
+    top: auto;
+    transition: .3s linear;
+  }
+
+  .aside__menu li:hover > .aside__menu-lvl2 {
+
   }
 }

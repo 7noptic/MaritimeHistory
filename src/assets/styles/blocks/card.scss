@@ -236,6 +236,39 @@
     }
   }
 }
+@media screen and (max-width: 1199px){
+  .card{
+    &__name{
+      font-size: 16px;
+    }
+    &__text {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+
+      &-b {
+        padding-bottom: 15px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 19px;
+      }
+    }
+
+    &__price {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      opacity: .6;
+      padding-bottom: 15px;
+      &-b {
+        padding-bottom: 19px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+}
 @media screen and (max-width: 575px){
   .card{
     &__img{
