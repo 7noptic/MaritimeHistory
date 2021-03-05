@@ -8,6 +8,7 @@
     text-transform: uppercase;
     font-weight: 800;
     transition: none;
+    cursor: pointer;
     &:hover{
         background: linear-gradient(180deg, #FFE249 -1%, #B36C19 100%);
         color: #fff;

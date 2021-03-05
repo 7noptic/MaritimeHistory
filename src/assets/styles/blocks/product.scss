@@ -1,0 +1,268 @@
+.product {
+  padding: 35px 0 60px;
+
+  &__title {
+    margin-bottom: 35px;
+  }
+
+  &-price {
+    font-size: 16px;
+    line-height: 20px;
+
+    &__top {
+      font-weight: 500;
+      padding-bottom: 20px;
+
+      & span {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+        margin-right: 7px;
+      }
+    }
+
+    &__bot {
+      font-weight: 600;
+      padding-bottom: 20px;
+
+      & span {
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 700;
+        margin-right: 7px;
+      }
+    }
+  }
+
+  &-count {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+
+    &__text {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      margin-right: 20px;
+    }
+
+    &__num {
+      width: 50px;
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    &__prev, &__next {
+      background-color: transparent;
+    }
+
+    &__next {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  &__btn {
+    padding: 8px 45px;
+    margin-right: 25px;
+  }
+
+  &__char {
+    display: flex;
+    font-size: 14px;
+    line-height: 35px;
+
+    & > a {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    & > img {
+      margin-right: 15px;
+    }
+  }
+
+  &__list {
+    margin-top: 25px;
+
+
+  }
+
+  &__next, &__prev {
+    cursor: pointer;
+    position: absolute;
+    left: calc(50% - 20px);
+
+  }
+
+  &__prev {
+    top: 8px;
+    transform: rotate(90deg);
+  }
+
+  &__next {
+    bottom: 7px;
+    transform: rotate(-90deg);
+  }
+
+  &-descr {
+    &__content {
+      h2 {
+        font-size: 40px;
+        line-height: 46px;
+        margin-bottom: 35px;
+      }
+
+      h4 {
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 18px;
+        padding-bottom: 20px;
+
+        & b {
+          font-weight: 700;
+
+        }
+      }
+
+      a {
+        display: block;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+.js-product-descr-tab {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1599px) {
+  .product {
+    &-price {
+      font-size: 16px;
+      line-height: 20px;
+
+      &__top {
+        font-weight: 500;
+        padding-bottom: 15px;
+
+        & span {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 22px;
+          margin-right: 7px;
+        }
+      }
+
+      &__bot {
+        font-weight: 600;
+        padding-bottom: 15px;
+
+        & span {
+          font-size: 30px;
+          line-height: 34px;
+          font-weight: 700;
+          margin-right: 7px;
+        }
+      }
+    }
+
+    &__char {
+      font-size: 13px;
+      line-height: 23px;
+    }
+
+    &__btns {
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    &-count {
+      margin-bottom: 15px;
+    }
+
+    &__list {
+      margin-top: 15px;
+    }
+
+    &__btn {
+      width: 48%;
+      padding: 7px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .product {
+    &__info {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .product {
+
+    &__next, &__prev {
+      cursor: pointer;
+      position: absolute;
+      bottom: -20px;
+      z-index: 100000;
+    }
+
+    &__nav {
+      width: 100%;
+      position: relative;
+      height: 30px;
+      z-index: 10000;
+    }
+
+    &__prev {
+      right: 15px;
+      transform: rotate(0deg);
+    }
+
+    &__char {
+      margin-bottom: 5px;
+      font-size: 14px;
+
+      & span {
+        font-weight: 600;
+      }
+    }
+
+    &__next {
+      left: 15px;
+      transform: rotate(180deg);
+    }
+
+    &__btns {
+      flex-wrap: wrap;
+    }
+
+    &__btn {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+}

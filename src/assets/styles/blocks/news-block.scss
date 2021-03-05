@@ -23,3 +23,16 @@
 
     }
 }
+@media screen and (max-width: 767px){
+    .news-block{
+        &__nav-slider{
+            z-index: 100;
+            display: flex;
+            margin-top: 0;
+            position: absolute;
+            bottom: 2px;
+            right: 15px;
+        }
+    }
+
+}

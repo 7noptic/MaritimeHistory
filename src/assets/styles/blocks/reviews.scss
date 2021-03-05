@@ -1,0 +1,143 @@
+.reviews{
+  padding: 35px 0 60px;
+  &__title{
+    padding-bottom: 45px;
+  }
+  &-form{
+    background-image: url("../img/formlt.svg"), url("../img/formrt.svg"),url("../img/formlb.svg"),url("../img/formrb.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: top left, top right, bottom left, bottom right;
+    padding: 50px;
+    max-width: 460px;
+    &__link{
+      display: block;
+      text-align: center;
+      font-size: 20px;
+      line-height: 30px;
+      font-family: Yeseva One;
+      margin-bottom: 15px;
+    }
+    &__text{
+      text-align: center;
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 20px;
+    }
+    &__yandex{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 35px;
+      & > ul{
+        margin-top: 5px;
+        margin-bottom: 0!important;
+        margin-left: 20px;
+      }
+    }
+    &__title{
+      font-size: 20px;
+      line-height: 30px;
+      font-family: Yeseva One;
+      margin-bottom: 20px;
+      text-align: center;
+
+    }
+    &__wrapper{
+      & > span{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > label{
+          width: 100%;
+          padding: 5px;
+          border-bottom: 1px solid $brown;
+          display: block;
+          font-size: 16px;
+          line-height: 20px;
+          text-align: center;
+          opacity: .5;
+        }
+        & > textarea{
+          width: 100%;
+          background: transparent;
+          height: 80px;
+        }
+      }
+    }
+    &__rating{
+      margin: 20px 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & > p{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+      }
+      & > ul{
+        margin-bottom: 0!important;
+        margin-left: 15px;
+        margin-top: 5px;
+      }
+    }
+    &__photo{
+      padding: 40px 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: .65;
+      border: 1px dashed $brown;
+      background: transparent;
+      color: $brown;
+      border-radius: 4px;
+      transition: $transition4;
+      margin-bottom: 30px;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 20px;
+      &:hover{
+        opacity: 1;
+        color: $gold;
+        border: 1px dashed $gold;
+        background: transparent;
+      }
+    }
+    &__agreement{
+      margin-bottom: 30px;
+      font-size: 10px;
+      line-height: 13px;
+      text-align: center;
+    }
+    &__btn{
+      margin: 0 auto;
+      padding: 13px 50px;
+    }
+  }
+}
+@media screen and (max-width: 991px){
+  .reviews{
+    padding: 30px 0 40px;
+    &-form{
+      margin: 60px auto 0;
+    }
+  }
+}
+@media screen and (max-width: 575px){
+  .reviews{
+    padding: 25px 0;
+    &-form{
+      max-width: calc(100% + 30px);
+      width: calc(100% + 30px);
+      margin-top: 40px;
+      margin-left: -15px;
+      margin-right: -15px;
+      padding: 50px 30px;
+      &__rating{
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

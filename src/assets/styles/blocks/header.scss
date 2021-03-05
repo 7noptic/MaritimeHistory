@@ -1,6 +1,7 @@
-.burger{
+.burger {
   width: 20%;
 }
+
 .header {
   padding: 30px;
 
@@ -50,9 +51,11 @@
     font-size: 12px;
     font-weight: 800;
   }
-&-menu__call{
-  display: none;
-}
+
+  &-menu__call {
+    display: none;
+  }
+
   &__heart {
     &:hover {
       & path {
@@ -67,6 +70,12 @@
     justify-content: space-between;
     width: 100%;
     font-size: 14px;
+    & > a{
+      & > img{
+        max-width: 30px;
+        max-height: 30px;
+      }
+    }
   }
 
   &__row {
@@ -215,12 +224,13 @@
       transition: $transition4;
 
       &__icon {
-        margin-top: 15px;
+        margin-top: 6px;
         display: block;
         width: 22px;
         height: 26px;
         transition: $transition4;
-        .js-burger{
+
+        .js-burger {
           &::before {
             content: '';
             display: block;
@@ -232,6 +242,7 @@
             z-index: 1000000000;
           }
         }
+
         &::before {
           content: '';
           display: block;
@@ -336,7 +347,7 @@
         cursor: pointer;
         max-width: 30px;
         max-height: 30px;
-        margin-top: 8px;
+        margin-top: 0px;
       }
 
       & > form {
@@ -356,31 +367,37 @@
     }
   }
 }
+
 @media screen and (max-width: 767px) {
-  .burger{
+  .burger {
     width: 100%;
   }
   .header {
     padding: 20px 0;
-    .logo{
+
+    .logo {
       margin-top: 0;
     }
-    &__row{
+
+    &__row {
       margin-bottom: 0;
     }
-    &-burger{
+
+    &-burger {
       width: 100%;
       display: flex;
-      justify-content: flex-start!important;
-      padding-left: 20px;
-      &__icon{
+      justify-content: flex-start !important;
+
+      &__icon {
         margin-top: 5px;
 
       }
     }
-    &__basket{
+
+    &__basket {
       justify-content: flex-end;
-      &> a{
+
+      & > a {
         justify-content: flex-end;
       }
     }

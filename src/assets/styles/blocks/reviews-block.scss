@@ -2,6 +2,7 @@
     padding: 60px 0;
     &__btn{
         padding: 8px 31px;
+
     }
     &__rating{
         margin-bottom: 20px!important;
@@ -25,5 +26,8 @@
 @media screen and (max-width: 991px){
     .reviews-block{
         padding: 40px 0;
+        &__btn{
+            margin: 0 auto;
+        }
     }
 }

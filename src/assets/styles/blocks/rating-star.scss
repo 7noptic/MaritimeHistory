@@ -19,3 +19,8 @@
       background-repeat: no-repeat;
     }
   }
+.js-rating{
+  & li{
+    cursor: pointer;
+  }
+}

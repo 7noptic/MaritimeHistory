@@ -51,7 +51,13 @@
     max-width: 220px;
 
     &__item {
-
+      &:hover {
+        & > svg {
+          & > path {
+            fill: $gold;
+          }
+        }
+      }
     }
   }
 
@@ -66,20 +72,34 @@
   }
 
   &__btn {
-      display: flex;
+    display: flex;
     padding: 17px;
     margin-bottom: 55px;
   }
+
+  &__link {
+    &:hover {
+      & > svg {
+        & > path {
+          fill: $gold;
+        }
+      }
+    }
+
+  }
 }
-@media screen and (max-width: 1919px){
+
+@media screen and (max-width: 1919px) {
   .footer {
     padding-top: 140px;
 
   }
 }
-@media screen and (max-width: 1599px){
+
+@media screen and (max-width: 1599px) {
   .footer {
     padding-top: 120px;
+
     &__title {
       font-family: Yeseva One;
       font-weight: normal;
@@ -147,9 +167,11 @@
     }
   }
 }
-@media screen and (max-width: 991px){
+
+@media screen and (max-width: 991px) {
   .footer {
     padding-top: 60px;
+
     &__title {
       font-size: 18px;
       line-height: 26px;
@@ -212,56 +234,69 @@
     }
   }
 }
-@media screen and (max-width: 767px){
-  .footer__row{
+
+@media screen and (max-width: 767px) {
+  .footer__row {
     margin-top: 30px;
   }
 }
-@media screen and (max-width: 575px){
-  .footer{
+
+@media screen and (max-width: 575px) {
+  .footer {
     padding-top: 35px;
-    &__title{
+
+    &__title {
       text-align: center;
       margin-bottom: 20px;
     }
-    &__row{
+
+    &__row {
       margin: 30px 0;
     }
-    &__menu{
+
+    &__menu {
       margin-bottom: 20px;
       display: none;
-      & > a{
+
+      & > a {
         display: block;
         width: 100%;
         text-align: center;
         margin-bottom: 10px;
         font-size: 14px;
       }
-      &.active{
+
+      &.active {
         display: block;
       }
     }
-    &__text{
+
+    &__text {
       text-align: center;
       font-size: 13px;
-      &-b{
+
+      &-b {
         font-size: 14px;
         text-align: center;
       }
-      &-s{
+
+      &-s {
         font-size: 14px;
         text-align: center;
       }
     }
-    &__tel{
+
+    &__tel {
       font-size: 20px;
       text-align: center;
     }
-    &__link{
+
+    &__link {
       display: flex;
       justify-content: center;
     }
-    &-social{
+
+    &-social {
       max-width: 100%;
       margin: 20px 0 30px;
     }

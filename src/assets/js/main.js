@@ -1,9 +1,9 @@
 'use script';
-import Swiper, {Navigation, Pagination, Autoplay} from 'swiper';
+import Swiper, {Navigation, Pagination, Autoplay, Thumbs} from 'swiper';
 import Readmore from "readmore-js";
 import GLightbox from 'glightbox';
 
-Swiper.use([Navigation, Pagination, Autoplay]);
+Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -112,23 +112,33 @@ window.addEventListener('DOMContentLoaded', () => {
 
     /* TABS */
     let reviewsBlockParent = document.querySelector('.reviews-block'),
-        reviewsBlockTabs = reviewsBlockParent.querySelectorAll('.js-reviews-block-tab'),
-        reviewsBlockLink = reviewsBlockParent.querySelectorAll('.reviews-block__link'),
         newsBlockParent = document.querySelector('.news-block'),
-        newsBlockTabs = newsBlockParent.querySelectorAll('.js-news-block-tab'),
-        newsBlockLink = newsBlockParent.querySelectorAll('.news-block__link'),
         regionParent = document.querySelector('.region'),
-        regionTabs = regionParent.querySelectorAll('.js-region-tabs'),
-        regionLink = regionParent.querySelectorAll('.region__link');
+        productDescrParent = document.querySelector('.product-descr');
+
 
 
     if (reviewsBlockParent) {
+        let reviewsBlockTabs = reviewsBlockParent.querySelectorAll('.js-reviews-block-tab'),
+            reviewsBlockLink = reviewsBlockParent.querySelectorAll('.reviews-block__link');
+
         toggleTabs(0, reviewsBlockLink, reviewsBlockTabs, reviewsBlockParent, 'reviews-block__link');
     }
     if (newsBlockParent) {
+        let newsBlockTabs = newsBlockParent.querySelectorAll('.js-news-block-tab'),
+            newsBlockLink = newsBlockParent.querySelectorAll('.news-block__link');
+
         toggleTabs(0, newsBlockLink, newsBlockTabs, newsBlockParent, 'news-block__link');
     }
+    if (productDescrParent) {
+        let productDescrTabs = productDescrParent.querySelectorAll('.js-product-descr-tab'),
+            productDescrLink = productDescrParent.querySelectorAll('.product-descr__link');
+
+        toggleTabs(0, productDescrLink, productDescrTabs, productDescrParent, 'product-descr__link');
+    }
     if (regionParent) {
+        let regionTabs = regionParent.querySelectorAll('.js-region-tabs'),
+            regionLink = regionParent.querySelectorAll('.region__link');
         toggleTabs(0, regionLink, regionTabs, regionParent, 'region__link', true);
     }
 
@@ -320,6 +330,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     });
+    let sliderReviewsTabs = new Swiper('.swiper-container-reviews-tabs', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+
+        navigation: {
+            nextEl: '.reviews-tabs__next',
+            prevEl: '.reviews-tabs__prev'
+        },
+
+
+    });
     let sliderCert = new Swiper('.swiper-container-sertificate', {
         slidesPerView: 4,
         spaceBetween: 50,
@@ -349,6 +374,27 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     });
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 30,
+        autoplay:true,
+        slidesPerView: 4,
+        direction: 'vertical',
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+        spaceBetween: 0,
+        autoplay:true,
+        navigation: {
+            nextEl: '.product__next',
+            prevEl: '.product__prev',
+        },
+        thumbs: {
+            swiper: galleryThumbs
+        }
+    });
+
 
 
     /* RATING */
