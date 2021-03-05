@@ -147,6 +147,8 @@ window.addEventListener('DOMContentLoaded', () => {
             let subLinks = tabs[0].querySelectorAll('.subregion__link'),
                 subTabs = tabs[0].querySelectorAll('.subregion__content');
 
+                console.log(subLinks);
+                console.log(subTabs);
             hideTabs(subLinks, subTabs);
             showTabs(0, subLinks, subTabs);
 

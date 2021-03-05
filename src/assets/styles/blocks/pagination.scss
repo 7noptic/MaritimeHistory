@@ -1,0 +1,19 @@
+.pagination{
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    &> a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        font-family: Geometria;
+        &.active{
+            background: linear-gradient(180deg, #FFE249 -2.35%, #B36C19 114.54%);
+border-radius: 50%;
+padding: 10px 11px;
+color: #fff;
+        }
+    }
+}
