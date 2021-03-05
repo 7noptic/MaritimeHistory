@@ -15,16 +15,16 @@
 <header class="header">
     <div class="container">
         <div class="row">
-            <div class="col-3 col-lg-2">
-                <a href="index.html" class="logo">
+            <div class="col-3 col-lg-2 d-none d-md-block">
+                <a data-da=".js-adaptive-logo,767,1" href="index.html" class="logo">
                     <img src="img/logo.png" alt="">
                 </a>
             </div>
-            <div class="col-9 col-lg-10">
+            <div class="col-12 col-md-9 col-lg-10">
                 <div class="row header__row d-flex align-items-center">
 
-                    <div class="col-12 col-lg-6 d-flex align-items-center">
-                        <nav class="header__menu">
+                    <div class="col-4 col-md-12 col-lg-6 d-flex align-items-center js-adaptive-burger">
+                        <nav class="header__menu d-none d-md-flex">
                             <a href="#">
                                 Гарантия
                             </a>
@@ -43,23 +43,23 @@
                         </nav>
                     </div>
 
-                    <div class="col-4 d-none d-lg-flex align-items-center">
-                        <p class="header__info">
+                    <div class="col-4 d-flex d-md-none d-lg-flex align-items-center js-adaptive-logo">
+                        <p class="header__info d-none d-lg-block">
                             Пн-Пт с 8:00 до 21:00, сб-вс с 9:00 до 17:00
                         </p>
                     </div>
 
-                    <div class="col-2 d-none d-lg-flex align-items-center">
-                        <p class="header__info">
+                    <div class="col-4 col-md-2 justify-content-end justify-content-md-start js-adaptive-basket d-flex d-md-none d-lg-flex align-items-center">
+                        <p class="header__info d-none d-lg-block">
                             Волоколамское ш. 112, к.1с3а
                         </p>
                     </div>
 
                 </div>
 
-                <div class="row d-flex align-items-center">
+                <div class="row d-none d-md-flex align-items-center">
 
-                    <div class="col-2 col-lg-6 d-flex align-items-center">
+                    <div class="col-4 col-lg-6 d-flex justify-content-between justify-content-lg-start align-items-center">
                         <div class="header__search">
                             <div class="header__search-img">
                                 <img src="img/search.svg" class="js-search" alt="">
@@ -75,7 +75,6 @@
                                 </div>
                             </form>
                         </div>
-<<<<<<< HEAD
                         <div data-da=".js-adaptive-burger,767,1" class="burger">
                             <div class="header-burger">
                                 <div class="header-burger__icon js-burger">
@@ -96,21 +95,19 @@
                             </div>
                         </div>
 
-=======
->>>>>>> 23b650522c783ab5247a8f6d36aa392d3bc3565a
                     </div>
 
-                    <div class="col-5 col-lg-4 d-flex align-items-center header__tels">
+                    <div class="col-4 col-lg-4 d-flex align-items-center header__tels">
                         <a href="tel:80000000000" class="header__tel">8 800 000 00 00</a>
                         <a href="#" class="btn header__btn js-call">заказать звонок</a>
                     </div>
 
-                    <div class="col-5 col-lg-2 d-flex align-items-center">
+                    <div class="col-4 col-lg-2 d-flex align-items-center">
                         <div class="header__basket">
                             <a href="#">
                                 <img src="img/heart.svg" alt="">
                             </a>
-                            <a href="basket.html">
+                            <a href="basket.html" data-da=".js-adaptive-basket,767,1">
                                 <img src="img/basket.svg" alt="">
                             </a>
 
@@ -139,7 +136,7 @@
                             доставка быстрее! 
                         </span>
                     </p>
-                    <ul class="aside__menu">
+                    <ul data-da=".header-menu__wrapper,1199,1" class="aside__menu">
                         <li><a href="#">Рыба</a>
                             <ul class="aside__menu-lvl2">
                                 <li><a href="#">Барабуля</a></li>
@@ -507,19 +504,11 @@
                             </ul>
                         </li>
                     </ul>
-<<<<<<< HEAD
 
                     <a href="basket.html" class="aside__basket">
                         <img src="img/basketaside.png" alt="">
                     </a>
 
-=======
-                    <!-- 
-                    <nav class="aside__basket">
-                        Корзина
-                    </nav>
-                    -->
->>>>>>> 23b650522c783ab5247a8f6d36aa392d3bc3565a
                 </section>
 
 
@@ -887,7 +876,7 @@
                                     <div class="row  d-flex align-items-center">
                                         <div class="col-6">
                                             <p class="card__text-b">
-                                                Опт от 6 кг
+                                                Опт от <span class="js-count-kg">6</span>кг
                                             </p>
                                         </div>
                                         <div class="col-6">
@@ -908,7 +897,7 @@
                                         </div>
                                         <div class="col-6">
                                             <p class="card__text">
-                                                72₽ 6%
+                                                <span class="card__economy">72₽ 6%</span>
                                             </p>
                                         </div>
                                     </div>
@@ -985,12 +974,12 @@
                                     <div class="row  d-flex align-items-center">
                                         <div class="col-6">
                                             <p class="card__text-b">
-                                                Опт от 6 кг
+                                                Опт от <span class="js-count-kg">6</span>кг
                                             </p>
                                         </div>
                                         <div class="col-6">
                                             <p class="card__price-b">
-                                                800 ₽
+                                                1230 ₽
                                             </p>
                                             <p class="card__price">
                                                 1050 ₽
@@ -1006,7 +995,7 @@
                                         </div>
                                         <div class="col-6">
                                             <p class="card__text">
-                                                72₽ 6%
+                                                <span class="card__economy">72₽ 6%</span>
                                             </p>
                                         </div>
                                     </div>
@@ -1083,15 +1072,15 @@
                                     <div class="row  d-flex align-items-center">
                                         <div class="col-6">
                                             <p class="card__text-b">
-                                                Опт от 6 кг
+                                                Опт от <span class="js-count-kg">6</span>кг
                                             </p>
                                         </div>
                                         <div class="col-6">
                                             <p class="card__price-b">
-                                                800 ₽
+                                                6561 ₽
                                             </p>
                                             <p class="card__price">
-                                                1050 ₽
+                                                7684 ₽
                                             </p>
                                         </div>
                                     </div>
@@ -1104,7 +1093,7 @@
                                         </div>
                                         <div class="col-6">
                                             <p class="card__text">
-                                                72₽ 6%
+                                                <span class="card__economy">72₽ 6%</span>
                                             </p>
                                         </div>
                                     </div>
@@ -1181,7 +1170,7 @@
                                     <div class="row  d-flex align-items-center">
                                         <div class="col-6">
                                             <p class="card__text-b">
-                                                Опт от 6 кг
+                                                Опт от <span class="js-count-kg">6</span>кг
                                             </p>
                                         </div>
                                         <div class="col-6">
@@ -1189,7 +1178,7 @@
                                                 800 ₽
                                             </p>
                                             <p class="card__price">
-                                                1050 ₽
+
                                             </p>
                                         </div>
                                     </div>
@@ -1202,7 +1191,7 @@
                                         </div>
                                         <div class="col-6">
                                             <p class="card__text">
-                                                72₽ 6%
+                                                <span class="card__economy">72₽ 6%</span>
                                             </p>
                                         </div>
                                     </div>
@@ -1279,7 +1268,7 @@
                                     <div class="row  d-flex align-items-center">
                                         <div class="col-6">
                                             <p class="card__text-b">
-                                                Опт от 6 кг
+                                                Опт от <span class="js-count-kg">6</span>кг
                                             </p>
                                         </div>
                                         <div class="col-6">
@@ -1300,7 +1289,7 @@
                                         </div>
                                         <div class="col-6">
                                             <p class="card__text">
-                                                72₽ 6%
+                                                <span class="card__economy">72₽ 6%</span>
                                             </p>
                                         </div>
                                     </div>
@@ -1377,7 +1366,7 @@
                                     <div class="row  d-flex align-items-center">
                                         <div class="col-6">
                                             <p class="card__text-b">
-                                                Опт от 6 кг
+                                                Опт от <span class="js-count-kg">6</span>кг
                                             </p>
                                         </div>
                                         <div class="col-6">
@@ -1398,7 +1387,7 @@
                                         </div>
                                         <div class="col-6">
                                             <p class="card__text">
-                                                72₽ 6%
+                                                <span class="card__economy">72₽ 6%</span>
                                             </p>
                                         </div>
                                     </div>
@@ -1475,7 +1464,7 @@
                                     <div class="row  d-flex align-items-center">
                                         <div class="col-6">
                                             <p class="card__text-b">
-                                                Опт от 6 кг
+                                                Опт от <span class="js-count-kg">6</span>кг
                                             </p>
                                         </div>
                                         <div class="col-6">
@@ -1496,7 +1485,7 @@
                                         </div>
                                         <div class="col-6">
                                             <p class="card__text">
-                                                72₽ 6%
+                                                <span class="card__economy">72₽ 6%</span>
                                             </p>
                                         </div>
                                     </div>
@@ -1573,7 +1562,7 @@
                                     <div class="row  d-flex align-items-center">
                                         <div class="col-6">
                                             <p class="card__text-b">
-                                                Опт от 6 кг
+                                                Опт от <span class="js-count-kg">6</span>кг
                                             </p>
                                         </div>
                                         <div class="col-6">
@@ -1594,7 +1583,7 @@
                                         </div>
                                         <div class="col-6">
                                             <p class="card__text">
-                                                72₽ 6%
+                                                <span class="card__economy">72₽ 6%</span>
                                             </p>
                                         </div>
                                     </div>
@@ -1893,20 +1882,15 @@
                                     <div class="review">
                                         <div class="review__header">
                                             <div class="row d-flex justify-content-between">
-<<<<<<< HEAD
                                                 <div class="col-12 col-sm-4 d-flex align-items-center flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-start">
                                                     <div class="review__ava">
-=======
-                                                <div class="col-12 col-sm-4 d-flex align-items-center">
-                                                    <div class="review__img">
->>>>>>> 23b650522c783ab5247a8f6d36aa392d3bc3565a
                                                         <img src="img/ava.jpg" alt="">
                                                     </div>
                                                     <div class="review__name">
                                                         Андрей
                                                     </div>
                                                 </div>
-                                                <div class="col-6 col-sm-4 d-flex align-items-center justify-content-center">
+                                                <div class="col-12 col-sm-4 d-flex align-items-center justify-content-center">
                                                     <ul class="rating-star reviews-block__rating">
                                                         <li class="active"></li>
                                                         <li class="active"></li>
@@ -1915,11 +1899,7 @@
                                                         <li></li>
                                                     </ul>
                                                 </div>
-<<<<<<< HEAD
                                                 <div class="col-12 col-sm-4 d-flex align-items-center justify-content-center justify-content-sm-end">
-=======
-                                                <div class="col-6 col-sm-4 d-flex align-items-center justify-content-end">
->>>>>>> 23b650522c783ab5247a8f6d36aa392d3bc3565a
                                                     <time datetime="2012-12-23T08:23:11+07:00" class="review__date">
                                                         08.05.2020
                                                     </time>
@@ -1945,20 +1925,15 @@
                                     <div class="review">
                                         <div class="review__header">
                                             <div class="row d-flex justify-content-between">
-<<<<<<< HEAD
                                                 <div class="col-12 col-sm-4 d-flex align-items-center flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-start">
                                                     <div class="review__ava">
-=======
-                                                <div class="col-12 col-sm-4 d-flex align-items-center">
-                                                    <div class="review__img">
->>>>>>> 23b650522c783ab5247a8f6d36aa392d3bc3565a
                                                         <img src="img/ava.jpg" alt="">
                                                     </div>
                                                     <div class="review__name">
                                                         Андрей
                                                     </div>
                                                 </div>
-                                                <div class="col-6 col-sm-4 d-flex align-items-center justify-content-center">
+                                                <div class="col-12 col-sm-4 d-flex align-items-center justify-content-center">
                                                     <ul class="rating-star reviews-block__rating">
                                                         <li class="active"></li>
                                                         <li class="active"></li>
@@ -1967,11 +1942,7 @@
                                                         <li></li>
                                                     </ul>
                                                 </div>
-<<<<<<< HEAD
                                                 <div class="col-12 col-sm-4 d-flex align-items-center justify-content-center justify-content-sm-end">
-=======
-                                                <div class="col-6 col-sm-4 d-flex align-items-center justify-content-end">
->>>>>>> 23b650522c783ab5247a8f6d36aa392d3bc3565a
                                                     <time datetime="2012-12-23T08:23:11+07:00" class="review__date">
                                                         08.05.2020
                                                     </time>
@@ -2542,7 +2513,7 @@
                     <div class="js-region-tabs">
                         <div class="row">
 
-                            <div class="col-3 col-lg-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <h3 class="subregion__name">
                                     ВАО
                                 </h3>
@@ -2550,46 +2521,85 @@
                                     <a href="#" class="subregion__link">Новокосино</a>
                                     <a href="#" class="subregion__link">Перово</a>
                                     <a href="#" class="subregion__link">Измайлово</a>
-                                    <a href="#" class="subregion__link">Сокольники</a>
-                                    <a href="#" class="subregion__link">Соколиная гора</a>
-                                    <a href="#" class="subregion__link">Шоссе Энтузиастов</a>
-                                    <a href="#" class="subregion__link">Щелковская</a>
-                                    <a href="#" class="subregion__link">Электрозаводская</a>
+
                                 </nav>
                             </div>
 
-                            <div class="col-9 col-lg-10">
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
                                 <div class="row">
 
-                                    <div class="col-12 col-md-6 col-lg-4">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-md-6 col-lg-4 d-none d-lg-block">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -2597,7 +2607,7 @@
                     <div class="js-region-tabs">
                         <div class="row">
 
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <h3 class="subregion__name">
                                     ВАО
                                 </h3>
@@ -2605,29 +2615,85 @@
                                     <a href="#" class="subregion__link">Новокосино</a>
                                     <a href="#" class="subregion__link">Перово</a>
                                     <a href="#" class="subregion__link">Измайлово</a>
-                                    <a href="#" class="subregion__link">Сокольники</a>
-                                    <a href="#" class="subregion__link">Соколиная гора</a>
-                                    <a href="#" class="subregion__link">Шоссе Энтузиастов</a>
-                                    <a href="#" class="subregion__link">Щелковская</a>
-                                    <a href="#" class="subregion__link">Электрозаводская</a>
+
                                 </nav>
                             </div>
 
-                            <div class="col-10">
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
                                 <div class="row">
 
-                                    <div class="col-4">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
 
                                 </div>
                             </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -2635,7 +2701,7 @@
                     <div class="js-region-tabs">
                         <div class="row">
 
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <h3 class="subregion__name">
                                     ВАО
                                 </h3>
@@ -2643,46 +2709,85 @@
                                     <a href="#" class="subregion__link">Новокосино</a>
                                     <a href="#" class="subregion__link">Перово</a>
                                     <a href="#" class="subregion__link">Измайлово</a>
-                                    <a href="#" class="subregion__link">Сокольники</a>
-                                    <a href="#" class="subregion__link">Соколиная гора</a>
-                                    <a href="#" class="subregion__link">Шоссе Энтузиастов</a>
-                                    <a href="#" class="subregion__link">Щелковская</a>
-                                    <a href="#" class="subregion__link">Электрозаводская</a>
+
                                 </nav>
                             </div>
 
-                            <div class="col-10">
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
                                 <div class="row">
 
-                                    <div class="col-4">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -2690,7 +2795,7 @@
                     <div class="js-region-tabs">
                         <div class="row">
 
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <h3 class="subregion__name">
                                     ВАО
                                 </h3>
@@ -2698,46 +2803,85 @@
                                     <a href="#" class="subregion__link">Новокосино</a>
                                     <a href="#" class="subregion__link">Перово</a>
                                     <a href="#" class="subregion__link">Измайлово</a>
-                                    <a href="#" class="subregion__link">Сокольники</a>
-                                    <a href="#" class="subregion__link">Соколиная гора</a>
-                                    <a href="#" class="subregion__link">Шоссе Энтузиастов</a>
-                                    <a href="#" class="subregion__link">Щелковская</a>
-                                    <a href="#" class="subregion__link">Электрозаводская</a>
+
                                 </nav>
                             </div>
 
-                            <div class="col-10">
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
                                 <div class="row">
 
-                                    <div class="col-4">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -2745,7 +2889,7 @@
                     <div class="js-region-tabs">
                         <div class="row">
 
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <h3 class="subregion__name">
                                     ВАО
                                 </h3>
@@ -2753,46 +2897,85 @@
                                     <a href="#" class="subregion__link">Новокосино</a>
                                     <a href="#" class="subregion__link">Перово</a>
                                     <a href="#" class="subregion__link">Измайлово</a>
-                                    <a href="#" class="subregion__link">Сокольники</a>
-                                    <a href="#" class="subregion__link">Соколиная гора</a>
-                                    <a href="#" class="subregion__link">Шоссе Энтузиастов</a>
-                                    <a href="#" class="subregion__link">Щелковская</a>
-                                    <a href="#" class="subregion__link">Электрозаводская</a>
+
                                 </nav>
                             </div>
 
-                            <div class="col-10">
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
                                 <div class="row">
 
-                                    <div class="col-4">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -2800,7 +2983,7 @@
                     <div class="js-region-tabs">
                         <div class="row">
 
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <h3 class="subregion__name">
                                     ВАО
                                 </h3>
@@ -2808,46 +2991,85 @@
                                     <a href="#" class="subregion__link">Новокосино</a>
                                     <a href="#" class="subregion__link">Перово</a>
                                     <a href="#" class="subregion__link">Измайлово</a>
-                                    <a href="#" class="subregion__link">Сокольники</a>
-                                    <a href="#" class="subregion__link">Соколиная гора</a>
-                                    <a href="#" class="subregion__link">Шоссе Энтузиастов</a>
-                                    <a href="#" class="subregion__link">Щелковская</a>
-                                    <a href="#" class="subregion__link">Электрозаводская</a>
+
                                 </nav>
                             </div>
 
-                            <div class="col-10">
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
                                 <div class="row">
 
-                                    <div class="col-4">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -2855,7 +3077,7 @@
                     <div class="js-region-tabs">
                         <div class="row">
 
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <h3 class="subregion__name">
                                     ВАО
                                 </h3>
@@ -2863,46 +3085,85 @@
                                     <a href="#" class="subregion__link">Новокосино</a>
                                     <a href="#" class="subregion__link">Перово</a>
                                     <a href="#" class="subregion__link">Измайлово</a>
-                                    <a href="#" class="subregion__link">Сокольники</a>
-                                    <a href="#" class="subregion__link">Соколиная гора</a>
-                                    <a href="#" class="subregion__link">Шоссе Энтузиастов</a>
-                                    <a href="#" class="subregion__link">Щелковская</a>
-                                    <a href="#" class="subregion__link">Электрозаводская</a>
+
                                 </nav>
                             </div>
 
-                            <div class="col-10">
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
                                 <div class="row">
 
-                                    <div class="col-4">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -2910,7 +3171,7 @@
                     <div class="js-region-tabs">
                         <div class="row">
 
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <h3 class="subregion__name">
                                     ВАО
                                 </h3>
@@ -2918,46 +3179,85 @@
                                     <a href="#" class="subregion__link">Новокосино</a>
                                     <a href="#" class="subregion__link">Перово</a>
                                     <a href="#" class="subregion__link">Измайлово</a>
-                                    <a href="#" class="subregion__link">Сокольники</a>
-                                    <a href="#" class="subregion__link">Соколиная гора</a>
-                                    <a href="#" class="subregion__link">Шоссе Энтузиастов</a>
-                                    <a href="#" class="subregion__link">Щелковская</a>
-                                    <a href="#" class="subregion__link">Электрозаводская</a>
+
                                 </nav>
                             </div>
 
-                            <div class="col-10">
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
                                 <div class="row">
 
-                                    <div class="col-4">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -2965,7 +3265,7 @@
                     <div class="js-region-tabs">
                         <div class="row">
 
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <h3 class="subregion__name">
                                     ВАО
                                 </h3>
@@ -2973,46 +3273,85 @@
                                     <a href="#" class="subregion__link">Новокосино</a>
                                     <a href="#" class="subregion__link">Перово</a>
                                     <a href="#" class="subregion__link">Измайлово</a>
-                                    <a href="#" class="subregion__link">Сокольники</a>
-                                    <a href="#" class="subregion__link">Соколиная гора</a>
-                                    <a href="#" class="subregion__link">Шоссе Энтузиастов</a>
-                                    <a href="#" class="subregion__link">Щелковская</a>
-                                    <a href="#" class="subregion__link">Электрозаводская</a>
+
                                 </nav>
                             </div>
 
-                            <div class="col-10">
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
                                 <div class="row">
 
-                                    <div class="col-4">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-12 col-md-4 col-lg-4">
                                         <div class="region__item">
                                             <div class="card__img">
                                                 <img src="img/card.jpg" alt="">
                                             </div>
-                                            <a href="#" class="card__name">Рыба с доставкой в ВАО</a>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-9 col-lg-10 subregion__content">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="region__item">
+                                            <div class="card__img">
+                                                <img src="img/card.jpg" alt="">
+                                            </div>
+                                            <a href="#" class="card__name region__name">Рыба с доставкой в ВАО</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -3195,7 +3534,7 @@
                 <div class="row">
 
                     <div class="col-12 col-sm-6 col-md-3">
-                        <h3 class="footer__title">
+                        <h3 class="footer__title js-footer">
                             О компании
                         </h3>
                         <nav class="footer__menu">
@@ -3213,7 +3552,7 @@
 
 
                     <div class="col-12 col-sm-6 col-md-3">
-                        <h3 class="footer__title">
+                        <h3 class="footer__title js-footer">
                             Категории
                         </h3>
                         <nav class="footer__menu">
@@ -3313,12 +3652,15 @@
                         </p>
                     </div>
 
-                    <div class="col-9">
+
+                </div>
+                <div class="row footer__row">
+                    <div class="col-12 col-sm-9">
                         <p class="footer__text">
                             Maritime History ©2017-2021 г. Все права защищены.
                         </p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-sm-3">
 
 
                         <a href="#" class="footer__link">
@@ -3359,7 +3701,6 @@
                         </a>
                     </div>
                 </div>
-
 
             </div>
         </div>
@@ -3432,7 +3773,7 @@
                                     <button class="modal-one-click__prev">
                                         <img src="img/arr.svg" alt="">
                                     </button>
-                                    <div class="modal-one-click__text-b">
+                                    <div class="modal-one-click__text-b js-modal-count-kg">
                                         10
                                     </div>
                                     <button class="modal-one-click__next">
@@ -3479,7 +3820,7 @@
                                     <button class="modal-one-click__prev">
                                         <img src="img/arr.svg" alt="">
                                     </button>
-                                    <div class="modal-one-click__text-b">
+                                    <div class="modal-one-click__text-b js-modal-count-kg">
                                         10
                                     </div>
                                     <button class="modal-one-click__next">
@@ -3526,7 +3867,7 @@
                                     <button class="modal-one-click__prev">
                                         <img src="img/arr.svg" alt="">
                                     </button>
-                                    <div class="modal-one-click__text-b">
+                                    <div class="modal-one-click__text-b js-modal-count-kg">
                                         10
                                     </div>
                                     <button class="modal-one-click__next">
@@ -3573,7 +3914,7 @@
                                     <button class="modal-one-click__prev">
                                         <img src="img/arr.svg" alt="">
                                     </button>
-                                    <div class="modal-one-click__text-b">
+                                    <div class="modal-one-click__text-b js-modal-count-kg">
                                         10
                                     </div>
                                     <button class="modal-one-click__next">
@@ -3650,7 +3991,6 @@
         </div>
     </section>
 
-<<<<<<< HEAD
     <section class="modal modal-job">
         <div class="modal__wrapper modal-job__wrapper">
             <div class="modal__exit">
@@ -3688,8 +4028,6 @@
         </div>
     </section>
 
-=======
->>>>>>> 23b650522c783ab5247a8f6d36aa392d3bc3565a
 </aside>
 <!-- !MODAL -->
 </body>
