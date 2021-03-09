@@ -1,14 +1,636 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+  <link rel="icon" href="img/favicon/favicon.ico">
   <title>Title</title>
   <link href="vendors~main.css" rel="stylesheet">
   <link href="main.css" rel="stylesheet">
 </head>
 
 <body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-3 col-lg-2 d-none d-md-block"><a data-da=".js-adaptive-logo,767,1" href="index.html" class="logo"><img src="img/logo.png" alt=""></a></div>
+        <div class="col-12 col-md-9 col-lg-10">
+          <div class="row header__row d-flex align-items-center">
+            <div class="col-4 col-md-12 col-lg-6 d-flex align-items-center js-adaptive-burger">
+              <nav class="header__menu d-none d-md-flex"><a href="#">Гарантия </a><a href="#">Доставка и оплата </a><a href="#">Отзывы </a><a href="#">Рецепты </a><a href="#">Контакты</a></nav>
+            </div>
+            <div class="col-4 d-flex d-md-none d-lg-flex align-items-center js-adaptive-logo">
+              <p class="header__info d-none d-lg-block">Пн-Пт с 8:00 до 21:00, сб-вс с 9:00 до 17:00</p>
+            </div>
+            <div class="col-4 col-md-2 justify-content-end justify-content-md-start js-adaptive-basket d-flex d-md-none d-lg-flex align-items-center">
+              <p class="header__info d-none d-lg-block">Волоколамское ш. 112, к.1с3а</p>
+            </div>
+          </div>
+          <div class="row d-none d-md-flex align-items-center">
+            <div class="col-4 col-lg-6 d-flex justify-content-between justify-content-lg-start align-items-center">
+              <div class="header__search">
+                <div class="header__search-img"><img src="img/search.svg" class="js-search" alt=""></div>
+                <form action="POST">
+                  <div class="form-wrapper-header"><span><input type="search" class="form-control" placeholder="Дефлопе с крутонами"> </span><span><button type="submit"><img src="img/search.svg" alt=""></button></span></div>
+                </form>
+              </div>
+              <div data-da=".js-adaptive-burger,767,1" class="burger">
+                <div class="header-burger">
+                  <div class="header-burger__icon js-burger"><span class="js-burger"></span> <span class="js-burger"></span> <span></span> <span></span></div>
+                </div>
+                <div class="header-menu hamburger-menu"><a href="#" class="header-menu__call js-call"><img src="img/call.svg" alt="" class="js-call"></a>
+                  <div class="header-menu__wrapper"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 col-lg-4 d-flex align-items-center header__tels"><a href="tel:80000000000" class="header__tel">8 800 000 00 00</a> <a href="#" class="btn header__btn js-call">заказать звонок</a></div>
+            <div class="col-4 col-lg-2 d-flex align-items-center">
+              <div class="header__basket"><a href="#"><img src="img/heart.svg" alt=""> </a><a href="basket.html" data-da=".js-adaptive-basket,767,1"><img src="img/basket.svg" alt=""> </a><a href="basket.html" class="d-none d-lg-flex">10шт. <span>на 27000 ₽</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-2 d-none d-xl-block">
+          <section class="aside">
+            <p class="aside__slogan">Цены ниже, <span>доставка быстрее!</span></p>
+            <ul data-da=".header-menu__wrapper,1199,1" class="aside__menu">
+              <li><a href="#">Рыба</a>
+                <ul class="aside__menu-lvl2">
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Ленок</a></li>
+                  <li><a href="#">Муксун</a></li>
+                  <li><a href="#">Морской язык</a></li>
+                  <li><a href="#">Нерка</a></li>
+                  <li><a href="#">Омуль</a></li>
+                  <li><a href="#">Осетр</a></li>
+                  <li><a href="#">Палтус</a></li>
+                  <li><a href="#">Пелядь</a></li>
+                  <li><a href="#">Ряпушка</a></li>
+                  <li><a href="#">Сиг</a></li>
+                  <li><a href="#">Сом</a></li>
+                  <li><a href="#">Тунец</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Акула</a></li>
+                  <li><a href="#">Голец</a></li>
+                  <li><a href="#">Желтощек</a></li>
+                  <li><a href="#">Кижуч</a></li>
+                  <li><a href="#">Кит</a></li>
+                  <li><a href="#">Клыкач</a></li>
+                  <li><a href="#">Лакедра</a></li>
+                  <li><a href="#">Ледяная рыба</a></li>
+                  <li><a href="#">Мерлуза</a></li>
+                  <li><a href="#">Меч-рыба</a></li>
+                  <li><a href="#">Микижа</a></li>
+                  <li><a href="#">Морской черт</a></li>
+                  <li><a href="#">Налим</a></li>
+                  <li><a href="#">Пыжьян</a></li>
+                  <li><a href="#">Семга</a></li>
+                  <li><a href="#">Сибас</a></li>
+                  <li><a href="#">Стерлядь</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Морепродукты</a>
+                <ul class="aside__menu-lvl2">
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Ленок</a></li>
+                  <li><a href="#">Муксун</a></li>
+                  <li><a href="#">Морской язык</a></li>
+                  <li><a href="#">Нерка</a></li>
+                  <li><a href="#">Омуль</a></li>
+                  <li><a href="#">Осетр</a></li>
+                  <li><a href="#">Палтус</a></li>
+                  <li><a href="#">Пелядь</a></li>
+                  <li><a href="#">Ряпушка</a></li>
+                  <li><a href="#">Сиг</a></li>
+                  <li><a href="#">Микижа</a></li>
+                  <li><a href="#">Морской черт</a></li>
+                  <li><a href="#">Налим</a></li>
+                  <li><a href="#">Пыжьян</a></li>
+                  <li><a href="#">Семга</a></li>
+                  <li><a href="#">Сибас</a></li>
+                  <li><a href="#">Стерлядь</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Икра</a>
+                <ul class="aside__menu-lvl2">
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Ленок</a></li>
+                  <li><a href="#">Муксун</a></li>
+                  <li><a href="#">Морской язык</a></li>
+                  <li><a href="#">Нерка</a></li>
+                  <li><a href="#">Омуль</a></li>
+                  <li><a href="#">Осетр</a></li>
+                  <li><a href="#">Палтус</a></li>
+                  <li><a href="#">Пелядь</a></li>
+                  <li><a href="#">Ряпушка</a></li>
+                  <li><a href="#">Сиг</a></li>
+                  <li><a href="#">Сом</a></li>
+                  <li><a href="#">Тунец</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Овощи и фрукты</a>
+                <ul class="aside__menu-lvl2">
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Молочная продукция</a>
+                <ul class="aside__menu-lvl2">
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Ленок</a></li>
+                  <li><a href="#">Муксун</a></li>
+                  <li><a href="#">Морской язык</a></li>
+                  <li><a href="#">Нерка</a></li>
+                  <li><a href="#">Омуль</a></li>
+                  <li><a href="#">Осетр</a></li>
+                  <li><a href="#">Палтус</a></li>
+                  <li><a href="#">Пелядь</a></li>
+                  <li><a href="#">Ряпушка</a></li>
+                  <li><a href="#">Сиг</a></li>
+                  <li><a href="#">Сом</a></li>
+                  <li><a href="#">Тунец</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Мясо</a>
+                <ul class="aside__menu-lvl2">
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Сиг</a></li>
+                  <li><a href="#">Сом</a></li>
+                  <li><a href="#">Тунец</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Колбасы</a>
+                <ul class="aside__menu-lvl2">
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Сиг</a></li>
+                  <li><a href="#">Сом</a></li>
+                  <li><a href="#">Тунец</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Пельмени</a>
+                <ul class="aside__menu-lvl2">
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Приправы</a>
+                <ul class="aside__menu-lvl2">
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                  <li><a href="#">Барабуля</a></li>
+                  <li><a href="#">Белуга</a></li>
+                  <li><a href="#">Горбуша</a></li>
+                  <li><a href="#">Камбала</a></li>
+                  <li><a href="#">Кета</a></li>
+                  <li><a href="#">Китайский окунь</a></li>
+                  <li><a href="#">Корюшка</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Сом</a></li>
+                  <li><a href="#">Тунец</a></li>
+                  <li><a href="#">Хариус</a></li>
+                  <li><a href="#">Чавыча</a></li>
+                  <li><a href="#">Чир</a></li>
+                  <li><a href="#">Треска</a></li>
+                  <li><a href="#">Тугунок</a></li>
+                  <li><a href="#">Угорь</a></li>
+                  <li><a href="#">Форель</a></li>
+                  <li><a href="#">Фугу</a></li>
+                  <li><a href="#">Язь</a></li>
+                </ul>
+              </li>
+            </ul><a href="basket.html" class="aside__basket"><img src="img/basketaside.png" alt=""></a>
+          </section>
+        </div>
+        <div class="col-12 col-xl-10">
+          <nav class="headcrumbs"><a href="index.html" class="headcrumbs__link">Главная</a> <a href="#" class="headcrumbs__link">Каталог</a></nav>
+          <section class="contacts">
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <h1 class="title contacts__title">Контакты</h1>
+                <p class="contacts__text-s">Адрес</p>
+                <p class="contacts__text-b">108801, Россия, Московская область,<br>Москва, ул. Потаповская Роща, 6к1.</p>
+                <p class="contacts__text-s">Время работы</p>
+                <p class="contacts__text-b">пн-вс с 10.00 до 20.00</p>
+                <p class="contacts__text-s">Телефон</p><a href="tel:88000000000" class="contacts__text-b">8-800-000-00-00</a>
+                <p class="contacts__text-s">Email</p><a href="tel:88000000000" class="contacts__text-b">info@test.ru</a>
+              </div>
+              <div class="col-12 col-lg-6">
+                <h2 class="title contacts__title">Банковские реквизиты</h2>
+                <p class="contacts__text-b">Р/c № 4000000000000000 в<br>ВТБ 24 (ПАО) Г. МОСКВА<br>к/c 300000000000000000<br>БИК 000000000<br></p>
+                <div class="subscribe-form">
+                  <form action="POST">
+                    <div class="subscribe-form__wrapper">
+                      <h2 class="subscribe-form__title">Заголовок</h2><span><input type="text" placeholder="Имя" class="form-control form__input subscribe-form__input"> </span><span><input type="tel" placeholder="Телефон" class="form-control form__input subscribe-form__input"></span>
+                      <p class="subscribe-form__agreement">Я согласен условиями предоставления услуг и обработкой моих персональных данных при нажатии “Подписаться”</p><button type="submit" class="form-control btn subscribe-form__btn">подписаться</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="map">
+            <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/46/kirov/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Киров</a> <a href="https://yandex.ru/maps/46/kirov/stops/station__lh_9600180/?ll=49.687061%2C58.587015&source=wizgeo&utm_medium=mapframe&utm_source=maps&z=12.25" style="color:#eee;font-size:12px;position:absolute;top:14px;">Киров-Котласский — Яндекс.Карты</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUQVLfBWA" allowfullscreen="true" style="position:relative;"></iframe></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-2 d-none d-xl-block"></div>
+        <div class="col-12 col-xl-10">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-3">
+              <h3 class="footer__title js-footer">О компании</h3>
+              <nav class="footer__menu"><a href="#">О нас</a> <a href="#">Каталог</a> <a href="#">Гарантии</a> <a href="#">Рецепты</a> <a href="#">F.A.Q</a> <a href="#">Статьи</a> <a href="#">Отзывы</a> <a href="#">Контакты</a> <a href="#">Вакансии</a></nav>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <h3 class="footer__title js-footer">Категории</h3>
+              <nav class="footer__menu"><a href="#">Рыба</a> <a href="#">Морепродукты</a> <a href="#">Икра</a> <a href="#">Овощи и фрукты</a> <a href="#">Молочная продукция</a> <a href="#">Мясо</a> <a href="#">Колбасы</a> <a href="#">Пельмени</a> <a href="#">Приправы</a></nav>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <h3 class="footer__title">Контакты</h3>
+              <p class="footer__text">Наш адрес:</p>
+              <p class="footer__text-b">108801, г. Москва,<br>ул. Потаповская Роща, 6к1</p>
+              <p class="footer__text">Режим работы:</p>
+              <p class="footer__text-b">понедельник - воскресенье<br>с 10.00 до 20.00</p>
+              <p class="footer__text">Наш e-mail:</p><a href="mailto:info@maritimehistory.ru" class="footer__text-b">info@maritimehistory.ru</a>
+              <p class="footer__text">Мы в соцсетях:</p>
+              <div class="footer-social"><a href="#" class="footer-social__item" target="_blank"><img src="img/inst.svg" alt=""> </a><a href="#" class="footer-social__item" target="_blank"><img src="img/vk.svg" alt=""> </a><a href="#" class="footer-social__item" target="_blank"><img src="img/fb.svg" alt=""> </a><a href="#" class="footer-social__item" target="_blank"><img src="img/yt.svg" alt=""> </a><a href="#" class="footer-social__item" target="_blank"><img src="img/viber.svg" alt=""> </a><a href="#" class="footer-social__item" target="_blank"><img src="img/whatsapp.svg" alt=""></a></div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <p class="footer__text-s">Круглосуточная поддержка</p><a href="tel:80000000000" class="footer__tel">8 800 000 00 00 </a><a href="#" class="btn footer__btn js-call">заказать звонок</a>
+              <nav class="footer__menu"><a href="sitemap.html">Карта сайта</a> <a href="#">Пебличная оферта</a> <a href="#" class="js-subscribe">Подписка</a></nav>
+              <p class="footer__text">© ИП Матьякубова К.С.<br>ОГРНИП: 319774600567555<br>ИНН: 332104937342</p>
+            </div>
+          </div>
+          <div class="row footer__row">
+            <div class="col-12 col-sm-9">
+              <p class="footer__text">Maritime History ©2017-2021 г. Все права защищены.</p>
+            </div>
+            <div class="col-12 col-sm-3"><a href="#" class="footer__link"><svg width="135" height="19" viewBox="0 0 135 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32.2314 11.5487H27.8376L26.9994 13.5706H24.7551L28.9732 4.1349H31.1363L35.3679 13.5706H33.0696L32.2314 11.5487ZM31.5419 9.89068L30.0412 6.27815L28.5406 9.89068H31.5419Z" fill="#7A5F46" />
+                  <path d="M42.3795 13.5706L40.5543 10.9421H40.4462H38.5399V13.5706H36.3498V4.1349H40.4462C41.2844 4.1349 42.0099 4.27419 42.6228 4.55277C43.2447 4.83134 43.7224 5.22675 44.0559 5.73897C44.3894 6.25119 44.5561 6.85777 44.5561 7.55871C44.5561 8.25965 44.3849 8.86623 44.0424 9.37846C43.7089 9.88169 43.2312 10.2681 42.6093 10.5377L44.7319 13.5706H42.3795ZM42.3389 7.55871C42.3389 7.02852 42.1677 6.62413 41.8252 6.34555C41.4827 6.05799 40.9825 5.9142 40.3245 5.9142H38.5399V9.20322H40.3245C40.9825 9.20322 41.4827 9.05944 41.8252 8.77188C42.1677 8.48431 42.3389 8.07992 42.3389 7.55871Z" fill="#7A5F46" />
+                  <path d="M48.1197 5.9142H45.0913V4.1349H53.3382V5.9142H50.3098V13.5706H48.1197V5.9142Z" fill="#7A5F46" />
+                  <path d="M61.8442 11.8183V13.5706H54.5166V4.1349H61.6684V5.88724H56.6932V7.93614H61.0871V9.63457H56.6932V11.8183H61.8442Z" fill="#7A5F46" />
+                  <path d="M72.1987 13.5706L72.1852 7.90918L69.4002 12.5731H68.4133L65.6418 8.0305V13.5706H63.5868V4.1349H65.3984L68.9405 9.99852L72.4286 4.1349H74.2266L74.2537 13.5706H72.1987Z" fill="#7A5F46" />
+                  <path d="M84.9109 13.7324C83.9284 13.7324 83.0407 13.5212 82.2475 13.0988C81.4634 12.6765 80.846 12.0968 80.3953 11.36C79.9537 10.6141 79.7329 9.77835 79.7329 8.85275C79.7329 7.92716 79.9537 7.09591 80.3953 6.35903C80.846 5.61316 81.4634 5.02904 82.2475 4.60668C83.0407 4.18432 83.9284 3.97314 84.9109 3.97314C85.8933 3.97314 86.7765 4.18432 87.5607 4.60668C88.3448 5.02904 88.9622 5.61316 89.4128 6.35903C89.8635 7.09591 90.0888 7.92716 90.0888 8.85275C90.0888 9.77835 89.8635 10.6141 89.4128 11.36C88.9622 12.0968 88.3448 12.6765 87.5607 13.0988C86.7765 13.5212 85.8933 13.7324 84.9109 13.7324ZM84.9109 11.8722C85.4697 11.8722 85.9744 11.7464 86.425 11.4947C86.8757 11.2341 87.2272 10.8747 87.4796 10.4164C87.7409 9.95808 87.8716 9.43687 87.8716 8.85275C87.8716 8.26864 87.7409 7.74743 87.4796 7.28912C87.2272 6.83082 86.8757 6.47585 86.425 6.22423C85.9744 5.96363 85.4697 5.83333 84.9109 5.83333C84.352 5.83333 83.8473 5.96363 83.3967 6.22423C82.946 6.47585 82.59 6.83082 82.3286 7.28912C82.0763 7.74743 81.9501 8.26864 81.9501 8.85275C81.9501 9.43687 82.0763 9.95808 82.3286 10.4164C82.59 10.8747 82.946 11.2341 83.3967 11.4947C83.8473 11.7464 84.352 11.8722 84.9109 11.8722Z" fill="#7A5F46" />
+                  <path d="M95.8312 4.1349C96.6694 4.1349 97.395 4.27419 98.0079 4.55277C98.6298 4.83134 99.1074 5.22675 99.4409 5.73897C99.7744 6.25119 99.9411 6.85777 99.9411 7.55871C99.9411 8.25066 99.7744 8.85725 99.4409 9.37846C99.1074 9.89068 98.6298 10.2861 98.0079 10.5647C97.395 10.8343 96.6694 10.969 95.8312 10.969H93.925V13.5706H91.7348V4.1349H95.8312ZM95.7095 9.18974C96.3675 9.18974 96.8677 9.05045 97.2102 8.77188C97.5527 8.48431 97.724 8.07992 97.724 7.55871C97.724 7.02852 97.5527 6.62413 97.2102 6.34555C96.8677 6.05799 96.3675 5.9142 95.7095 5.9142H93.925V9.18974H95.7095Z" fill="#7A5F46" />
+                  <path d="M107.262 11.5487H102.868L102.03 13.5706H99.7857L104.004 4.1349H106.167L110.398 13.5706H108.1L107.262 11.5487ZM106.572 9.89068L105.072 6.27815L103.571 9.89068H106.572Z" fill="#7A5F46" />
+                  <path d="M117.41 13.5706L115.585 10.9421H115.477H113.57V13.5706H111.38V4.1349H115.477C116.315 4.1349 117.04 4.27419 117.653 4.55277C118.275 4.83134 118.753 5.22675 119.086 5.73897C119.42 6.25119 119.587 6.85777 119.587 7.55871C119.587 8.25965 119.415 8.86623 119.073 9.37846C118.739 9.88169 118.262 10.2681 117.64 10.5377L119.762 13.5706H117.41ZM117.369 7.55871C117.369 7.02852 117.198 6.62413 116.856 6.34555C116.513 6.05799 116.013 5.9142 115.355 5.9142H113.57V9.20322H115.355C116.013 9.20322 116.513 9.05944 116.856 8.77188C117.198 8.48431 117.369 8.07992 117.369 7.55871Z" fill="#7A5F46" />
+                  <path d="M121.322 4.1349H123.512V13.5706H121.322V4.1349Z" fill="#7A5F46" />
+                  <path d="M134.438 4.1349V13.5706H132.639L127.921 7.84178V13.5706H125.758V4.1349H127.57L132.274 9.86372V4.1349H134.438Z" fill="#7A5F46" />
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.013 16.5142C13.1325 16.5142 16.472 13.1846 16.472 9.07721C16.472 4.96986 13.1325 1.6402 9.013 1.6402C4.89349 1.6402 1.55397 4.96986 1.55397 9.07721C1.55397 13.1846 4.89349 16.5142 9.013 16.5142ZM9.013 18.0636C13.9907 18.0636 18.026 14.0403 18.026 9.07721C18.026 4.11416 13.9907 0.0908203 9.013 0.0908203C4.03526 0.0908203 0 4.11416 0 9.07721C0 14.0403 4.03526 18.0636 9.013 18.0636Z" fill="#7A5F46" />
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.01291 1.02061L4.70644 9.61966H13.3194L9.01291 1.02061ZM9.01291 4.48885L7.2193 8.07028H10.8065L9.01291 4.48885Z" fill="#7A5F46" />
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.87076 12.021H14.155L15.3021 14.3085L13.9122 15.0014L13.1945 13.5704H4.83116L4.11353 15.0014L2.72362 14.3085L3.87076 12.021Z" fill="#7A5F46" />
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- MODAL -->
+  <aside class="js-sidebars">
+    <section class="modal modal-call">
+      <div class="modal__wrapper modal-call__wrapper">
+        <div class="modal__exit"><img src="img/exit.svg" alt="" class="modal-call__exit"></div>
+        <h3 class="modal__title modal-call__title">Заполните форму<br>и мы Вам перезвоним</h3>
+        <div class="modal-form">
+          <form action="POST">
+            <div class="modal-form__wrapper"><span><input type="text" class="form-control form__input" placeholder="Имя"> </span><span><input type="tel" class="form-control form__input" placeholder="Телефон"></span></div>
+            <div class="modal-form__agreement">Я согласен условиями предоставления услуг и обработкой моих персональных данных при нажатии “Заказать звонок”</div><button type="submit" class="btn modal-form__btn">заказать звонок</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="modal modal-one-click">
+      <div class="modal__wrapper modal-one-click__wrapper">
+        <div class="modal__exit"><img src="img/exit.svg" alt="" class="modal-one-click__exit"></div>
+        <h3 class="modal__title modal-one-click__title">Купить в 1 клик</h3>
+        <div class="modal-one-click__items">
+          <div class="modal-one-click__item">
+            <div class="row">
+              <div class="col-4">
+                <div class="modal-one-click__img"><img src="img/card.jpg" alt=""></div>
+              </div>
+              <div class="col-8"><a href="#" class="modal-one-click__name">Семга свежемороженая Премиум чилийская</a>
+                <div class="row">
+                  <div class="col-4">
+                    <p class="modal-one-click__text">Кг:</p>
+                  </div>
+                  <div class="col-8 d-flex justify-content-between"><button class="modal-one-click__prev"><img src="img/arr.svg" alt=""></button>
+                    <div class="modal-one-click__text-b js-modal-count-kg">10</div><button class="modal-one-click__next"><img src="img/arr.svg" alt=""></button>
+                  </div>
+                  <div class="col-4">
+                    <p class="modal-one-click__text">Цена:</p>
+                  </div>
+                  <div class="col-8">
+                    <div class="modal-one-click__text-b js-modal-price">10 550 ₽</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-one-click__item">
+            <div class="row">
+              <div class="col-4">
+                <div class="modal-one-click__img"><img src="img/card.jpg" alt=""></div>
+              </div>
+              <div class="col-8"><a href="#" class="modal-one-click__name">Семга свежемороженая Премиум чилийская</a>
+                <div class="row">
+                  <div class="col-4">
+                    <p class="modal-one-click__text">Кг:</p>
+                  </div>
+                  <div class="col-8 d-flex justify-content-between"><button class="modal-one-click__prev"><img src="img/arr.svg" alt=""></button>
+                    <div class="modal-one-click__text-b js-modal-count-kg">10</div><button class="modal-one-click__next"><img src="img/arr.svg" alt=""></button>
+                  </div>
+                  <div class="col-4">
+                    <p class="modal-one-click__text">Цена:</p>
+                  </div>
+                  <div class="col-8">
+                    <div class="modal-one-click__text-b js-modal-price">10 550 ₽</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-one-click__item">
+            <div class="row">
+              <div class="col-4">
+                <div class="modal-one-click__img"><img src="img/card.jpg" alt=""></div>
+              </div>
+              <div class="col-8"><a href="#" class="modal-one-click__name">Семга свежемороженая Премиум чилийская</a>
+                <div class="row">
+                  <div class="col-4">
+                    <p class="modal-one-click__text">Кг:</p>
+                  </div>
+                  <div class="col-8 d-flex justify-content-between"><button class="modal-one-click__prev"><img src="img/arr.svg" alt=""></button>
+                    <div class="modal-one-click__text-b js-modal-count-kg">10</div><button class="modal-one-click__next"><img src="img/arr.svg" alt=""></button>
+                  </div>
+                  <div class="col-4">
+                    <p class="modal-one-click__text">Цена:</p>
+                  </div>
+                  <div class="col-8">
+                    <div class="modal-one-click__text-b js-modal-price">10 550 ₽</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-one-click__item">
+            <div class="row">
+              <div class="col-4">
+                <div class="modal-one-click__img"><img src="img/card.jpg" alt=""></div>
+              </div>
+              <div class="col-8"><a href="#" class="modal-one-click__name">Семга свежемороженая Премиум чилийская</a>
+                <div class="row">
+                  <div class="col-4">
+                    <p class="modal-one-click__text">Кг:</p>
+                  </div>
+                  <div class="col-8 d-flex justify-content-between"><button class="modal-one-click__prev"><img src="img/arr.svg" alt=""></button>
+                    <div class="modal-one-click__text-b js-modal-count-kg">10</div><button class="modal-one-click__next"><img src="img/arr.svg" alt=""></button>
+                  </div>
+                  <div class="col-4">
+                    <p class="modal-one-click__text">Цена:</p>
+                  </div>
+                  <div class="col-8">
+                    <div class="modal-one-click__text-b js-modal-price">10 550 ₽</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 class="modal__title modal-one-click__title">Заполните форму<br>и мы Вам перезвоним</h3>
+        <div class="modal-form">
+          <form action="POST">
+            <div class="modal-form__wrapper"><span><input type="tel" class="form-control form__input" placeholder="Телефон"></span></div>
+            <div class="modal-form__agreement">Я согласен условиями предоставления услуг и обработкой моих персональных данных при нажатии “Заказать звонок”</div><button type="submit" class="btn modal-form__btn">заказать звонок</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="modal modal-subscribe">
+      <div class="modal__wrapper modal-subscribe__wrapper">
+        <div class="modal__exit"><img src="img/exit.svg" alt="" class="modal-subscribe__exit"></div>
+        <h3 class="modal__title modal-subscribe__title">Подпишись на свежие<br>статьи и новости</h3>
+        <div class="modal-form">
+          <form action="POST">
+            <div class="modal-form__wrapper"><span><input type="text" class="form-control form__input" placeholder="Имя"> </span><span><input type="tel" class="form-control form__input" placeholder="Email"></span></div>
+            <div class="modal-form__agreement">Я согласен условиями предоставления услуг и обработкой моих персональных данных при нажатии “Подписаться”</div><button type="submit" class="btn modal-form__btn">подписаться</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="modal modal-job">
+      <div class="modal__wrapper modal-job__wrapper">
+        <div class="modal__exit"><img src="img/exit.svg" alt="" class="modal-job__exit"></div>
+        <h3 class="modal__title modal-call__title">Заполните форму<br>и мы Вам перезвоним</h3>
+        <div class="modal-form">
+          <form action="POST">
+            <div class="modal-form__wrapper"><span><input type="text" class="form-control form__input" placeholder="Имя"> </span><span><input type="tel" class="form-control form__input" placeholder="Телефон"> </span><span><input type="text" class="form-control form__input" placeholder="Вакансия"> </span><span><textarea name="your-resume" class="form-control form__textarea" id="yourresume" cols="30" rows="10" placeholder="Расскажите о себе"></textarea></span></div>
+            <div class="modal-form__agreement">Я согласен условиями предоставления услуг и обработкой моих персональных данных при нажатии “Отправить резюме”</div><button type="submit" class="btn modal-form__btn">Отправить резюме</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </aside><!-- !MODAL -->
   <script src="vendors~main.js"></script>
   <script src="main.js"></script>
 </body>

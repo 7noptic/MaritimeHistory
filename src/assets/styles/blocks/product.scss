@@ -4,7 +4,20 @@
   &__title {
     margin-bottom: 35px;
   }
+&__hit{
+  position: absolute;
+  top: 0;
+  left: 30%;
 
+  z-index: 900;
+}
+&__new{
+  position: absolute;
+  top: 0;
+  left: calc(30% + 90px);
+
+  z-index: 899;
+}
   &-price {
     font-size: 16px;
     line-height: 20px;
@@ -156,6 +169,22 @@
 
 @media screen and (max-width: 1599px) {
   .product {
+    &__hit{
+      left: 30%;
+      img{
+        width: 85px;
+        object-fit: cover;
+        height: 30px;
+      }
+    }
+    &__new{
+      left: calc(30% + 65px);
+      img{
+        width: 135px;
+        height: 30px;
+        object-fit:cover;
+      }
+    }
     &-price {
       font-size: 16px;
       line-height: 20px;
