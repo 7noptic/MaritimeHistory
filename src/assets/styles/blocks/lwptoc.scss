@@ -1,0 +1,25 @@
+.lwptoc{
+        margin-left: 60px;
+
+    &_item{
+        font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    display: block;
+    margin-bottom: 20px;
+    
+    }
+}
+@media screen and (max-width: 991px){
+    .lwptoc{
+            margin-left: 0;
+            margin-bottom: 30px;
+        &_item{
+            font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        display: block;
+        margin-bottom: 15px;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+.page{
+    padding-bottom: 60px;
+    &__title{
+        margin: 35px 0;
+    }
+    &__content{
+        max-width: 620px;
+        font-size: 14px;
+line-height: 18px;
+        p{
+            padding-bottom: 20px;
+        }
+        img{
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+        ul{
+            margin: 40px 0 40px 15px;
+            padding: 0;
+            columns: 150px 2;
+            li{
+                font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+margin-bottom: 20px;
+            }
+        }
+    }
+    &__img{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &-b{
+            margin-bottom: 35px;
+            width: 100%;
+        }
+        &-s{
+            width: 48%;
+            margin-bottom: 35px;
+        }
+    }
+}
+@media screen and (max-width:991px){
+    .page{
+        padding-bottom: 40px;
+        &__title{
+            margin: 25px 0;
+        }
+        &__content{
+            img{
+                margin-bottom: 40px;
+            }
+            font-size: 13px;
+    line-height: 17px;
+            p{
+                padding-bottom: 20px;
+            }
+            ul{
+                margin: 30px 0 30px 15px;
+                padding: 0;
+                columns: 150px 2;
+                li{
+                    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    margin-bottom: 15px;
+                }
+            }
+        }
+        
+        &__img{
+            margin-top: 40px;
+        }
+    }
+}
+@media screen and (max-width:767px){
+    .page{
+        padding-bottom: 30px;
+        &__content{
+            img{
+                margin-bottom: 30px;
+            }
+            font-size: 12px;
+            p{
+                padding-bottom: 15px;
+            }
+            ul{
+                margin: 25px 0 25px 15px;
+                li{
+    font-size: 14px;
+    line-height: 18px;
+                }
+            }
+        }
+        
+        &__img{
+            margin-top: 35px;
+        }
+    }
+}

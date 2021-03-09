@@ -26,7 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
             for (let i = 0; i < footerContent.length; i++) {
                 if (target == footerLink[i]) {
-                    console.log(footerContent[i]);
                     footerContent[i].classList.toggle('active');
                 }
             }
@@ -95,11 +94,11 @@ window.addEventListener('DOMContentLoaded', () => {
         if (target && target.classList.contains('sidebar-bg')) {
             e.preventDefault();
             modalBlock.classList.toggle('sidebar-bg');
-            allModal.forEach(item => {
-                if (item.classList.toggle('active')) {
-                    item.classList.remove('active');
+            for(let i =0; i < allModal.length; i++){
+                if (allModal[i].classList.toggle('active')) {
+                    allModal[i].classList.remove('active');
                 }
-            });
+            }
         }
     });
 
@@ -191,7 +190,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 for (let i = 0; i < subLinks.length; i++) {
                     if (subLinks[i] === e.target) {
-                        console.log(subLinks[i]);
                         hideTabs(subLinks, subTabs);
                         showTabs(i, subLinks, subTabs);
                     }
@@ -206,52 +204,151 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function hideTabs(link, content) {
-        link.forEach(item => {
-            item.classList.remove('active');
-        });
-        content.forEach(item => {
-            item.classList.remove('active');
-        });
+        for(let i = 0; i < link.length; i++){
+            link[i].classList.remove('active');
+        }
+        for(let i = 0; i < content.length; i++){
+            content[i].classList.remove('active');
+        }
     }
 
     /* SHOW HIDE CONTENT */
+    let jobParent = document.querySelector('.job'),
+        jobLink = document.querySelectorAll('.job-item__header'),
+        jobContent = document.querySelectorAll('.job-item__content');
 
+    if(jobParent){
+        toggleContent(jobLink, jobContent, 'job-item__header')
+    }
     function toggleContent(link, content, linkClass) {
         document.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains(linkClass)) {
                 e.preventDefault();
+                for(let i = 0; i < link.length; i++){
+                    if (e.target == link[i]) {
+                        link[i].classList.toggle('active');
+                        content[i].classList.toggle('active');
+                    }
+                }
+                /*
                 link.forEach((item, i) => {
                     if (e.target == item) {
                         item.classList.toggle('active');
                         content[i].classList.toggle('active');
                     }
                 });
+                */
             }
         });
     }
 
     /* card */
+    
     let cards = document.querySelectorAll('.card'),
         oldPrice = document.querySelectorAll('.card__price'),
         newPrice = document.querySelectorAll('.card__price-b'),
-        economy = document.querySelectorAll('.card__economy');
-    for(let i = 0; i < cards.length;i++){
-        let oldP = +oldPrice[i].innerHTML.replace(/\D+/g, ''),
-            newP = +newPrice[i].innerHTML.replace(/\D+/g, ''),
-            resultNum = oldP - newP,
-            resultDec =   (oldP - newP) / (oldP / 100);
-        if(resultNum > 0){
-            economy[i].innerHTML = `${resultNum} ₽ ${resultDec.toFixed(1)} %`;
-        }
-        else{
-            economy[i].innerHTML = '-';
-        }
+        economy = document.querySelectorAll('.card__economy'),
+        cardLike = document.querySelectorAll('.card__heart');
+        document.addEventListener('click', (e) => {
+            if(e.target && e.target.classList.contains('card__heart')){
+                e.preventDefault();
+            }
+        })
+        if(cards){
+            for(let i = 0; i < cards.length;i++){
+                let oldP = +oldPrice[i].innerHTML.replace(/\D+/g, ''),
+                    newP = +newPrice[i].innerHTML.replace(/\D+/g, ''),
+                    resultNum = oldP - newP,
+                    resultDec =   (oldP - newP) / (oldP / 100);
+                if(resultNum > 0){
+                    economy[i].innerHTML = `${resultNum} ₽ ${resultDec.toFixed(1)} %`;
+                }
+                else{
+                    economy[i].innerHTML = '-';
+                }
+            }
 
+            toggleCardLike(cardLike);
+        
+        function toggleCardLike(like) {
+            for(let i=0; i < like.length; i++) {
+                let trigger = false;
+                like[i].onclick = function(x) {
+                    return function() { 
+                        if(trigger){
+                            like[i].innerHTML = `
+                            <img src="img/cardheart.svg" class="card__heart-img" alt="">
+                            `
+                            ;
+                            trigger = false;
+                        }else{
+                            like[i].innerHTML = `
+                            <img src="img/cardheartactive.svg" class="card__heart-img" alt="">
+                            `
+                            ;
+                            trigger = true;
+
+
+                        }
+                    }
+                }(i)
+                
+            }
+        }
+        
+
+        }
+    
+    let modalCountKg = document.querySelectorAll('.js-modal-count-kg'),
+        modalCountPrev = document.querySelectorAll('.modal-one-click__prev'),
+        modalCountNext = document.querySelectorAll('.modal-one-click__next'),
+        modalPrice = document.querySelectorAll('.js-modal-price'),
+        productParent = document.querySelector('.product'),
+        productPlus = document.querySelector('.product-count__next'),
+        productMinus = document.querySelector('.product-count__prev'),
+        productCount = document.querySelector('.product-count__num');
+
+    if(productParent){
+        let count = 6;
+        productCount.innerHTML = count;
+        productPlus.addEventListener('click', (e) => {
+            e.preventDefault();
+                productCount.innerHTML = ++count;
+        });
+        productMinus.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(count > 0){
+                productCount.innerHTML = --count;
+            }
+        });
     }
-    let countKg = document.querySelectorAll('.js-modal-count-kg'),
-        countPrev = document.querySelectorAll('.modal-one-click__prev'),
-        countNext = document.querySelectorAll('.modal-one-click__prev');
-
+    if(modalOneClick){
+        toggleModalCount(modalCountPrev, modalCountKg, modalCountNext);
+        
+        function toggleModalCount(prev, count ,next) {
+            for(let i=0; i < count.length; i++) {
+                let price =  +modalPrice[i].innerHTML.replace(/\D+/g, '');
+                count[i].innerHTML = 1
+                next[i].onclick = function(x) {
+                    return function() { 
+                        count[i].innerHTML = +count[i].innerHTML + 1;
+                        modalPrice[i].innerHTML = +modalPrice[i].innerHTML.replace(/\D+/g, '') + price + ' ₽';
+                    }
+                }(i)
+                prev[i].onclick = function(x) {
+                        return function() { 
+                            if(+count[i].innerHTML > 0){
+                            count[i].innerHTML = +count[i].innerHTML - 1;
+                            modalPrice[i].innerHTML = +modalPrice[i].innerHTML.replace(/\D+/g, '') - price + ' ₽';
+                        }
+                    }
+                    
+                }(i)
+            }
+        }
+        
+    }
+    
 
     /* SWIPER */
 
@@ -269,7 +366,6 @@ window.addEventListener('DOMContentLoaded', () => {
         },
 
     });
-
     let sliderNewsBlock1 = new Swiper('.swiper-container-news-block-1', {
         slidesPerView: 1,
         spaceBetween: 50,
@@ -314,7 +410,6 @@ window.addEventListener('DOMContentLoaded', () => {
             prevEl: '.news-block__prev-4'
         },
     });
-
     let sliderTags = new Swiper('.swiper-container-tags', {
         slidesPerView: 'auto',
         spaceBetween: 20,
@@ -326,6 +421,21 @@ window.addEventListener('DOMContentLoaded', () => {
         navigation: {
             nextEl: '.tags__next',
             prevEl: '.tags__prev'
+        },
+
+
+    });
+    let sliderTags2 = new Swiper('.swiper-container-tags-2', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+
+        navigation: {
+            nextEl: '.tags-2__next',
+            prevEl: '.tags-2__prev'
         },
 
 
@@ -374,7 +484,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     });
-    var galleryThumbs = new Swiper('.gallery-thumbs', {
+    let galleryThumbs = new Swiper('.gallery-thumbs', {
         spaceBetween: 30,
         autoplay:true,
         slidesPerView: 4,
@@ -383,7 +493,7 @@ window.addEventListener('DOMContentLoaded', () => {
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
     });
-    var galleryTop = new Swiper('.gallery-top', {
+    let galleryTop = new Swiper('.gallery-top', {
         spaceBetween: 0,
         autoplay:true,
         navigation: {
@@ -407,9 +517,9 @@ window.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const target = event.target;
             if (target && target.tagName == 'LI') {
-                ratingStar.forEach((item, i) => {
-                    item.classList.remove('active');
-                });
+                for(let i = 0; i < ratingStar.length; i++){
+                    ratingStar[i].classList.remove('active')
+                }
                 for (let i = 0; i => ratingStar.length; i++) {
                     if (ratingStar[i] == target) {
                         ratingStar[i].classList.add('active');
@@ -420,20 +530,10 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             }
-
         });
     }
-    /* CARD HEART */
-    let card = document.querySelectorAll('.card');
-    if (card) {
-        document.addEventListener('click', (e) => {
 
-            if (e.target && e.target.classList.contains('card__heart-img')) {
-                e.preventDefault();
-                console.log('asdfasdf');
-            }
-        });
-    }
+    
 
 
     /* VIDEO */

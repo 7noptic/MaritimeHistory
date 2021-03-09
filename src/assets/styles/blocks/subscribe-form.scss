@@ -1,20 +1,22 @@
 .subscribe-form {
   margin-top: 70px;
-  max-width: 650px;
+  max-width: 620px;
   padding: 50px 90px;
   background-image: url('../img/subscribebg-l.svg'), url('../img/subscribebg-r.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left, right;
+  width: 100%;
 
   &__wrapper {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
 
     & > h2 {
       font-weight: 400;
-      margin: 0 auto;
+      margin: 0;
       font-family: Yeseva One;
       font-size: 20px;
       line-height: 30px;
@@ -58,7 +60,7 @@
     &__wrapper {
       & > h2 {
         font-weight: 400;
-        margin: 0 auto;
+        margin: 0;
         font-size: 20px;
         line-height: 30px;
         text-align: center;
@@ -95,11 +97,11 @@
 
 @media screen and (max-width: 991px) {
   .subscribe-form {
-    margin-top: 75px;
+    margin: 75px auto 25px;
 
     &__wrapper {
       & > h2 {
-        margin: 0 auto;
+        margin: 0;
         font-size: 20px;
         line-height: 30px;
         text-align: center;

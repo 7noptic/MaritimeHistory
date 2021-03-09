@@ -1,0 +1,52 @@
+.contacts{
+    .subscribe-form{
+        margin-top: 0;
+    }
+    &__title{
+        margin: 35px 0;
+
+    }
+    &__text{
+        &-s{
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            padding-bottom: 15px;
+        }
+        &-b{
+            font-size: 22px;
+            line-height: 28px;
+            padding-bottom: 50px;
+            display: block;
+        }
+
+    }
+    margin-bottom: 40px;
+}
+@media screen and (max-width:767px){
+    .contacts{
+        .subscribe-form{
+            margin-top: 0;
+        }
+        &__title{
+            margin: 25px 0;
+    
+        }
+        &__text{
+            &-s{
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 17px;
+                padding-bottom: 15px;
+            }
+            &-b{
+                font-size: 16px;
+    line-height: 22px;
+    padding-bottom: 35px;
+    display: block;
+            }
+    
+        }
+        margin-bottom: 35px;
+    }
+}

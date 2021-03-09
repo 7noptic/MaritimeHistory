@@ -1,9 +1,16 @@
 .faq{
+    padding-bottom: 60px;
+    &__title{
+        margin: 35px 0;
+    }
     &-block{
         padding: 60px 0;
         &__title{
             padding-bottom: 35px;
         }
+    }
+    &-form{
+        margin-left: 60px;
     }
     &-item{
         margin-bottom: 20px;
@@ -26,6 +33,9 @@
 }
 @media screen and (max-width: 991px){
     .faq{
+        &-form{
+            margin: 35px 0;
+        }
         &-block{
             padding: 40px 0;
             &__title{
@@ -51,6 +61,7 @@
 }
 @media screen and (max-width: 575px){
     .faq{
+        padding-bottom: 30px;
         &-block{
             padding: 40px 0;
             &__title{

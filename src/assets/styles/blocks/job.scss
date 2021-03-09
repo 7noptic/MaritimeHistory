@@ -1,0 +1,130 @@
+.job{
+    &__title{
+        margin: 35px 0;
+    }
+    &__subtitle{
+        margin-bottom: 20px;
+        font-family: Yeseva One;
+            font-size: 20px;
+            line-height: 24px;
+    }
+    &__block{
+        margin-bottom: 60px;
+        max-width: 600px;
+    }
+    &-item{
+        font-size: 14px;
+        line-height: 18px;
+        
+        border-top: 1px solid rgba($color: $brown, $alpha: .5);
+        &__header{
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            transition: $transition4;
+            cursor: pointer;
+            .job-item__arrow{
+                transition: $transition4;
+                transform: rotate(0deg);
+            }
+            p,span{
+                transition: $transition2;
+            }
+            p{
+                width: 55%;
+            }
+            span{
+                &:first-child,:first-of-type{
+                    width: 35%;
+display: flex;
+justify-content: center;
+                }
+                &:last-child,&:last-of-type{
+                   
+                }
+            }
+            &:hover{
+                 p,span{
+                    color: $gold;
+                }
+            }
+           &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 0;
+                height: 100%;
+                display: block;
+                opacity: 0;
+            }
+            &.active{
+                transition: $transition4;
+                .job-item__arrow{
+                    transition: $transition4;
+                    transform: rotate(180deg);
+                    opacity: .5;
+                    justify-content: flex-start;
+                }
+            }
+            
+        }
+        &__arrow{
+ width: 10%;
+                    display: flex;
+                    justify-content: flex-end;
+        }
+        &__name{
+            margin-bottom: 0!important;
+        }
+        &__price{
+            font-weight: 600;
+        }
+        p{
+            margin-bottom: 20px;
+        }
+        &__btn{
+            padding: 13px 50px;
+            margin-bottom: 30px;
+        }
+        &:last-child,&:last-of-type{
+            border-bottom: 1px solid rgba($color: $brown, $alpha: .5);
+        }
+        &__content{
+            display: none;
+            &.active{
+                display: block;
+            }
+        }
+    }
+}
+@media screen and (max-width:575px){
+    .job{
+        &__block{
+            margin-bottom: 30px;
+        }
+        &-item{
+            &__header{
+                flex-wrap: wrap;
+                p{
+                    width: 100%;
+                }
+                span{
+                   
+                    &:last-child,&:last-of-type{
+                        display: none;
+                    }
+                } 
+            }
+            &__price{
+                width: 100%;
+                            text-align: end;
+                justify-content: flex-end;
+                margin-top: 20px;
+            }
+        }
+        
+    }
+}

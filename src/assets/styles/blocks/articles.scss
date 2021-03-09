@@ -1,0 +1,32 @@
+.articles{
+    &__item{
+        margin-bottom: 35px;
+    }
+    &__link{
+        font-size: 20px;
+        line-height: 30px;
+        max-width: 600px;
+        font-weight: 400;
+        padding-bottom: 15px;
+        font-family: Yeseva One;
+        display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -moz-box;
+            -moz-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            line-clamp: 3;
+            box-orient: vertical;
+            height: 95px;
+    }
+    &__img{
+        width: 100%;
+        object-fit: cover;
+        height: 300px;
+    }
+}
+@media screen and (max-width: 575px){
+
+}

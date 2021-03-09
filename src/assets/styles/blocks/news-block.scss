@@ -14,6 +14,9 @@
         transform: rotate(180deg);
         cursor: pointer;
     }
+    .article__item{
+        margin-bottom: 0;
+    }
 }
 .js-news-block-tab{
     display: none;
