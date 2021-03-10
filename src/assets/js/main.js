@@ -336,19 +336,19 @@ window.addEventListener('DOMContentLoaded', () => {
                     basketItemSum[i].innerHTML = +count[i].innerHTML * price + ' ₽';
                     basketResultPrice.innerHTML = +basketResultPrice.innerHTML.replace(/\D+/g, '') + price  + ' ₽';
                     basketResultSum.innerHTML = +basketResultSum.innerHTML.replace(/\D+/g, '') + (+count[i].innerHTML * price) + ' ₽';
+                    orderFinal.innerHTML = +basketResultSum.innerHTML.replace(/\D+/g, '') + ' ₽';
                     orderPrice.innerHTML = +basketResultSum.innerHTML.replace(/\D+/g, '') + ' ₽';
                     basketResultKg.innerHTML = +basketResultKg.innerHTML.replace(/\D+/g, '') + kg;
                     if(i+1 == basketItems.length && +basketResultSum.innerHTML.replace(/\D+/g, '') != 0){
                         basketResultSum.innerHTML = +basketResultSum.innerHTML.replace(/\D+/g, '') + +orderDelivery.innerHTML.replace(/\D+/g, '') - +  +orderDiscount.innerHTML.replace(/\D+/g, '') + ' ₽';
                         orderFinal.innerHTML = +basketResultSum.innerHTML.replace(/\D+/g, '') + ' ₽';
                     }
+                    orderFinal.innerHTML = +basketResultSum.innerHTML.replace(/\D+/g, '') + ' ₽';
                     next[i].onclick = function(x) {
                         return function() { 
                             count[i].innerHTML = +count[i].innerHTML + 1;
                             basketItemSum[i].innerHTML = +count[i].innerHTML * price + ' ₽';
-                            basketResultKg.innerHTML = 0;
-                            basketResultPrice.innerHTML = 0;
-                            basketResultSum.innerHTML = 0;
+                            nullData();
                             toggleBasketCount(basketItemMinus, basketItemCount, basketItemPlus);
                         }
                     }(i)
@@ -357,9 +357,7 @@ window.addEventListener('DOMContentLoaded', () => {
                                 if(+count[i].innerHTML > 0){
                                 count[i].innerHTML = +count[i].innerHTML - 1;
                                 basketItemSum[i].innerHTML = +count[i].innerHTML * price + ' ₽';
-                                basketResultKg.innerHTML = 0;
-                                basketResultPrice.innerHTML = 0;
-                                basketResultSum.innerHTML = 0;
+                                nullData();
                                 toggleBasketCount(basketItemMinus, basketItemCount, basketItemPlus);
                             }
                         }
@@ -368,14 +366,19 @@ window.addEventListener('DOMContentLoaded', () => {
                     basketItemDelete[i].onclick = function (x) {
                         return function() { 
                             basketItems[i].remove();
-                            basketResultKg.innerHTML = 0;
-                            basketResultPrice.innerHTML = 0;
-                            basketResultSum.innerHTML = 0;
+                            nullData();
                             toggleBasketCount(basketItemMinus, basketItemCount, basketItemPlus);
                             
                             
                     }
                     }(i)
+                    function nullData(){
+                        basketResultKg.innerHTML = 0;
+                        basketResultPrice.innerHTML = 0;
+                        basketResultSum.innerHTML = 0;
+                        orderPrice.innerHTML = 0;
+                        orderFinal.innerHTML = 0;
+                    }
                 }
             }
         }
