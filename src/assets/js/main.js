@@ -113,7 +113,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let reviewsBlockParent = document.querySelector('.reviews-block'),
         newsBlockParent = document.querySelector('.news-block'),
         regionParent = document.querySelector('.region'),
-        productDescrParent = document.querySelector('.product-descr');
+        productDescrParent = document.querySelector('.product-descr'),
+        orderParent = document.querySelector('.order');
 
 
 
@@ -122,6 +123,12 @@ window.addEventListener('DOMContentLoaded', () => {
             reviewsBlockLink = reviewsBlockParent.querySelectorAll('.reviews-block__link');
 
         toggleTabs(0, reviewsBlockLink, reviewsBlockTabs, reviewsBlockParent, 'reviews-block__link');
+    }
+    if (orderParent) {
+        let orderTabs = orderParent.querySelectorAll('.js-order-tabs'),
+        orderLink = orderParent.querySelectorAll('.order__link');
+
+        toggleTabs(0, orderLink, orderTabs, orderParent, 'order__link');
     }
     if (newsBlockParent) {
         let newsBlockTabs = newsBlockParent.querySelectorAll('.js-news-block-tab'),
@@ -230,14 +237,6 @@ window.addEventListener('DOMContentLoaded', () => {
                         content[i].classList.toggle('active');
                     }
                 }
-                /*
-                link.forEach((item, i) => {
-                    if (e.target == item) {
-                        item.classList.toggle('active');
-                        content[i].classList.toggle('active');
-                    }
-                });
-                */
             }
         });
     }
@@ -298,7 +297,7 @@ window.addEventListener('DOMContentLoaded', () => {
         
 
         }
-    
+    /* basket */
     let modalCountKg = document.querySelectorAll('.js-modal-count-kg'),
         modalCountPrev = document.querySelectorAll('.modal-one-click__prev'),
         modalCountNext = document.querySelectorAll('.modal-one-click__next'),
@@ -306,7 +305,80 @@ window.addEventListener('DOMContentLoaded', () => {
         productParent = document.querySelector('.product'),
         productPlus = document.querySelector('.product-count__next'),
         productMinus = document.querySelector('.product-count__prev'),
-        productCount = document.querySelector('.product-count__num');
+        productCount = document.querySelector('.product-count__num'),
+        basketParent = document.querySelector('.basket'),
+        basketItems = document.getElementsByClassName('basket-item'),
+        basketItemNum = document.getElementsByClassName('js-basket-num'),
+        basketItemCount = document.getElementsByClassName('js-basket-kg'),
+        basketItemPlus = document.getElementsByClassName('basket__next'),
+        basketItemMinus = document.getElementsByClassName('basket__prev'),
+        basketItemSum = document.getElementsByClassName('js-basket-sum'),
+        basketItemPrice = document.getElementsByClassName('js-basket-price'),
+        basketItemDelete = document.getElementsByClassName('js-basket-delete'),
+        basketResultPrice = document.querySelector('.js-basket-result-price'),
+        basketResultSum = document.querySelector('.js-basket-result-sum'),
+        basketResultKg = document.querySelector('.js-basket-result-kg'),
+        orderPrice = document.querySelector('.js-order-price'),
+        orderDelivery = document.querySelector('.js-order-delivery'),
+        orderDiscount = document.querySelector('.js-order-discount'),
+        orderFinal = document.querySelector('.js-order-final');
+
+        if(basketParent){
+            toggleBasketCount(basketItemMinus, basketItemCount, basketItemPlus);
+        
+            function toggleBasketCount(prev, count ,next) {
+                for(let i=0; i < basketItems.length; i++) {
+                    basketItemNum[i].innerHTML = i + 1;
+                    let price =  +basketItemPrice[i].innerHTML.replace(/\D+/g, ''),
+                        kg = +basketItemCount[i].innerHTML.replace(/\D+/g, ''),
+                        sum = +basketItemSum[i].innerHTML.replace(/\D+/g, '');
+
+                    basketItemSum[i].innerHTML = +count[i].innerHTML * price + ' ₽';
+                    basketResultPrice.innerHTML = +basketResultPrice.innerHTML.replace(/\D+/g, '') + price  + ' ₽';
+                    basketResultSum.innerHTML = +basketResultSum.innerHTML.replace(/\D+/g, '') + (+count[i].innerHTML * price) + ' ₽';
+                    orderPrice.innerHTML = +basketResultSum.innerHTML.replace(/\D+/g, '') + ' ₽';
+                    basketResultKg.innerHTML = +basketResultKg.innerHTML.replace(/\D+/g, '') + kg;
+                    if(i+1 == basketItems.length && +basketResultSum.innerHTML.replace(/\D+/g, '') != 0){
+                        basketResultSum.innerHTML = +basketResultSum.innerHTML.replace(/\D+/g, '') + +orderDelivery.innerHTML.replace(/\D+/g, '') - +  +orderDiscount.innerHTML.replace(/\D+/g, '') + ' ₽';
+                        orderFinal.innerHTML = +basketResultSum.innerHTML.replace(/\D+/g, '') + ' ₽';
+                    }
+                    next[i].onclick = function(x) {
+                        return function() { 
+                            count[i].innerHTML = +count[i].innerHTML + 1;
+                            basketItemSum[i].innerHTML = +count[i].innerHTML * price + ' ₽';
+                            basketResultKg.innerHTML = 0;
+                            basketResultPrice.innerHTML = 0;
+                            basketResultSum.innerHTML = 0;
+                            toggleBasketCount(basketItemMinus, basketItemCount, basketItemPlus);
+                        }
+                    }(i)
+                    prev[i].onclick = function(x) {
+                            return function() { 
+                                if(+count[i].innerHTML > 0){
+                                count[i].innerHTML = +count[i].innerHTML - 1;
+                                basketItemSum[i].innerHTML = +count[i].innerHTML * price + ' ₽';
+                                basketResultKg.innerHTML = 0;
+                                basketResultPrice.innerHTML = 0;
+                                basketResultSum.innerHTML = 0;
+                                toggleBasketCount(basketItemMinus, basketItemCount, basketItemPlus);
+                            }
+                        }
+                        
+                    }(i)
+                    basketItemDelete[i].onclick = function (x) {
+                        return function() { 
+                            basketItems[i].remove();
+                            basketResultKg.innerHTML = 0;
+                            basketResultPrice.innerHTML = 0;
+                            basketResultSum.innerHTML = 0;
+                            toggleBasketCount(basketItemMinus, basketItemCount, basketItemPlus);
+                            
+                            
+                    }
+                    }(i)
+                }
+            }
+        }
 
     if(productParent){
         let count = 6;
@@ -322,6 +394,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    /*modal one click */
     if(modalOneClick){
         toggleModalCount(modalCountPrev, modalCountKg, modalCountNext);
         
@@ -451,6 +524,21 @@ window.addEventListener('DOMContentLoaded', () => {
         navigation: {
             nextEl: '.reviews-tabs__next',
             prevEl: '.reviews-tabs__prev'
+        },
+
+
+    });
+    let sliderOrderTabs = new Swiper('.swiper-container-order', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+
+        navigation: {
+            nextEl: '.order__next',
+            prevEl: '.order__prev'
         },
 
 

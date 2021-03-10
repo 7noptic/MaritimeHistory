@@ -9,14 +9,14 @@
   top: 0;
   left: 30%;
 
-  z-index: 900;
+  z-index: 100;
 }
 &__new{
   position: absolute;
   top: 0;
   left: calc(30% + 90px);
 
-  z-index: 899;
+  z-index: 100;
 }
   &-price {
     font-size: 16px;
