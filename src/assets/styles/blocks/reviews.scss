@@ -130,6 +130,21 @@
 @media screen and (max-width: 575px){
   .reviews{
     padding: 25px 0;
+    &-block{
+      &__wrapper{
+        display: flex;justify-content: center;
+      }
+      &__link{
+        &:last-of-type{
+          margin-right: 0!important;
+
+        }
+      }
+      &__nav{
+display: inline-flex;
+        width: auto;
+      }
+    }
     &-form{
       max-width: calc(100% + 30px);
       width: calc(100% + 30px);
