@@ -32,3 +32,38 @@
     }
   }
 }
+.kama_breadcrumbs{
+  margin: 0 -15px!important;
+  .container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    & > span{
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 1;
+      transition: $transition4;
+      padding-right: 30px;
+      position: relative;
+      &.kb_title{
+        opacity: .5;
+        padding-right: 0;
+      }
+      &.kb_sep{
+        position: relative;
+        padding-right: 0;
+
+        &::after {
+          content: url('../img/hc.svg');
+          display: inline-block;
+          position: absolute;
+          top: 0px;
+
+          right: 12px;
+        }
+      }
+    }
+  }
+
+}

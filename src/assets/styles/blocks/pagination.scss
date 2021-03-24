@@ -1,15 +1,30 @@
 .pagination {
-  width: 300px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 0 auto;
 
+span, a{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: Geometria;
+  display: block;
+  margin-right: 20px;
+  &.current{
+    background: linear-gradient(180deg, #FFE249 -2.35%, #B36C19 114.54%);
+    border-radius: 50%;
+    padding: 5px 11px;
+    color: #fff;
+  }
+}
   & > a {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     font-family: Geometria;
+    display: block;
+    margin-right: 20px;
 
     &.active {
       background: linear-gradient(180deg, #FFE249 -2.35%, #B36C19 114.54%);
@@ -18,4 +33,8 @@
       color: #fff;
     }
   }
+}
+.nav-links{
+  display: flex;
+  align-items: center;
 }
