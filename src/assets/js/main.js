@@ -114,10 +114,22 @@ window.addEventListener('DOMContentLoaded', () => {
         newsBlockParent = document.querySelector('.news-block'),
         regionParent = document.querySelector('.region'),
         productDescrParent = document.querySelector('.product-descr'),
-        orderParent = document.querySelector('.order');
+        orderParent = document.querySelector('.order'),
+        productBlockParent = document.querySelector('.product-block'),
+        boardBlockParent = document.querySelector('.board');
 
+    if (boardBlockParent) {
+        let boardBlockTabs = boardBlockParent.querySelectorAll('.js-banner-tab'),
+            boardBlockLink = boardBlockParent.querySelectorAll('.js-banner-link');
 
+        toggleTabs(0, boardBlockLink, boardBlockTabs, boardBlockParent, 'js-banner-link');
+    }
+    if (productBlockParent) {
+        let productBlockTabs = productBlockParent.querySelectorAll('.js-product-tab'),
+            productBlockLink = productBlockParent.querySelectorAll('.js-product-link');
 
+        toggleTabs(0, productBlockLink, productBlockTabs, productBlockParent, 'js-product-link');
+    }
     if (reviewsBlockParent) {
         let reviewsBlockTabs = reviewsBlockParent.querySelectorAll('.js-reviews-block-tab'),
             reviewsBlockLink = reviewsBlockParent.querySelectorAll('.reviews-block__link');
@@ -242,7 +254,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     /* card */
-    
+
     let cards = document.querySelectorAll('.card'),
         oldPrice = document.querySelectorAll('.card__price'),
         newPrice = document.querySelectorAll('.card__price-b'),
@@ -268,12 +280,12 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             toggleCardLike(cardLike);
-        
+
         function toggleCardLike(like) {
             for(let i=0; i < like.length; i++) {
                 let trigger = false;
                 like[i].onclick = function(x) {
-                    return function() { 
+                    return function() {
                         if(trigger){
                             like[i].innerHTML = `
                             <img src="img/cardheart.svg" class="card__heart-img" alt="">
@@ -291,10 +303,10 @@ window.addEventListener('DOMContentLoaded', () => {
                         }
                     }
                 }(i)
-                
+
             }
         }
-        
+
 
         }
     /* basket */
@@ -325,7 +337,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if(basketParent){
             toggleBasketCount(basketItemMinus, basketItemCount, basketItemPlus);
-        
+
             function toggleBasketCount(prev, count ,next) {
                 for(let i=0; i < basketItems.length; i++) {
                     basketItemNum[i].innerHTML = i + 1;
@@ -345,7 +357,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
                     orderFinal.innerHTML = +basketResultSum.innerHTML.replace(/\D+/g, '') + ' ₽';
                     next[i].onclick = function(x) {
-                        return function() { 
+                        return function() {
                             count[i].innerHTML = +count[i].innerHTML + 1;
                             basketItemSum[i].innerHTML = +count[i].innerHTML * price + ' ₽';
                             nullData();
@@ -353,7 +365,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         }
                     }(i)
                     prev[i].onclick = function(x) {
-                            return function() { 
+                            return function() {
                                 if(+count[i].innerHTML > 0){
                                 count[i].innerHTML = +count[i].innerHTML - 1;
                                 basketItemSum[i].innerHTML = +count[i].innerHTML * price + ' ₽';
@@ -361,15 +373,15 @@ window.addEventListener('DOMContentLoaded', () => {
                                 toggleBasketCount(basketItemMinus, basketItemCount, basketItemPlus);
                             }
                         }
-                        
+
                     }(i)
                     basketItemDelete[i].onclick = function (x) {
-                        return function() { 
+                        return function() {
                             basketItems[i].remove();
                             nullData();
                             toggleBasketCount(basketItemMinus, basketItemCount, basketItemPlus);
-                            
-                            
+
+
                     }
                     }(i)
                     function nullData(){
@@ -400,31 +412,31 @@ window.addEventListener('DOMContentLoaded', () => {
     /*modal one click */
     if(modalOneClick){
         toggleModalCount(modalCountPrev, modalCountKg, modalCountNext);
-        
+
         function toggleModalCount(prev, count ,next) {
             for(let i=0; i < count.length; i++) {
                 let price =  +modalPrice[i].innerHTML.replace(/\D+/g, '');
                 count[i].innerHTML = 1
                 next[i].onclick = function(x) {
-                    return function() { 
+                    return function() {
                         count[i].innerHTML = +count[i].innerHTML + 1;
                         modalPrice[i].innerHTML = +modalPrice[i].innerHTML.replace(/\D+/g, '') + price + ' ₽';
                     }
                 }(i)
                 prev[i].onclick = function(x) {
-                        return function() { 
+                        return function() {
                             if(+count[i].innerHTML > 0){
                             count[i].innerHTML = +count[i].innerHTML - 1;
                             modalPrice[i].innerHTML = +modalPrice[i].innerHTML.replace(/\D+/g, '') - price + ' ₽';
                         }
                     }
-                    
+
                 }(i)
             }
         }
-        
+
     }
-    
+
 
     /* SWIPER */
 
@@ -624,7 +636,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
+
 
 
     /* VIDEO */

@@ -19,7 +19,21 @@
     }
   }
 }
-
+.tab{
+  display: none;
+  transform: scale(0);
+  visibility: hidden;
+  opacity: 0;
+  transition: $transition4;
+  &.active{
+    animation: showTabs .5s;
+    display: flex;
+    flex-wrap: wrap;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 @media screen and (max-width: 1599px) {
   .tabs {
     &__nav {

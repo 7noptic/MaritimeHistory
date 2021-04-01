@@ -9,7 +9,7 @@
     font-weight: 800;
     transition: none;
     cursor: pointer;
-    &:hover{
+    &:hover,&.active{
         background: linear-gradient(180deg, #FFE249 -1%, #B36C19 100%);
         color: #fff;
     }
@@ -19,7 +19,7 @@
         background: #FAF6F0;
         border: 1px solid $brown;
         font-weight: 400;
-        &:hover{
+        &:hover,&.active{
             border: 1px solid #FAF6F0;
         }
     }
