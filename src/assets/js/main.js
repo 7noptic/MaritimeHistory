@@ -111,52 +111,47 @@ window.addEventListener('DOMContentLoaded', () => {
 
     /* TABS */
     let reviewsBlockParent = document.querySelector('.reviews-block'),
+        reviewsBlockTabs = document.querySelectorAll('.js-reviews-block-tab'),
+        reviewsBlockLink = document.querySelectorAll('.reviews-block__link'),
         newsBlockParent = document.querySelector('.news-block'),
+        newsBlockTabs = document.querySelectorAll('.js-news-block-tab'),
+        newsBlockLink = document.querySelectorAll('.news-block__link'),
         regionParent = document.querySelector('.region'),
+        regionTabs = document.querySelectorAll('.js-region-tabs'),
+        regionLink = document.querySelectorAll('.region__link'),
         productDescrParent = document.querySelector('.product-descr'),
+        productDescrTabs = document.querySelectorAll('.js-product-descr-tab'),
+        productDescrLink = document.querySelectorAll('.product-descr__link'),
         orderParent = document.querySelector('.order'),
+        orderTabs = document.querySelectorAll('.js-order-tabs'),
+        orderLink = document.querySelectorAll('.order__link'),
         productBlockParent = document.querySelector('.product-block'),
-        boardBlockParent = document.querySelector('.board');
 
-    if (boardBlockParent) {
-        let boardBlockTabs = boardBlockParent.querySelectorAll('.js-banner-tab'),
-            boardBlockLink = boardBlockParent.querySelectorAll('.js-banner-link');
+        productBlockTabs = document.querySelectorAll('.js-product-tab'),
+        productBlockLink = document.querySelectorAll('.js-product-link'),
+        boardBlockParent = document.querySelector('.board'),
+        boardBlockTabs = document.querySelectorAll('.js-banner-tab'),
+        boardBlockLink = document.querySelectorAll('.js-banner-link');
 
+    if (boardBlockParent && boardBlockLink.length > 0 && boardBlockTabs.length > 0) {
         toggleTabs(0, boardBlockLink, boardBlockTabs, boardBlockParent, 'js-banner-link');
     }
-    if (productBlockParent) {
-        let productBlockTabs = productBlockParent.querySelectorAll('.js-product-tab'),
-            productBlockLink = productBlockParent.querySelectorAll('.js-product-link');
-
+    if (productBlockParent && productBlockLink.length > 0 && productBlockTabs.length > 0) {
         toggleTabs(0, productBlockLink, productBlockTabs, productBlockParent, 'js-product-link');
     }
-    if (reviewsBlockParent) {
-        let reviewsBlockTabs = reviewsBlockParent.querySelectorAll('.js-reviews-block-tab'),
-            reviewsBlockLink = reviewsBlockParent.querySelectorAll('.reviews-block__link');
-
+    if (reviewsBlockParent && reviewsBlockLink.length > 0 && reviewsBlockTabs.length > 0) {
         toggleTabs(0, reviewsBlockLink, reviewsBlockTabs, reviewsBlockParent, 'reviews-block__link');
     }
-    if (orderParent) {
-        let orderTabs = orderParent.querySelectorAll('.js-order-tabs'),
-        orderLink = orderParent.querySelectorAll('.order__link');
-
+    if (orderParent && orderLink.length > 0 && orderTabs.length > 0) {
         toggleTabs(0, orderLink, orderTabs, orderParent, 'order__link');
     }
-    if (newsBlockParent) {
-        let newsBlockTabs = newsBlockParent.querySelectorAll('.js-news-block-tab'),
-            newsBlockLink = newsBlockParent.querySelectorAll('.news-block__link');
-
+    if (newsBlockParent && newsBlockLink.length > 0 && newsBlockTabs.length > 0) {
         toggleTabs(0, newsBlockLink, newsBlockTabs, newsBlockParent, 'news-block__link');
     }
-    if (productDescrParent) {
-        let productDescrTabs = productDescrParent.querySelectorAll('.js-product-descr-tab'),
-            productDescrLink = productDescrParent.querySelectorAll('.product-descr__link');
-
+    if (productDescrParent && productDescrLink.length > 0 && productDescrTabs.length > 0) {
         toggleTabs(0, productDescrLink, productDescrTabs, productDescrParent, 'product-descr__link');
     }
-    if (regionParent) {
-        let regionTabs = regionParent.querySelectorAll('.js-region-tabs'),
-            regionLink = regionParent.querySelectorAll('.region__link');
+    if (regionParent && regionLink.length > 0 && regionTabs.length > 0) {
         toggleTabs(0, regionLink, regionTabs, regionParent, 'region__link', true);
     }
 
@@ -171,7 +166,7 @@ window.addEventListener('DOMContentLoaded', () => {
         */
         let subIndex = 0;
 
-        if (subRegion) {
+        if (subRegion && regionLink.length > 0) {
             let subLinks = tabs[0].querySelectorAll('.subregion__link'),
                 subTabs = tabs[0].querySelectorAll('.subregion__content');
 
@@ -395,7 +390,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-    if(productParent){
+    if(productParent && productCount){
         let count = 6;
         productCount.innerHTML = count;
         productPlus.addEventListener('click', (e) => {

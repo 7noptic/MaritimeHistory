@@ -27,7 +27,7 @@
   transition: $transition4;
   &.active{
     animation: showTabs .5s;
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     visibility: visible;
     opacity: 1;
