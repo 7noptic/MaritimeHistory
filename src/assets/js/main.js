@@ -266,12 +266,15 @@ window.addEventListener('DOMContentLoaded', () => {
                     newP = +newPrice[i].innerHTML.replace(/\D+/g, ''),
                     resultNum = oldP - newP,
                     resultDec =   (oldP - newP) / (oldP / 100);
-                if(resultNum > 0){
-                    economy[i].innerHTML = `${resultNum} ₽ ${resultDec.toFixed(1)} %`;
-                }
-                else{
-                    economy[i].innerHTML = '-';
-                }
+                    if(economy[i]){
+                        if(resultNum > 0){
+                            economy[i].innerHTML = `${resultNum} ₽ ${resultDec.toFixed(1)} %`;
+                        }
+                        else{
+                            economy[i].innerHTML = '-';
+                        }
+                    }
+                
             }
 
             toggleCardLike(cardLike);
