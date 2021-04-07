@@ -1,0 +1,28 @@
+a.added_to_cart.wc-forward {
+    display: none;
+}
+
+.wpcf7 .ajax-loader {
+    display: none !important;
+}
+
+.wl-button__remove {
+    position: absolute;
+    top: 20px !important;
+    right: 26px !important;
+    display: block;
+    width: 20px !important;
+    height: 20px !important;
+    color: #6d6d6d;
+    fill: #6d6d6d;
+    background-color: transparent !important;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+
+@media (max-width: 767px) {
+    .wl-button__remove {
+        right: 10px !important;
+    }
+}

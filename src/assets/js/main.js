@@ -253,30 +253,32 @@ window.addEventListener('DOMContentLoaded', () => {
     let cards = document.querySelectorAll('.card'),
         oldPrice = document.querySelectorAll('.card__price'),
         newPrice = document.querySelectorAll('.card__price-b'),
-        economy = document.querySelectorAll('.card__economy'),
         cardLike = document.querySelectorAll('.card__heart');
         document.addEventListener('click', (e) => {
             if(e.target && e.target.classList.contains('card__heart')){
                 e.preventDefault();
             }
         })
-        if(cards){
+        if(cards){/*
             for(let i = 0; i < cards.length;i++){
+        let economy = cards[i].querySelectorAll('.card__economy');
+        console.log(economy);
+
                 let oldP = +oldPrice[i].innerHTML.replace(/\D+/g, ''),
                     newP = +newPrice[i].innerHTML.replace(/\D+/g, ''),
                     resultNum = oldP - newP,
                     resultDec =   (oldP - newP) / (oldP / 100);
-                    if(economy[i]){
+                    if(economy){
                         if(resultNum > 0){
-                            economy[i].innerHTML = `${resultNum} ₽ ${resultDec.toFixed(1)} %`;
+                            economy.innerHTML = `${resultNum} ₽ ${resultDec.toFixed(1)} %`;
                         }
                         else{
-                            economy[i].innerHTML = '-';
+                            economy.innerHTML = '-';
                         }
                     }
                 
             }
-
+*/
             toggleCardLike(cardLike);
 
         function toggleCardLike(like) {
@@ -286,13 +288,13 @@ window.addEventListener('DOMContentLoaded', () => {
                     return function() {
                         if(trigger){
                             like[i].innerHTML = `
-                            <img src="img/cardheart.svg" class="card__heart-img" alt="">
+                            <img src="https://maritimehistory.webdevlair.com/wp-content/themes/maritimehistory/assets/img/cardheart.svg" class="card__heart-img" alt="">
                             `
                             ;
                             trigger = false;
                         }else{
                             like[i].innerHTML = `
-                            <img src="img/cardheartactive.svg" class="card__heart-img" alt="">
+                            <img src="https://maritimehistory.webdevlair.com/wp-content/themes/maritimehistory/assets/img/cardheartactive.svg" class="card__heart-img" alt="">
                             `
                             ;
                             trigger = true;
@@ -394,16 +396,15 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
     if(productParent && productCount){
-        let count = 6;
-        productCount.innerHTML = count;
+        let count = productCount.value;
         productPlus.addEventListener('click', (e) => {
             e.preventDefault();
-                productCount.innerHTML = ++count;
+                productCount.value = ++count;
         });
         productMinus.addEventListener('click', (e) => {
             e.preventDefault();
             if(count > 0){
-                productCount.innerHTML = --count;
+                productCount.value = --count;
             }
         });
     }

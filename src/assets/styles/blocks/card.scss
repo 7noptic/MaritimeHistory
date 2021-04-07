@@ -23,8 +23,9 @@
 
   &__heart {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
+    display: block;
     transition: $transition2;
     z-index: 1;
     &::before {
