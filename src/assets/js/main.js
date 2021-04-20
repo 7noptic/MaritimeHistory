@@ -450,9 +450,9 @@ window.addEventListener('DOMContentLoaded', () => {
      modalInputName = document.querySelector('#js-modal-one-click-name'),
      modalInputPrice = document.querySelector('#js-modal-one-click-price'),
      modalInputUrl = document.querySelector('#js-modal-one-click-url'),
-     oneCardParent = document.querySelector('.product__info'),
+     oneCardParent = document.querySelector('.product'),
      oneCardName = document.querySelector('.product__title'),
-     oneCardPrice = document.querySelector('.product-price__new'),
+     oneCardPrice = document.querySelector('.product-price__bot span'),
      oneCardImg = document.querySelector('.product__img');
 
 
@@ -467,22 +467,19 @@ if(card || oneCardParent){
          modalOneClickBtn[i].onclick = function(x) {
              return function() {
                  if(oneCardParent){
-                     console.log('work');
-                     modalOneClickName.innerHTML = oneCardName.innerHTML;
-                     modalInputName.value = oneCardName.innerHTML
+                    modalOneClickName.innerHTML = cardName[i-1].innerHTML;
+                    modalInputName.value = cardName[i-1].innerHTML
 
-                     modalOneClickPrice.innerHTML = oneCardPrice.innerHTML;
-                     modalInputPrice.value = oneCardPrice.innerHTML;
+                    modalOneClickPrice.innerHTML = cardPrice[i-1].innerHTML;
+                    modalInputPrice.value = cardPrice[i-1].innerHTML;
 
 
-                     modalOneClickImg.childNodes[1].src = oneCardImg.childNodes[1].src;
-                     modalInputUrl.value =  window.location;
+                    modalOneClickImg.childNodes[1].src = cardImg[i-1].childNodes[1].src;
+                    modalInputUrl.value = cardName[i-1].href;
                  }
                  else{
                      modalOneClickName.innerHTML = cardName[i].innerHTML;
                      modalInputName.value = cardName[i].innerHTML
-                     console.log(modalOneClickPrice.innerHTML);
-                     console.log(cardPrice[i].innerHTML);
 
                      modalOneClickPrice.innerHTML = cardPrice[i].innerHTML;
                      modalInputPrice.value = cardPrice[i].innerHTML;
@@ -495,6 +492,21 @@ if(card || oneCardParent){
 
              }
          }(i)
+         oneCardParent.addEventListener('click', (e)=>{
+            if(e.target && e.target.classList.contains('js-one-click')){
+                if(oneCardParent ){
+                    modalOneClickName.innerHTML = oneCardName.innerHTML;
+                    modalInputName.value = oneCardName.innerHTML
+
+                    modalOneClickPrice.innerHTML = oneCardPrice.innerHTML;
+                    modalInputPrice.value = oneCardPrice.innerHTML;
+
+
+                    modalOneClickImg.childNodes[1].src = oneCardImg.childNodes[1].src;
+                    modalInputUrl.value =  window.location;
+                }
+            }
+         });
 
      }
 
