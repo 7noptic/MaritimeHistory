@@ -50,7 +50,6 @@
   &-count {
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
 
     &__text {
       font-weight: 600;
@@ -68,6 +67,7 @@
     }
 
     &__prev, &__next {
+      display: none;
       background-color: transparent;
     }
 
@@ -226,9 +226,6 @@
 
     }
 
-    &-count {
-      margin-bottom: 15px;
-    }
 
     &__list {
       margin-top: 15px;
@@ -249,7 +246,12 @@
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 767px) {
+  table.shop_table_responsive tr td::before{
+    display: none!important;
+    opacity: 0;
+    visibility: hidden;
+  }
   .product {
 
     &__next, &__prev {

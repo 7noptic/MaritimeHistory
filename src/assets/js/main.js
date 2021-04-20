@@ -122,9 +122,7 @@ window.addEventListener('DOMContentLoaded', () => {
         productDescrParent = document.querySelector('.product-descr'),
         productDescrTabs = document.querySelectorAll('.js-product-descr-tab'),
         productDescrLink = document.querySelectorAll('.product-descr__link'),
-        orderParent = document.querySelector('.order'),
-        orderTabs = document.querySelectorAll('.js-order-tabs'),
-        orderLink = document.querySelectorAll('.order__link'),
+        
         productBlockParent = document.querySelector('.product-block'),
 
         productBlockTabs = document.querySelectorAll('.js-product-tab'),
@@ -142,9 +140,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (reviewsBlockParent && reviewsBlockLink.length > 0 && reviewsBlockTabs.length > 0) {
         toggleTabs(0, reviewsBlockLink, reviewsBlockTabs, reviewsBlockParent, 'reviews-block__link');
     }
-    if (orderParent && orderLink.length > 0 && orderTabs.length > 0) {
-        toggleTabs(0, orderLink, orderTabs, orderParent, 'order__link');
-    }
+    
     if (newsBlockParent && newsBlockLink.length > 0 && newsBlockTabs.length > 0) {
         toggleTabs(0, newsBlockLink, newsBlockTabs, newsBlockParent, 'news-block__link');
     }
@@ -154,7 +150,10 @@ window.addEventListener('DOMContentLoaded', () => {
     if (regionParent && regionLink.length > 0 && regionTabs.length > 0) {
         toggleTabs(0, regionLink, regionTabs, regionParent, 'region__link', true);
     }
-
+    let body = document.querySelector('body');
+    body.addEventListener('click', (e)=>{
+        console.log(e.target);
+    });
 
     function toggleTabs(i = 0, link, tabs, parent, classContains, subRegion, subLink, subContent) {
         hideTabs(link, tabs);
@@ -165,7 +164,7 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log(tabs[0].clientHeight);
         */
         let subIndex = 0;
-
+       
         if (subRegion && regionLink.length > 0) {
             let subLinks = tabs[0].querySelectorAll('.subregion__link'),
                 subTabs = tabs[0].querySelectorAll('.subregion__content');
@@ -177,6 +176,7 @@ window.addEventListener('DOMContentLoaded', () => {
         parent.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains(classContains)) {
                 e.preventDefault();
+                
 
                 for (let i = 0; i < link.length; i++) {
                     if (link[i] === e.target) {
@@ -309,7 +309,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
         }
-    /* basket */
+    
     let modalCountKg = document.querySelectorAll('.js-modal-count-kg'),
         modalCountPrev = document.querySelectorAll('.modal-one-click__prev'),
         modalCountNext = document.querySelectorAll('.modal-one-click__next'),
@@ -334,7 +334,7 @@ window.addEventListener('DOMContentLoaded', () => {
         orderDelivery = document.querySelector('.js-order-delivery'),
         orderDiscount = document.querySelector('.js-order-discount'),
         orderFinal = document.querySelector('.js-order-final');
-
+/* basket 
         if(basketParent){
             toggleBasketCount(basketItemMinus, basketItemCount, basketItemPlus);
 
@@ -408,6 +408,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    */
     /*modal one click */
     if(modalOneClick){
         toggleModalCount(modalCountPrev, modalCountKg, modalCountNext);
@@ -435,6 +436,69 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
     }
+     /* modal one click */
+     let card = document.querySelectorAll('.card'),
+     cardPrice = document.querySelectorAll('.card__price-b'),
+     cardName = document.querySelectorAll('.card__name'),
+     cardImg = document.querySelectorAll('.card__img'),
+
+     modalOneClickImg = document.querySelector('.modal-one-click__img'),
+     modalOneClickName = document.querySelector('.modal-one-click__name'),
+     modalOneClickPrice = document.querySelector('.js-modal-price'),
+     modalOneClickBtn = document.querySelectorAll('.js-one-click'),
+
+     modalInputName = document.querySelector('#js-modal-one-click-name'),
+     modalInputPrice = document.querySelector('#js-modal-one-click-price'),
+     modalInputUrl = document.querySelector('#js-modal-one-click-url'),
+     oneCardParent = document.querySelector('.product__info'),
+     oneCardName = document.querySelector('.product__title'),
+     oneCardPrice = document.querySelector('.product-price__new'),
+     oneCardImg = document.querySelector('.product__img');
+
+
+
+if(card || oneCardParent){
+ getCardInfoToModalOneClick(card);
+}
+
+
+ function getCardInfoToModalOneClick(card) {
+     for(let i=0; i < card.length; i++) {
+         modalOneClickBtn[i].onclick = function(x) {
+             return function() {
+                 if(oneCardParent){
+                     console.log('work');
+                     modalOneClickName.innerHTML = oneCardName.innerHTML;
+                     modalInputName.value = oneCardName.innerHTML
+
+                     modalOneClickPrice.innerHTML = oneCardPrice.innerHTML;
+                     modalInputPrice.value = oneCardPrice.innerHTML;
+
+
+                     modalOneClickImg.childNodes[1].src = oneCardImg.childNodes[1].src;
+                     modalInputUrl.value =  window.location;
+                 }
+                 else{
+                     modalOneClickName.innerHTML = cardName[i].innerHTML;
+                     modalInputName.value = cardName[i].innerHTML
+                     console.log(modalOneClickPrice.innerHTML);
+                     console.log(cardPrice[i].innerHTML);
+
+                     modalOneClickPrice.innerHTML = cardPrice[i].innerHTML;
+                     modalInputPrice.value = cardPrice[i].innerHTML;
+
+
+                     modalOneClickImg.childNodes[1].src = cardImg[i].childNodes[1].src;
+                     modalInputUrl.value = cardName[i].href;
+                 }
+
+
+             }
+         }(i)
+
+     }
+
+ }
 
 
     /* SWIPER */

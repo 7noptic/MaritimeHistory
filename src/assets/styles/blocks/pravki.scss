@@ -19,10 +19,22 @@ a.added_to_cart.wc-forward {
     border-radius: 50%;
     z-index: 100;
 }
-
+.wac-quantity{
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+.wac-btn-inc, .wac-btn-sub{
+    background-color: transparent!important;
+}
 
 @media (max-width: 767px) {
     .wl-button__remove {
         right: 10px !important;
+    }
+}
+@media screen and (min-width: 48em){
+    table .shop_table_responsive tr td{
+display: flex!important;
     }
 }

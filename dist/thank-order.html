@@ -10,105 +10,16 @@
   <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
   <link rel="icon" href="img/favicon/favicon.ico">
   <title>Title</title>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      let orderParent = document.querySelector('.order'),
-        bodyFix = document.querySelector('body'),
-        orderTabs = document.querySelectorAll('.js-order-tabs'),
-        orderLink = document.querySelectorAll('.order__link');
-      console.log(orderLink);
-      if (orderParent && orderLink.length > 0 && orderTabs.length > 0) {
-        toggleTabs(0, orderLink, orderTabs, orderParent, 'order__link');
-
-        function toggleTabs(i = 0, link, tabs, parent, classContains, subRegion, subLink, subContent) {
-          hideTabs(link, tabs);
-          showTabs(0, link, tabs);
-
-
-          bodyFix.addEventListener('click', (e) => {
-            if (e.target && e.target.classList.contains(classContains)) {
-              e.preventDefault();
-
-              for (let i = 0; i < link.length; i++) {
-                if (link[i] === e.target) {
-                  hideTabs(link, tabs);
-                  showTabs(i, link, tabs);
-
-                }
-              }
-            }
-
-          });
-        }
-
-        function showTabs(i = 0, link, content) {
-          link[i].classList.add('active');
-          content[i].classList.add('active');
-        }
-
-        function hideTabs(link, content) {
-          for (let i = 0; i < link.length; i++) {
-            link[i].classList.remove('active');
-          }
-          for (let i = 0; i < content.length; i++) {
-            content[i].classList.remove('active');
-          }
-        }
-      }
-    })
-  </script>
   <link href="vendors~main.css" rel="stylesheet">
   <link href="main.css" rel="stylesheet">
 </head>
 
 <body>
-  <header class="header">
-    <div class="container">
-      <div class="row">
-        <div class="col-3 col-lg-2 d-none d-md-block"><a data-da=".js-adaptive-logo,767,1" href="index.html" class="logo"><img src="img/logo.png" alt=""></a></div>
-        <div class="col-12 col-md-9 col-lg-10">
-          <div class="row header__row d-flex align-items-center">
-            <div class="col-4 col-md-12 col-lg-6 d-flex align-items-center js-adaptive-burger">
-              <nav class="header__menu d-none d-md-flex"><a href="#">Гарантия </a><a href="#">Доставка и оплата </a><a href="#">Отзывы </a><a href="#">Рецепты </a><a href="#">Контакты</a></nav>
-            </div>
-            <div class="col-4 d-flex d-md-none d-lg-flex align-items-center js-adaptive-logo">
-              <p class="header__info d-none d-lg-block">Пн-Пт с 8:00 до 21:00, сб-вс с 9:00 до 17:00</p>
-            </div>
-            <div class="col-4 col-md-2 justify-content-end justify-content-md-start js-adaptive-basket d-flex d-md-none d-lg-flex align-items-center">
-              <p class="header__info d-none d-lg-block">Волоколамское ш. 112, к.1с3а</p>
-            </div>
-          </div>
-          <div class="row d-none d-md-flex align-items-center">
-            <div class="col-4 col-lg-6 d-flex justify-content-between justify-content-lg-start align-items-center">
-              <div class="header__search">
-                <div class="header__search-img"><img src="img/search.svg" class="js-search" alt=""></div>
-                <form action="POST">
-                  <div class="form-wrapper-header"><span><input type="search" class="form-control" placeholder="Дефлопе с крутонами"> </span><span><button type="submit"><img src="img/search.svg" alt=""></button></span></div>
-                </form>
-              </div>
-              <div data-da=".js-adaptive-burger,767,1" class="burger">
-                <div class="header-burger">
-                  <div class="header-burger__icon js-burger"><span class="js-burger"></span> <span class="js-burger"></span> <span></span> <span></span></div>
-                </div>
-                <div class="header-menu hamburger-menu"><a href="#" class="header-menu__call js-call"><img src="img/call.svg" alt="" class="js-call"></a>
-                  <div class="header-menu__wrapper"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 col-lg-4 d-flex align-items-center header__tels"><a href="tel:80000000000" class="header__tel">8 800 000 00 00</a> <a href="#" class="btn header__btn js-call">заказать звонок</a></div>
-            <div class="col-4 col-lg-2 d-flex align-items-center">
-              <div class="header__basket"><a href="#"><img src="img/heart.svg" alt=""> </a><a href="basket.html" data-da=".js-adaptive-basket,767,1"><img src="img/basket.svg" alt=""> </a><a href="basket.html" class="d-none d-lg-flex">10шт. <span>на 27000 ₽</span></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
   <main>
     <div class="container">
       <div class="row">
         <div class="col-2 d-none d-xl-block">
-          <section class="aside">
+          <section class="aside"><a data-da=".js-adaptive-logo,767,1" href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
             <p class="aside__slogan">Цены ниже, <span>доставка быстрее!</span></p>
             <ul data-da=".header-menu__wrapper,1199,1" class="aside__menu">
               <li><a href="#">Рыба</a>
@@ -164,34 +75,6 @@
                 <ul class="aside__menu-lvl2">
                   <li><a href="#">Барабуля</a></li>
                   <li><a href="#">Белуга</a></li>
-                  <li><a href="#">Горбуша</a></li>
-                  <li><a href="#">Камбала</a></li>
-                  <li><a href="#">Кета</a></li>
-                  <li><a href="#">Китайский окунь</a></li>
-                  <li><a href="#">Корюшка</a></li>
-                  <li><a href="#">Ленок</a></li>
-                  <li><a href="#">Муксун</a></li>
-                  <li><a href="#">Морской язык</a></li>
-                  <li><a href="#">Нерка</a></li>
-                  <li><a href="#">Омуль</a></li>
-                  <li><a href="#">Осетр</a></li>
-                  <li><a href="#">Палтус</a></li>
-                  <li><a href="#">Пелядь</a></li>
-                  <li><a href="#">Ряпушка</a></li>
-                  <li><a href="#">Сиг</a></li>
-                  <li><a href="#">Микижа</a></li>
-                  <li><a href="#">Морской черт</a></li>
-                  <li><a href="#">Налим</a></li>
-                  <li><a href="#">Пыжьян</a></li>
-                  <li><a href="#">Семга</a></li>
-                  <li><a href="#">Сибас</a></li>
-                  <li><a href="#">Стерлядь</a></li>
-                  <li><a href="#">Треска</a></li>
-                  <li><a href="#">Тугунок</a></li>
-                  <li><a href="#">Угорь</a></li>
-                  <li><a href="#">Форель</a></li>
-                  <li><a href="#">Фугу</a></li>
-                  <li><a href="#">Язь</a></li>
                 </ul>
               </li>
               <li><a href="#">Икра</a>
@@ -445,162 +328,111 @@
           </section>
         </div>
         <div class="col-12 col-xl-10">
-          <nav class="headcrumbs"><a href="index.html" class="headcrumbs__link">Главная</a> <a href="#" class="headcrumbs__link">Каталог</a></nav>
-          <section class="basket">
-            <div class="row">
-              <div class="col-12">
-                <h1 class="title basket__title">Корзина</h1>
-              </div>
-              <div class="col-12 col-lg-9">
-                <p class="basket__text">Товарная накладная № 5418 от 25.02.2022</p>
-                <div class="basket__items">
-                  <header class="basket__header">
-                    <div class="basket__num">№</div>
-                    <div class="basket__name">Наименование</div>
-                    <div class="basket__count">Кол-во</div>
-                    <div class="basket__price">Цена, 1 ед</div>
-                    <div class="basket__sum">Сумма</div>
-                    <div class="basket__delete"></div>
-                  </header>
-                  <div class="basket-item">
-                    <div class="basket__num js-basket-num">1</div><a href="product.html" class="basket__name">
-                      <div class="basket__img"><img src="img/card.jpg" alt=""></div>Семга свежемороженая<br>Премиум чилийская
-                    </a>
-                    <div class="basket__count">Килограмм<div class="basket__count-block"><button class="basket__prev"><img src="img/arr.svg" alt=""></button>
-                        <div class="js-basket-kg">10</div><button class="basket__next"><img src="img/arr.svg" alt=""></button>
+          <header class="header">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="row header__row d-flex align-items-center">
+                    <div class="col-4 col-md-12 col-lg-6 d-flex align-items-center js-adaptive-burger">
+                      <nav class="header__menu d-none d-md-flex align-items-center"><a href="#">Гарантия </a><a href="#">Доставка и оплата </a><a href="#">Отзывы </a><a href="#">Рецепты </a><a href="#">Контакты</a></nav>
+                    </div>
+                    <div class="col-4 d-flex d-md-none d-lg-flex align-items-center js-adaptive-logo">
+                      <p class="header__info d-none d-lg-block">Пн-Пт с 8:00 до 21:00, сб-вс с 9:00 до 17:00</p>
+                    </div>
+                    <div class="col-4 col-md-2 justify-content-end justify-content-md-start js-adaptive-basket d-flex d-md-none d-lg-flex align-items-center">
+                      <p class="header__info d-none d-lg-block">Волоколамское ш. 112, к.1с3а</p>
+                    </div>
+                  </div>
+                  <div class="row d-none d-md-flex align-items-center">
+                    <div class="col-4 col-lg-6 d-flex justify-content-between justify-content-lg-start align-items-center">
+                      <div class="header__search">
+                        <div class="header__search-img"><img src="img/search.svg" class="js-search" alt=""></div>
+                        <form action="POST">
+                          <div class="form-wrapper-header"><span><input type="search" class="form-control" placeholder="Дефлопе с крутонами"> </span><span><button type="submit"><img src="img/search.svg" alt=""></button></span></div>
+                        </form>
+                      </div>
+                      <div data-da=".js-adaptive-burger,767,1" class="burger">
+                        <div class="header-burger">
+                          <div class="header-burger__icon js-burger"><span class="js-burger"></span> <span class="js-burger"></span> <span></span> <span></span></div>
+                        </div>
+                        <div class="header-menu hamburger-menu"><a href="#" class="header-menu__call js-call"><img src="img/call.svg" alt="" class="js-call"></a>
+                          <div class="header-menu__wrapper"></div>
+                        </div>
                       </div>
                     </div>
-                    <div class="basket__price js-basket-price">2590 ₽</div>
-                    <div class="basket__sum js-basket-sum">2590 ₽</div>
-                    <div class="basket__delete"><img src="img/basketx.svg" alt="" class="js-basket-delete"></div>
-                  </div>
-                  <div class="basket-item">
-                    <div class="basket__num js-basket-num">1</div><a href="product.html" class="basket__name">
-                      <div class="basket__img"><img src="img/card.jpg" alt=""></div>Семга свежемороженая<br>Премиум чилийская
-                    </a>
-                    <div class="basket__count">Килограмм<div class="basket__count-block"><button class="basket__prev"><img src="img/arr.svg" alt=""></button>
-                        <div class="js-basket-kg">10</div><button class="basket__next"><img src="img/arr.svg" alt=""></button>
-                      </div>
+                    <div class="col-4 col-lg-4 d-flex align-items-center header__tels"><a href="tel:80000000000" class="header__tel">8 800 000 00 00</a> <a href="#" class="btn header__btn js-call">заказать звонок</a></div>
+                    <div class="col-4 col-lg-2 d-flex align-items-center">
+                      <div class="header__basket"><a href="#"><img src="img/heart.svg" alt=""> </a><a href="basket.html" data-da=".js-adaptive-basket,767,1"><img src="img/basket.svg" alt=""> </a><a href="basket.html" class="d-none d-lg-flex">10шт. <span>на 27000 ₽</span></a></div>
                     </div>
-                    <div class="basket__price js-basket-price">2590 ₽</div>
-                    <div class="basket__sum js-basket-sum">2590 ₽</div>
-                    <div class="basket__delete"><img src="img/basketx.svg" alt="" class="js-basket-delete"></div>
-                  </div>
-                  <div class="basket-item">
-                    <div class="basket__num js-basket-num">1</div><a href="product.html" class="basket__name">
-                      <div class="basket__img"><img src="img/card.jpg" alt=""></div>Семга свежемороженая<br>Премиум чилийская
-                    </a>
-                    <div class="basket__count">Килограмм<div class="basket__count-block"><button class="basket__prev"><img src="img/arr.svg" alt=""></button>
-                        <div class="js-basket-kg">10</div><button class="basket__next"><img src="img/arr.svg" alt=""></button>
-                      </div>
-                    </div>
-                    <div class="basket__price js-basket-price">2590 ₽</div>
-                    <div class="basket__sum js-basket-sum">2590 ₽</div>
-                    <div class="basket__delete"><img src="img/basketx.svg" alt="" class="js-basket-delete"></div>
-                  </div>
-                  <div class="basket-item">
-                    <div class="basket__num js-basket-num">1</div><a href="product.html" class="basket__name">
-                      <div class="basket__img"><img src="img/card.jpg" alt=""></div>Семга свежемороженая<br>Премиум чилийская
-                    </a>
-                    <div class="basket__count">Килограмм<div class="basket__count-block"><button class="basket__prev"><img src="img/arr.svg" alt=""></button>
-                        <div class="js-basket-kg">10</div><button class="basket__next"><img src="img/arr.svg" alt=""></button>
-                      </div>
-                    </div>
-                    <div class="basket__price js-basket-price">2590 ₽</div>
-                    <div class="basket__sum js-basket-sum">2590 ₽</div>
-                    <div class="basket__delete"><img src="img/basketx.svg" alt="" class="js-basket-delete"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-lg-3">
-                <div class="basket-result">
-                  <h2 class="title basket__subtitle">Ваш заказ (12)</h2>
-                  <div class="row basket-result__row">
-                    <div class="col-5 d-flex align-items-center">
-                      <p class="basket-result__text">Товаров на:</p>
-                    </div>
-                    <div class="col-7 d-flex align-items-center">
-                      <p class="basket-result__text-b js-basket-result-price">0</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-5 d-flex align-items-center">
-                      <p class="basket-result__text">Итого, ₽:</p>
-                    </div>
-                    <div class="col-7 d-flex align-items-center">
-                      <p class="basket-result__text-sb js-basket-result-sum">0</p>
-                    </div>
-                    <div class="col-5 d-flex align-items-center">
-                      <p class="basket-result__text">Итого, кг:</p>
-                    </div>
-                    <div class="col-7 d-flex align-items-center">
-                      <p class="basket-result__text-sb js-basket-result-kg">0</p>
-                    </div>
-                    <div class="col-12"><a href="#" class="btn basket__btn">оформить заказ</a></div>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-          <section class="order">
+          </header>
+          <nav class="headcrumbs"><a href="index.html" class="headcrumbs__link"><svg width="32" height="8" viewBox="0 0 32 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.646447 4.35355C0.451184 4.15829 0.451184 3.84171 0.646447 3.64645L3.82843 0.464467C4.02369 0.269204 4.34027 0.269204 4.53553 0.464467C4.7308 0.659729 4.7308 0.976311 4.53553 1.17157L1.70711 4L4.53553 6.82843C4.7308 7.02369 4.7308 7.34027 4.53553 7.53553C4.34027 7.7308 4.02369 7.7308 3.82843 7.53553L0.646447 4.35355ZM31 3.50001C31.2761 3.50001 31.5 3.72386 31.5 4.00001C31.5 4.27615 31.2761 4.50001 31 4.50001L31 3.50001ZM1 3.5L31 3.50001L31 4.50001L1 4.5L1 3.5Z" fill="#7A5F46" />
+              </svg> Назад</a></nav>
+          <section class="thank">
             <div class="row">
-              <div class="col-12">
-                <h2 class="title order__title">Оформление заказа</h2>
+              <div class="col-12 d-flex align-items-center flex-column">
+                <h1 class="title thank__title">Спасибо за заказ</h1>
+                <h2 class="thank__subtitle">Будем рады видеть вас снова!</h2>
               </div>
-              <div class="col-12">
-                <nav class="tabs__nav">
-                  <div class="swiper-container-order">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide swiper-slide__wauto"><a href="#" class="tabs__link order__link">Физическое лицо</a></div>
-                      <div class="swiper-slide swiper-slide__wauto"><a href="#" class="tabs__link order__link">Юридическое лицо</a></div>
-                    </div>
-                  </div>
-                </nav>
-              </div>
-              <div class="col-12 col-lg-9">
-                <div class="order-form">
-                  <form action="POST">
-                    <div class="order-form__wrapper">
-                      <div class="js-order-tabs">
-                        <h3 class="order-form__title">Информация о покупателе</h3>
-                        <div class="order-form__line order-form__line-1"><span><input id="ip-fio" type="text" class="form-control form__input" placeholder="Фамилия Имя Отчество"> <label for="ip-fio">Фамилия Имя Отчество</label> </span><span><input id="ip-tel" type="tel" class="form-control form__input" placeholder="Телефон"> <label for="ip-tel">Введите мобильный номер телефона *</label> </span><span><input id="ip-email" type="email" class="form-control form__input" placeholder="Email"> <label for="ip-email">Введите адрес эл. почты для получения чека и уведомлений</label></span></div>
-                      </div>
-                      <div class="js-order-tabs">
-                        <h3 class="order-form__title">Информация о покупателе</h3>
-                        <div class="order-form__line order-form__line-4"><span><input id="yr-company" type="text" class="form-control form__input" placeholder="Название компании"> <label for="yr-company">Название компании</label></span></div>
-                        <h3 class="order-form__title">Юридический адрес</h3>
-                        <div class="order-form__line order-form__line-5"><span><input id="yr-city" type="text" class="form-control form__input" placeholder="Город"> <label for="yr-city">Укажите адрес доставки</label> </span><span><input id="yr-street" type="text" class="form-control form__input" placeholder="Улица"> </span><span><input id="yr-house" type="text" class="form-control form__input" placeholder="Дом"> </span><span><input id="yr-inn" type="tel" class="form-control form__input" placeholder="00000000000000"> <label for="yr-inn">ИНН</label> </span><span><input id="yr-kpp" type="email" class="form-control form__input" placeholder="00000000000000"> <label for="yr-kpp">КПП</label> </span><span><input id="yr-tel" type="tel" class="form-control form__input" placeholder="Телефон"> <label for="yr-tel">Введите мобильный номер телефона *</label> </span><span><input id="yr-email" type="email" class="form-control form__input" placeholder="Email"> <label for="yr-email">Введите адрес эл. почты для получения чека и уведомлений</label></span></div>
-                      </div>
-                      <h3 class="order-form__title">Доставка</h3>
-                      <div class="order-form__line order-form__line-2"><span><input id="ip-city" type="text" class="form-control form__input" placeholder="Город"> <label for="ip-city">Укажите адрес доставки</label> </span><span><input id="ip-street" type="text" class="form-control form__input" placeholder="Улица"> </span><span><input id="ip-house" type="text" class="form-control form__input" placeholder="Дом"></span></div>
-                      <h3 class="order-form__title">Оплата</h3>
-                      <div class="order-form__line order-form__line-3">
-                        <div class="order-form__payment"><label for="ip-card-online"><img src="img/cardorder.svg" alt=""></label> <input class="custom-radio" type="radio" id="ip-card-online" checked="checked" name="ip-payment"> <label for="ip-card-online">Картой онлайн</label></div>
-                        <div class="order-form__payment"><label for="ip-cash"><img src="img/cashorder.svg" alt=""></label> <input class="custom-radio" type="radio" id="ip-cash" name="ip-payment"> <label for="ip-cash">Наличными</label></div>
-                        <div class="order-form__payment"><label for="ip-expense"><img src="img/bankorder.svg" alt=""></label> <input class="custom-radio" type="radio" id="ip-expense" name="ip-payment"> <label for="ip-expense">По счёту</label></div>
-                      </div>
-                      <h3 class="order-form__title">Комментарий к заказу</h3>
-                      <div class="order-form__line order-form__line-4"><span><input id="ip-comment" type="text" class="form-control form__input" placeholder="Ваш комментарий"> <label for="ip-comment">Расскажите о пожеланиях к заказу или как улучшить работу сайта</label></span></div>
-                      <div class="order-result">
-                        <div class="order-result__item"><span>Сумма товаров</span>
-                          <p class="order-result__price"><span>0 ₽ </span><span class="js-order-price">12 950 ₽</span></p>
-                        </div>
-                        <div class="order-result__item"><span>Доставка</span>
-                          <p class="js-order-delivery">+661 ₽</p>
-                        </div>
-                        <div class="order-result__item"><span>Итоговая скидка</span>
-                          <p class="js-order-discount">-999 ₽</p>
-                        </div>
-                        <div class="order-result__final"><span>Итого</span>
-                          <p class="js-order-final">12 950 ₽</p>
-                        </div>
-                      </div>
-                      <div class="order-form__footer"><button type="submit" class="btn order-form__btn">оформить заказ</button>
-                        <p class="order-form__agreement">Я согласен условиями предоставления<br>услуг и обработкой моих персональных<br>данных при нажатии “Оформить заказ”</p>
-                      </div>
-                    </div>
-                  </form>
+            </div>
+          </section>
+          <section class="board">
+            <h2 class="title product__title">Популярное</h2>
+            <aside class="tags">
+              <div class="swiper-container-tags">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Рыба</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Морепродукты</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Икра</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Рыба</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Морепродукты</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Икра</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Рыба</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Морепродукты</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Икра</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Рыба</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Морепродукты</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Икра</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Рыба</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Морепродукты</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Икра</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Рыба</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Морепродукты</a></div>
+                  <div class="swiper-slide tags-slide"><a href="#" class="btn btn-transparent tags__btn">Икра</a></div>
                 </div>
+              </div>
+              <div class="tags__prev"><img src="img/arrleft.svg" alt=""></div>
+              <div class="tags__next"><img src="img/arrleft.svg" alt=""></div>
+            </aside>
+            <div class="board__wrapper">
+              <div class="row">
+                <div class="col-12 col-lg-5"><a href="#" class="board__item" style="background-image: url('img/board1.jpg');">
+                    <div class="board__info">
+                      <p class="board__name-b">Семга свежемороженая</p>
+                      <p class="board__price">за 1 кг <span>1050₽</span></p>
+                    </div>
+                  </a></div>
+                <div class="col-12 col-lg-4 d-flex flex-column justify-content-between"><a href="#" class="board__item board__item-s" style="background-image: url('img/board2.jpg');">
+                    <div class="board__info">
+                      <p class="board__name">Семга свежемороженая Премиум чилийская</p>
+                      <p class="board__price">за 1 кг <span>1050₽</span></p>
+                    </div>
+                  </a><a href="#" class="board__item board__item-s" style="background-image: url('img/board3.jpg');">
+                    <div class="board__info">
+                      <p class="board__name">Семга свежемороженая Премиум чилийская</p>
+                      <p class="board__price">за 1 кг <span>1050₽</span></p>
+                    </div>
+                  </a></div>
+                <div class="col-12 col-lg-3"><a href="#" class="board__item" style="background-image: url('img/board4.jpg');">
+                    <div class="board__info">
+                      <p class="board__name">Омар свежемороженый Премиум</p>
+                      <p class="board__price">за 1 кг <span>1050₽</span></p>
+                    </div>
+                  </a></div>
               </div>
             </div>
           </section>

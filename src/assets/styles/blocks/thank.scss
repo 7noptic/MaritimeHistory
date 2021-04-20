@@ -1,0 +1,12 @@
+.thank{
+    padding: 50px 0 160px;
+}
+@media (max-width:575px) {
+    .thank{
+        padding: 50px 0;
+        &__subtitle{
+            text-align: center;
+            font-size: 18px;
+        }
+    } 
+}

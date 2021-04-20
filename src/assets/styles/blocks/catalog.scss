@@ -54,14 +54,7 @@
   }
 }
 
-@media screen and (max-width: 1599px){
-  .catalog {
-    &__name {
-      font-size: 28px;
-      line-height: 32px;
-    }
-  }
-}
+
 @media screen and (max-width: 575px) {
   .catalog {
     &__item{
